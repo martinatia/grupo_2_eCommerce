@@ -5,7 +5,7 @@ Zapp es una aplicacion que busca romper en el mercado dandole medios distintos a
 Zapp, ademas, es una aplicacion simple que busca que todos los consumidores tengan una clara y superior experiencia. 
 
 #       INTEGRANTES:
-#   Anriquez Atia, Walter Martin: Cara de taliban, pero buen pibe. Padre de Anirm el mejor hijo del universo. Tomo una cerveza de vez en cuando ;D
+#   Anriquez Atia, Walter Martin:  (A.K.A "Martin Atia") Cara de taliban, pero buen pibe. Padre de Anirm el mejor hijo del universo. Tomo una cerveza de vez en cuando ;D
 #   Arjona, Iván
 #   Capilla, Luana Yannina
 #   Dominguez, Alejandra
