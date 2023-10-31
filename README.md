@@ -12,5 +12,5 @@ Zapp, ademas, es una aplicacion simple que busca que todos los consumidores teng
 # Arjona, Iván
 # Capilla, Luana Yannina: Luana Capibara que no le gusta el fernet con coca, madre de dragones, rompedora de cadenas, la unica Targerian (GOT) 
 # Dominguez, Alejandra
-# Lodi, Jose Marcelo
+# Lodi, Jose Marcelo: Soy Jose Lodi, sacha Contador Publico, comparado de joven con superman y ahora con starLord, tengo 35 años (15 años libre, 20 años mandado), fanatico de las computadoras y de las criptos, soy de las bebidas blancas pero en lo posible sin speed.   
 # Tenaglia, Fausto: Soy Fausto, tengo 19 años, me gusta mucho tomar fernet y ver peliculas/series, gamer inutil como pocos pero me la banco. 
