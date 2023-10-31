@@ -11,6 +11,3 @@ Zapp, ademas, es una aplicacion simple que busca que todos los consumidores teng
 # Dominguez, Alejandra
 # Lodi, Jose Marcelo
 # Tenaglia, Fausto
-
-
-#algo para borrar
