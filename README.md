@@ -13,4 +13,4 @@ Zapp, ademas, es una aplicacion simple que busca que todos los consumidores teng
 # Capilla, Luana Yannina: Luana Capibara que no le gusta el fernet con coca, madre de dragones, rompedora de cadenas, la unica Targerian (GOT) 
 # Dominguez, Alejandra
 # Lodi, Jose Marcelo
-# Tenaglia, Fausto
+# Tenaglia, Fausto: Soy Fausto, tengo 19 años, me gusta mucho tomar fernet y ver peliculas/series, gamer inutil como pocos pero me la banco. 
