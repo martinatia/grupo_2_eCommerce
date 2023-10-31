@@ -7,7 +7,7 @@ Zapp, ademas, es una aplicacion simple que busca que todos los consumidores teng
 # INTEGRANTES:
 # Anriquez Atia, Walter Martin:  (A.K.A "Martin Atia") Cara de taliban, pero buen pibe. Padre de Amir el mejor hijo del universo. Tomo una cerveza de vez en cuando ;D
 # Arjona, Iván
-# Capilla, Luana Yannina
+# Capilla, Luana Yannina: Luana Capibara que no le gusta el fernet con coca, madre de dragones, rompedora de cadenas, la unica Targerian (GOT) 
 # Dominguez, Alejandra
 # Lodi, Jose Marcelo
 # Tenaglia, Fausto
