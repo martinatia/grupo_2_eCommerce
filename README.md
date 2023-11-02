@@ -6,7 +6,8 @@ Zapp, ademas, es una aplicacion simple que busca que todos los consumidores teng
 
 # Enlace del repositorio en Github:
     https://github.com/martinatia/grupo_2_eCommerce
-
+# Enlace de figma:
+    https://www.figma.com/file/BsL17nYKFFjmZSm9nzyNUG/PROYECTO-DH?type=design&node-id=0-1&mode=design&t=jj6NNBTmipftT90r-0
 # INTEGRANTES:
 # Anriquez Atia, Walter Martin:  (A.K.A "Martin Atia") Cara de taliban, pero buen pibe. Padre de Amir el mejor hijo del universo. Tomo una cerveza de vez en cuando ;D
 # Arjona, Iván
