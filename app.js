@@ -18,8 +18,8 @@ app.get("/login", (req, res) => {
   res.sendFile(path.resolve("./views/login.html"));
 });
 
-app.get("/product_description", (req, res) => {
-  res.sendFile(path.resolve("./views/product_description.html"));
+app.get("/produc_description", (req, res) => {
+  res.sendFile(path.resolve("./views/produc_description.html"));
 });
 
 app.get("/registration", (req, res) => {
