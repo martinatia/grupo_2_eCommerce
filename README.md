@@ -5,11 +5,6 @@ Zapp es una aplicacion que busca romper en el mercado dandole medios distintos a
 Zapp, ademas, es una aplicacion simple que busca que todos los consumidores tengan una clara y superior experiencia. 
 
 # Enlace del repositorio en Github:
-    https://github.com/martinatia/grupo_2_eCommerce
-# Enlace de figma:
-    https://www.figma.com/file/BsL17nYKFFjmZSm9nzyNUG/PROYECTO-DH?type=design&node-id=0-1&mode=design&t=jj6NNBTmipftT90r-0
-# #Referentes:
-https://www.nike.com.ar/
 https://www.adidas.com.ar/
 https://www.topper.com.ar/
 https://ar.puma.com/
