@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/styles.css">
     <title>Registrarse</title>
 </head>
 <body>
-    
+    <header>
+        <a href="./index.html"><img src="/img/Logo.jpg" alt="imagen de logo"></a>
+    </header>
+    <main>
+        <h2>Para tener una mejor experiencia resgistrate con nosotros colocando tus datos aqui: </h2>
+        <div class="inputs">
+            <input type="text" name="name" placeholder="Nombre">
+            <input type="text" name="lastname" placeholder="Apellido">
+            <input type="email" name="email" placeholder="Tu dirección de correo">
+            <input type="email" name="mailConfirmation" placeholder="Confirma tu direccion de correo">
+            <input type="password" name="pass" placeholder="Contraseña">
+        </div> 
+        <div>
+            <span class="simbolo_contraseña">(?)</span>
+            <span class="requisito_contraseña">La contraseña debe tener al menos 6 caracteres</span>
+        </div>
+        <div class="checkbox_registro">
+            <input type="checkbox" name="checkbox_ofertas" id="checkbox_ofertas">
+            <label for="checkbox_ofertas">Recibir Ofertas!</label>
+            <input type="checkbox" name="checkbox_terminos_y_condiciones" id="checkbox_terminos_y_condiciones">
+            <label for="checkbox_terminos_y_condiciones">
+                Eh leído los <a href="">Términos y Condiciones</a> DH Venture Capitals y su <a href="">Política de privacidad.</a>
+            </label>
+        </div>
+        <button type="submit" class="button_registro">Registrarme</button>
+
+        <h3 class="h3_registro">Ya tienes cuenta?</h3>
+        <span class="linea_registro"></span>
+        <a href="./login.html"><button class="button_registro_ingresar">Ingresar</button></a>
+    </main>
+    <footer></footer>    
 </body>
 </html>
