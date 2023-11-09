@@ -1,11 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de compras</title>
+    <style>
+        #main-content {
+            display: flex;
+            
+        }
+        #Resumen, #Pagar {
+            margin-left: 20px;
+            align-items: center;
+
+        }
+        #carrito {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #ResumenPago {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/6641947d89.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <header>
+        <button>Volver</button>
+        <img src="C:/Users/fabri/Downloads/Zapp-transformed.png" alt="Logo" width="50" height="60" align="center">
+        <nav>
+            <ul>
+                <li><a href="#">HOMBRE</a></li>
+                <li><a href="#">MUJER</a></li>
+                <li><a href="#">NIÑO/A</a></li>
+                <i class="fa-solid fa-user"></i>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section id="carrito">
+            <h2>Tu carrito</h2>
+            
+            <img src="https://png.pngtree.com/png-vector/20201224/ourlarge/pngtree-black-and-white-trend-sneakers-product-display-png-image_2603850.jpg" alt="Zapatilla 1" width="200" height="200" >
+            <img src="https://cdn.pixabay.com/photo/2013/07/12/18/20/shoes-153310_960_720.png" alt="Zapatilla 2" width="200" height="200" >
+            
+        </section>
+        <div id="ResumenPago">
+        <section id="Resumen">
+            <h2>Resumen del pedido</h2>
+            <p>Subtotal: ----</p>
+            <p>Entrega: ------</p>
+            <p>Total a pagar: -----</p>
+        </section>
+
+        <section id="Pagar">
+            <h2>Opciones de pago</h2>
+            <p><i class="fa-brands fa-cc-visa" ></i></p>
+            <p><i class="fa-brands fa-cc-mastercard" ></i></p>
+            <button>IR A PAGAR</button>
+        </section>
+        </div>
+    </main>
+    <footer>
+        <p>¿Tienes alguna duda?</p>
+        <p>Lunes - Viernes: 9:00 - 21:00</p>
+        <p>Sábado: 10:00 - 18:00</p>
+        <a href="#">Aviso de privacidad</a>
+        <a href="#">Términos y Condiciones</a>
+        <a href="#">Nuestros datos</a>
+        <p>© 2023 DH Venture Capitals.</p>
+    </footer>
 </body>
 </html>
