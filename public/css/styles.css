@@ -5,6 +5,11 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
+main {
+  width: 90%;
+  padding: 10px;
+  margin: 0 auto;
+}
 main article img{
     width:50%; 
     height:50%;
@@ -70,7 +75,8 @@ main article img{
     width: 40px;
 }
 .titulos{
-    display: flex;    
+    display: inline-flex;    
+    width: 100%;
     justify-content: space-between;
 
 }
@@ -83,7 +89,9 @@ main article img{
 .flechas{
     display: flex;
 }
-main section{
+.sec-ofertas,
+.sec-prod-destacados,
+.sec-ultima-coleccion{
     display: flex;
     flex-wrap: wrap;
 }
@@ -162,6 +170,21 @@ main section article{
  }
 
  @media (min-width: 361px){
+  main section article{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+main section div.productos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+main section div.productos article{
+    width: 45%;
+}
     .menu {
         display: none;
 
@@ -186,3 +209,7 @@ main section article{
         display: flex;
       }
  }
+ label {
+  display: block;
+  margin-bottom: 8px;
+}
