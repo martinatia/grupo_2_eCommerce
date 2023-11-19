@@ -1,97 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descripción del Producto</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/produc_description.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
 </head>
+
 <body>
-    
-    <header>
-            <span><img src="/img/Logo.jpg" alt="Logo ZAPP" width="40" height="40"></span>
-            <a href="./carrito"><i class="fas fa-shopping-cart"></i></a>
-            
-            <span><i class="fa-solid fa-bars"></i></span>
+
+    <header class="main-header">
+
+        <div class="main-navbar">
+            <img class="logo" src="/img/Zapp-alt.png" alt="Logo Zapp">
+            <div class="opciones">
+                <ul>
+                    <li><a href="#">Hombres</a></li>
+                    <li><a href="#">Mujeres</a></li>
+                    <li><a href="#">Niñ@</a></li>
+                </ul>
+            </div>
+            <div class="opciones">
+                <ul>
+                    <li>
+                        <a href="./carrito"><i class="fas fa-shopping-cart"></i></a>
+                    </li>
+                    <li>
+                        <a href="./login"><i class="fas fa-user"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
     </header>
     <main>
-        <h5><a href="./login" >Inicio ></a> Detalle del producto</h5>
-        <div class="contenedorFotos">
-            <div>
-                <img src="/img/Zapp3.jpg" alt="Foto del Producto" width="200" height="200">
-                <img src="/img/Zapp4.jpg" alt="Foto del Producto" width="200" height="200">
+        <div class="main-content">
+            <div class="contenedorFotos">
+                <div class="fotoPrimaria">
+                    <img src="/img/Zapp3.jpg" alt="Foto del Producto">
+                </div>
+                <div class="fotoSecundaria">
+                    <img src="/img/Zapp5.jpg" alt="Foto del Producto">
+                    <img src="/img/Zapp6.jpg" alt="Foto del Producto">
+                </div>
             </div>
-            <div>
-                <img src="/img/Zapp5.jpg" alt="Foto del Producto" width="200" height="200">
-                <img src="/img/Zapp6.jpg" alt="Foto del Producto" width="200" height="200">
+
+            <div class="contenedorDescripcion">
+                <h2>Modelo ZAPP#1</h2>
+                <h3 class="price">$70000 </h3>
+                <h2>Color</h2>
+                <span class="colores">
+                    <img src="/img/Color1.png" alt="Color 1" width="40" height="40">
+                    <img src="/img/Color2.png" alt="Color 2" width="40" height="40">
+                    <img src="/img/Color3.jpg" alt="Color 3" width="40" height="40">
+                </span>
+
+                <label for="talles"><h3 class="tallesss">Seleccioná un talle</h3></label>
+                <select name="talle" id="talle">
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                </select>
+                <div class="botonAñadir">
+                    <button onclick="window.location.href='./carrito'">Añadir <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
             </div>
         </div>
 
-        <div class="contenedorDescripcion">
-            <p>Modelo ZAPP#1</p>
-            <p>$70000 </p>
-            <p>Color</p>
-            <span>
-                <img src="/img/Color1.png" alt="Color 1" width="40" height="40">
-                <img src="/img/Color2.png" alt="Color 2" width="40" height="40">
-                <img src="/img/Color3.jpg" alt="Color 3" width="40" height="40">
-            </span>
-            <p>Talles</p>
-            <span>35</span>
-            <span>36</span>
-            <span>37</span>
-            <span>38</span>
-            <span>39</span>
-            <span>40</span>
-            <div>
-                <button onclick="window.location.href='./carrito'">Añadir <i class="fas fa-shopping-cart"></i> </button>
-            </div>
-            <div class="descripcionTextual">
-                <p>Descripción:</p>
-                <p>Sed condimentum diam orci, eget condimentum ipsum convallis quis. Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt.</p>
-            </div>
-            <div class="Relacionados">
-                <p>Relacionados</p>
-                <spam>
-                    <img src="/img/Zapp1.png" alt="Foto del Producto"  width="100" height="100">
-                    <p>$50000</p>
-                    <p>Descuento 40%<a href="./carrito"><i class="fas fa-shopping-cart"></i></a></p>
-                </spam>
-                <spam>
-                    <img src="/img/Zapp2.png" alt="Foto del Producto" width="100" height="100">
-                    <p>$50000</p>
-                    <p>Descuento 40%<a href="./carrito"><i class="fas fa-shopping-cart"></i></a></p>
-                    
-                </spam>
-                <spam>
-                    <img src="/img/Zapp7.png" alt="Foto del Producto" width="100" height="100">
-                    <p>$50000</p>
-                    <p>Descuento 40%<a href="./carrito"><i class="fas fa-shopping-cart"></i></a></p>
-                </spam>
-            </div>
+        <div class="descripcionTextual">
+            <h1>Descripción:</h1>
+            <p>Sed condimentum diam orci, eget condimentum ipsum convallis quis. Sed ut perspiciatis, unde omnis iste
+                natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo
+                inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,
+                quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione
+                voluptatem sequi nesciunt.</p>
         </div>
+        <section class="relacionados">
+            <div class="titulos">
+                <h3>Relacionados</h3>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-right"></i>
+            </div>
+            <div class="productos">
+                <article>
+                    <img src="img/ultraboost.jpg" alt="Ultraboost" />
+                    <div class="main-product">
+                        <i class="fas fa-cart-plus"></i>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
     </main>
     <footer>
-        <div class="column">
+        <div class="redes">
             <h3>Nuestras Redes Sociales</h3>
-            <ul>
-                <li><a href="#" target="_blank"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <ul class="redes-sociales">
+                <li>
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </li>
             </ul>
         </div>
 
         <div class="column">
             <h3>Contacto</h3>
-            <p>Dirección: xyz. Santiago del Estero - Argentina</p>
+            <p>Dirección: xyz. Sgo del Estero - Arg.</p>
             <p>Email: contacto@zapp.com</p>
             <p>Teléfono: +5493854000000</p>
         </div>
 
         <div class="column">
             <h3>Ayuda</h3>
-            <ul>
+            <ul class="ayuda">
                 <li><a href="#">Envíos y entregas</a></li>
                 <li><a href="#">Cambios</a></li>
                 <li><a href="#">Devoluciones</a></li>
@@ -100,9 +135,10 @@
             </ul>
         </div>
 
-        <div class="column">
-            <img src="/img/logo.jpg" alt="Zapp logo"  width="100" height="100">
+        <div class="logo-footer">
+            <img class="logo" src="/img/Zapp-alt.png" alt="Zapp logo" />
         </div>
     </footer>
 </body>
+
 </html>

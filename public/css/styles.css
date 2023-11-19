@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     font-family: 'Roboto', sans-serif;
@@ -113,18 +114,24 @@ main section article{
     background-color: #FFF;
     border-radius: 50%;
     position: absolute;
-    right: 20px;
+    right: 25px;
     top: -15px;
   }
-  article div.main-product{
+  div.productos i {
+    border: 2px solid #39b54a;
+    border-radius: 50%;
+    color: #39b54a;
+  }
+  section article div.main-product{
     width: 100%;
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
     align-items: baseline;
     border-top: 1px solid #ebebeb;
     position: relative;
-    padding: 15px;
+    margin-bottom: 15px;
   }
+
   footer{
     display: flex;
     background-color: #E9F1F1;
@@ -168,6 +175,10 @@ main section article{
     text-decoration-line: none;
     color: black;
  }
+ main section article{
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
 
  @media (min-width: 361px){
   main section article{
