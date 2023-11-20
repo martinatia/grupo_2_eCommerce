@@ -5,17 +5,27 @@
 }
 body {
   font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 main {
   width: 90%;
   padding: 15px;
   margin: 0 auto;
 }
-header {
-  display: flex;
-  background-color: #e9f1f1;
+.main-header {
+  background-color: #E9F1F1;
+  font-family: "Roboto", sans-serif;
+  padding: 0px 10px;
 }
-header button{
+
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+header button {
   padding: 5px;
   width: 30px;
   height: 30px;
@@ -23,78 +33,118 @@ header button{
   background-color: #fff;
   border-radius: 70%;
   right: 25px;
-  margin-top: 30px;
-}
-header nav ul li {
-  list-style: none;
-  display: inline-block;
-  padding: 10px;
-  margin-top: 25px;
-  margin-left: 50px;
+  margin-top: 15px;
   
 }
-header nav ul li a{
-    text-decoration: none;
-  color: #000;
+header{
+    display: flex;
+    padding: 0;
+    margin-top: 0px;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
 }
-header nav ul  i {
+.opciones {
+  display: none;
+}
+
+
+.main-header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.main-header a {
+  margin: 10px;
+  text-decoration: none;
+  color: #222222;
+  padding: 5px 0;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+}
+.menu {
+  text-align: center;
+  display: block;
+}
+
+.menu i {
+  text-align: center;
+  background-color: #161850;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 20px;
+  margin: 20px 0px 20px 0px;
+  padding: 10px;
+  width: 40px;
+}
+body main button.pago{
+  background-color: #161850; 
+    border: none; 
+    color: white; 
+    padding: 15px 32px;  
+    text-decoration: none; 
+    display: inline-block;
+    font-size: 16px; 
+    margin: 4px 2px; 
+    cursor: pointer; 
+    border-radius: 18px; 
+    
+}
+
+body main p i.fa-cc-visa {
   font-size: 30px;
-  padding: 5px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  position: absolute;
-  right: 25px;
-  margin-top: 30px;
-  color: #000;
+  color: #161850;
+  
 }
-header img {
-  margin-left: 5px;
-  width: 100px;
+
+body main p i.fa-cc-visa:hover {
+  color: yellow; 
 }
+
+body main p i.fa-cc-mastercard {
+  font-size: 30px;
+  color: red;
+  margin-left: 10px;
+}
+
+body main p i.fa-cc-mastercard:hover {
+  color: yellow; 
+}
+
+body main p i.fa-brands fa-cc-visa{
+  color: #161850;
+}
+main section div{
+  display: flex;
+}
+
 main img {
   width: 150px;
   height: 150px;
+  border: 2px solid black;
 }
-#main-content {
-  display: flex;
-  padding: 0px 10px;
-}
-#resumen,
-#pagar {
-  margin-left: 20px;
-}
-#carrito {
-  display: flex;
-  flex-direction: column;
-}
-#resumenPago {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: 300px;
-}
-#resumen{
-    padding: 10px;
-    margin: 15px;
-    margin-top: 5px;
-}
-#resumen p {
-    margin-bottom: 10px; /* Ajusta este valor según tus necesidades */
-  }
-#pagar{
-    margin-top: 90px;
-    margin-bottom: 10px;
+
+.resumen{
+  margin: 10px;
 }
 .logo {
   width: 100px;
   height: 100px;
 }
+
 footer {
-  background-color: #e9f1f1;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding: 40px;
+  background-color: #E9F1F1;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding: 10px;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 footer p {
   margin: 5px;
@@ -102,12 +152,80 @@ footer p {
 }
 footer div a {
   display: flex;
- justify-content: center;
+  justify-content: center;
   text-decoration: none;
   color: #000;
 }
-footer img  {
-    width: 100px;
-    height: 100px;
+footer img {
+  width: 100px;
+  height: 100px;
   float: left;
+}
+@media (min-width: 361px) {
+  
+  .menu {
+    display: none;
   }
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .opciones {
+    display: flex;
+  }
+}
+  
+
+
+@media (min-width: 769px) {
+  .menu {
+    display: none;
+  }
+  
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+main {
+  width: 100%;
+  padding: 15px;
+  margin: 0 auto;
+}
+.main-content {
+  display: flex;
+  padding: 0px 10px;
+}
+.resumen,
+.pagar {
+  margin-left: 20px;
+}
+.carrito {
+  display: flex;
+  flex-direction: column;
+}
+.resumenPago {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 300px;
+}
+.resumen{
+    padding: 10px;
+    margin: 15px;
+    margin-top: 5px;
+}
+.resumen p {
+    margin-bottom: 10px; 
+  }
+.pagar{
+    margin-top: 90px;
+    margin-bottom: 10px;
+}
+
+
+}
+footer{
+  margin-bottom: 10px;
+}

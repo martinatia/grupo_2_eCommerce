@@ -8,42 +8,55 @@
     <script src="https://kit.fontawesome.com/6641947d89.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <a class="button" href="/">
-        <button><i class="fa-solid fa-arrow-left"></i></button>
-        </a>
-        <img class="logo" src="/img/Zapp-alt.png" alt="Logo" width="50" height="60" align="center">
-        <nav>
+    <header class="main-header">
+        <img class="logo" src="/img/Zapp-alt.png" alt="Logo Zapp">
+        <div class="main-navbar">
+            <a href="/">
+                <button><i class="fa-solid fa-arrow-left"></i></button>
+                </a>
+          <div class="opciones">
             <ul>
-                <li><a href="#">HOMBRE</a></li>
-                <li><a href="#">MUJER</a></li>
-                <li><a href="#">NIÑO/A</a></li>
-                <a href="./login"><i class="fa-solid fa-user"></i></a>
+              <li><a href="#">Hombres</a></li>
+              <li><a href="#">Mujeres</a></li>
+              <li><a href="#">Niñ@</a></li>
             </ul>
-        </nav>
-    </header>
+          </div>
+          <div class="opciones">
+            <ul>
+              <li>
+                <a href="./login"><i class="fas fa-user"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="menu">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </header>
 
-    <main id="main-content">
-        <section id="carrito">
+    <main class="main-content">
+        <section class="carrito">
             <h2>Tu carrito</h2>
             
             <img src="img/ultraboost.jpg" alt="Zapatilla 1" width="200" height="200" >
             <img src="img/ultraboost.jpg" alt="Zapatilla 2" width="200" height="200" >
             
         </section>
-        <div id="resumenPago">
-        <section id="resumen">
+        <div class="resumenPago">
+        <section class="resumen">
             <h2>Resumen del pedido</h2>
             <p>Entrega: 15/12</p>
             <p>Productos: 2</p>
             <p>Total a pagar: $15000</p>
         </section>
 
-        <section id="pagar">
+        <section class="pagar">
             <h2>Opciones de pago</h2>
+            <div>
             <p><i class="fa-brands fa-cc-visa" ></i></p>
             <p><i class="fa-brands fa-cc-mastercard" ></i></p>
-            <button>IR A PAGAR</button>
+            </div>
+            <button class="pago">IR A PAGAR</button>
         </section>
         </div>
     </main>
@@ -56,7 +69,7 @@
         <a class="referencias" href="#">Términos y Condiciones</a>
         <a class="referencias" href="#">Nuestros datos</a>
         </div>
-        <p>© 2023 DH Venture Capitals.</p>
+        <p>Copyright® 2023 DH Venture Capitals. Todos los derechos reservados</p>
     </footer>
 </body>
 </html>
