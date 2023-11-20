@@ -3,79 +3,94 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-body{
+body {
     font-family: 'Roboto', sans-serif;
-
 }
 header{
     background-color: #E9F1F1;
+    width: 100%;
+}
+.logo{
+    display: flex;
+    
+    justify-content: center;
 }
 .logo img{
     width: 100px;
     height: 100px;
+    text-align: center;
 }
 
-.logo{
-    display: flex;
-    justify-content: center;
-}
-.form-box{
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    height: 100%;
-}
-.form-value{
-    width: 90%;
-    height: 90%;
-}
-.form-value h2, p{
-    margin-top: 15px;
-}
-.form-value h2{
-    color: #161850;
-    font-size: 40px;
-}
-.elementos-formulario{
+.contenedor-principal{
     display: flex;
     flex-direction: column;
+    text-align: center;
+    margin-top: 50px;
+}
+.contenedor-principal h3{
+    color: #161850;
 
 }
-.inputs{
-    padding: 10px;
-    text-align: center;
+.contenedor-formulario{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+    height: 200px;  
 }
-.inputs i{
-    margin-right: 5%;
+
+.contenedor-principal h3,
+.contenedor-principal p{
+    margin-top: 20px;
+}
+.input{
+    margin-bottom: 15px;
+    width: 300px;
+    
+}
+.input i{
+    margin-right: 10px;
     color: #161850;
 }
-.inputs input{
+.input input{
     text-align: center;
+    
 }
-.elementos-formulario a,
-.form-value a{
-    color: blue
-}
-button{
-    margin-top: 25px;
-}
-.elementos-formulario button{
-    width: 40%;
-    color: white;
+
+.contenedor-formulario button{
+    width: 70%;
     background-color: #161850;
+    color: white;
     border: solid 1px #161850;
-    margin-bottom: 25px;
 }
-footer {
-    position: fixed;
+footer{
+    background-color: #E9F1F1;
     width: 100%;
     bottom: 0;
-    background-color:#E9F1F1;
-    text-align: center; 
+    position: fixed;
+    text-align: center;
 }
+
 footer p{
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-size: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+@media (min-width:361px){
+
+}
+@media (min-width:769px){
+    
+    form{
+        width: 450px;
+    }
+    .input{
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .input input{
+        width: 100%;
+    }
 }
