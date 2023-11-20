@@ -3,28 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-.contenedorPrincipal{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top:15px;
-}
-.formu input{
-
-    text-align: center;
-    margin-top:15px;
-    margin-bottom:15px;
-}
-.formu{
-    display: flex;
-    flex-direction: column;
-    width:50%;
-}
 body{
     font-family: 'Roboto', sans-serif;
 }
+main{
+    text-align: center;
+    
 
+}
 header{
     background-color: #E9F1F1;
 }
@@ -38,6 +24,22 @@ header{
     display: flex;
     justify-content: center;
 }
+.contenedorPrincipal{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:15px;
+    justify-content: center;
+}
+.formu input{
+
+    text-align: center;
+    margin-top:15px;
+    margin-bottom:15px;
+    width: 90%;
+}
+
+
 
 .contenedorPrincipal button{
     background-color: #161850;
@@ -52,7 +54,23 @@ header{
     display: block;
     text-align: justify;
 }
-.checkbox-registro input{
+.terminos-condiciones{
+    margin-bottom: 15px;
+    width: 80%;
+    text-align: justify;
+    margin-left: 10%;
+    display: flex;
+}
+.terminos-condiciones input{
+    width: 10%;
+}
+.terminos-condiciones label{
+    width: 90%;
+    text-align: justify;
+
+}
+.contenedor-terminos{
+    display: flex;
     
 }
 .checkbox-registro a{

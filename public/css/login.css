@@ -6,23 +6,76 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-}
 
+}
+header{
+    background-color: #E9F1F1;
+}
 .logo img{
     width: 100px;
     height: 100px;
 }
 
-.inputbox input{
-    width: 300px;
-    margin: 7px;
-    padding: 12px;
-    font-size: 15px;
-    display: block;
-    border-radius: 7%;
-    margin-left: 20px;
+.logo{
+    display: flex;
+    justify-content: center;
 }
+.form-box{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+}
+.form-value{
+    width: 90%;
+    height: 90%;
+}
+.form-value h2, p{
+    margin-top: 15px;
+}
+.form-value h2{
+    color: #161850;
+    font-size: 40px;
+}
+.elementos-formulario{
+    display: flex;
+    flex-direction: column;
 
-.inputbox i{
-    align-items: center;
+}
+.inputs{
+    padding: 10px;
+    text-align: center;
+}
+.inputs i{
+    margin-right: 5%;
+    color: #161850;
+}
+.inputs input{
+    text-align: center;
+}
+.elementos-formulario a,
+.form-value a{
+    color: blue
+}
+button{
+    margin-top: 25px;
+}
+.elementos-formulario button{
+    width: 40%;
+    color: white;
+    background-color: #161850;
+    border: solid 1px #161850;
+    margin-bottom: 25px;
+}
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color:#E9F1F1;
+    text-align: center; 
+}
+footer p{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 10px;
 }
