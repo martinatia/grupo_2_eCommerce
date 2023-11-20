@@ -2,44 +2,42 @@
 <html lang="es">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/login.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-  <title>Zapp</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <title>Iniciar sesión</title>
 </head>
 
 <body>
   <header>
-    <div class="logo"><a href="./index.html"><img src="/img/Zapp-alt.png" alt="imagen de logo"></a></div>
+    <div class="logo"><a href="/"><img src="/img/Zapp-alt.png" alt="imagen de logo"></a></div>
   </header>
-  <section>
-    <div class="form-box">
-      <div class="form-value">
-        <form action="" method="post">
-          <h2>Bienvenido/a</h2>
-          <p>Inicia Sesión o <a href="./registration">Crea tu cuenta</a></p>
-          <div class="elementos-formulario">
-            <div class="inputs">
-              <i class="fas fa-envelope"></i><input type="email" required placeholder="Introduzca su E-mail">
-            </div>
-            <div class="inputs">
-              <i class="fas fa-lock"></i><input type="password" required placeholder="Introduzca su Contraseña">
-            </div>
-            <div>
-              <button>Iniciar sesión</button>
-            </div>
+  <main>
 
-            <a href="#">Olvidé mi contraseña</a>
+    <div class="contenedor-principal">
+      <h3>Bienvenido/a</h3>
+      <p>Inicia sesión o <a href="/registration">crea una cuenta</a></p>
+      <div class="contenedor-formulario">
+        <form action="/" method="">
+          <div class="input">
+            <i class="fas fa-envelope"></i>
+          <input type="text" placeholder="Introduzca su email">
           </div>
-
+          <div class="input">
+            <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Introduzca su contraseña">
+          </div>
+          <button type="submit">Iniciar sesión</button>
         </form>
+
       </div>
     </div>
-  </section>
+  </main>
   <footer>
-
     <p>Copyright® 2023 DH Venture Capitals. Todos los derechos reservados</p>
   </footer>
-
 </body>
 
 </html>
