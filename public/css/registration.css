@@ -3,11 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body{
     font-family: 'Roboto', sans-serif;
 }
+main{
+    text-align: center;
+    
 
+}
 header{
     background-color: #E9F1F1;
 }
@@ -21,71 +24,67 @@ header{
     display: flex;
     justify-content: center;
 }
+.contenedorPrincipal{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:15px;
+    justify-content: center;
+}
+.formu input{
 
-.registration-title{
     text-align: center;
-    width: 200px;
-    margin: 10px;
+    margin-top:15px;
+    margin-bottom:15px;
+    width: 90%;
 }
 
-.inputs{
-    width: 70%;
-}
 
-.form input{
-    width: 300px;
-    margin: 7px;
-    padding: 12px;
-    font-size: 15px;
-    display: block;
-    border-radius: 7%;
-}
 
-form input:hover{
-    border-color: #161850;
+.contenedorPrincipal button{
+    background-color: #161850;
+    color: white;
+    width:50%;
+    height: 10%;
 }
-
-.simbolo-pass, 
-.requisito-pass{
-    font-size: 10px;
-    margin-left: 10px;
-}
-
 .checkbox-registro{
-    width: 300px;
+    width: 50%;
     margin: 10px;
     font-size: 11px;
     display: block;
+    text-align: justify;
 }
-
-.pass{
-    margin-bottom: 20px;
+.terminos-condiciones{
+    margin-bottom: 15px;
+    width: 80%;
+    text-align: justify;
+    margin-left: 10%;
+    display: flex;
 }
-
-.bt-registration{
-    text-align: center;
+.terminos-condiciones input{
+    width: 10%;
 }
+.terminos-condiciones label{
+    width: 90%;
+    text-align: justify;
 
-.line{
-    border-top: 1px solid #ccccccac;
-    margin-top: -9px;
 }
-
-.link-login{
-    margin: 10px;
-    text-align: center;
-    margin-top: 40px;
+.contenedor-terminos{
+    display: flex;
+    
 }
-
-
-.bt-in button,
-.bt-registration button{
-    width: 300px;
-    margin-top: 20px;
-    padding: 12px;
-    font-size: 15px;
+.checkbox-registro a{
+    color: blue
 }
-
-.bt-in{
-    text-align: center;
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color:#E9F1F1;
+    text-align: center; 
+}
+footer p{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 10px;
 }

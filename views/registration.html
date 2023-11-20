@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/registration.css">
     <title>Registrarse</title>
 </head>
+
 <body>
     <header>
-        <div class="logo" ><a href="./index.html"><img src="/img/Zapp-alt.png" alt="imagen de logo"></a></div>
+        <div class="logo"><a href="./index.html"><img src="/img/Zapp-alt.png" alt="imagen de logo"></a></div>
     </header>
     <main>
-        <div class="registration-title"><h3>Para tener una mejor experiencia registrate con nosotros colocando tus datos aqui:</h3></div>
-        <form class="inputs" action="#" method="`POST">
-            <input type="text" name="name" required placeholder="Nombre">
-            <input type="text" name="lastname" required placeholder="Apellido">
-            <input type="email" name="email" required placeholder="Tu dirección de correo">
-            <input type="email" name="mailConfirmation" required placeholder="Confirma tu direccion de correo">
-            <input type="password" name="pass" required placeholder="Contraseña">
-        </form>
-        <div class="pass">
-            <span class="simbolo-pass">(?)</span>
-            <span class="requisito-pass">La contraseña debe tener al menos 6 caracteres</span>
-        </div>
-        <div class="checkbox-registro">
-            <div>
-                <input type="checkbox" name="checkbox_ofertas" id="checkbox_ofertas">
-                <label for="checkbox_ofertas">Recibir Ofertas!</label>
-            </div>
-            <div>
-                <input type="checkbox" name="checkbox_terminos_y_condiciones" id="checkbox_terminos_y_condiciones">
-                <label for="checkbox_terminos_y_condiciones">Eh leído los <a href="">Términos y Condiciones</a> DH Venture Capitals y su <a href="">Política de privacidad.</a></label>
-            </div> 
-        </div>
-        <div  class="bt-registration"><button type="submit">Registrarme</button></div>
-        <div class="link-login">
-            <span>Ya tienes cuenta?</span> 
-            <span class="line"></span>
-        </div>
-        <div  class="bt-in">
-            <a href="./login"><button>Ingresar</button></a>
+        <div class="contenedorPrincipal">
+            <h3>Por favor, indique sus datos:</h3>
+
+            <form action='/' method="GET">
+                <div class="formu">
+                    <input type="text" name="name" required placeholder="Nombre y Apellido">
+                    <input type="email" name="email" required placeholder="Correo electrónico">
+                    <input type="email" name="mailConfirmation" required placeholder="Confirme su correo">
+                    <input type="password" name="pass" required placeholder="Indique la contraseña">
+                    <div class="terminos-condiciones">
+                        <div class="contenedor-terminos">
+                            <input type="checkbox" name="checkbox_terminos_y_condiciones"
+                            id="checkbox_terminos_y_condiciones">
+                      
+                            <label for="checkbox_terminos_y_condiciones">He leído los y acepto los <a href="">
+                                Términos y Condiciones</a> de DH Venture Capitals y su
+                            <a href="">Política de privacidad.</a></label>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit">Registrarme</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </main>
-    <footer></footer>    
+    <footer>
+        <p>Copyright® 2023 DH Venture Capitals. Todos los derechos reservados</p>
+    </footer>
 </body>
+
 </html>
