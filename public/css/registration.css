@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    background-color: #E9F1F1;
+}
+
+.logo img{
+    width: 100px;
+    height: 100px;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+.registration-title{
+    text-align: center;
+    width: 200px;
+    margin: 10px;
+}
+
+.inputs{
+    width: 70%;
+}
+
+.form input{
+    width: 300px;
+    margin: 7px;
+    padding: 12px;
+    font-size: 15px;
+    display: block;
+    border-radius: 7%;
+}
+
+form input:hover{
+    border-color: #161850;
+}
+
+.simbolo-pass, 
+.requisito-pass{
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.checkbox-registro{
+    width: 300px;
+    margin: 10px;
+    font-size: 11px;
+    display: block;
+}
+
+.pass{
+    margin-bottom: 20px;
+}
+
+.bt-registration{
+    text-align: center;
+}
+
+.line{
+    border-top: 1px solid #ccccccac;
+    margin-top: -9px;
+}
+
+.link-login{
+    margin: 10px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+.bt-in button,
+.bt-registration button{
+    width: 300px;
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+.bt-in{
+    text-align: center;
+}

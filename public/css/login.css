@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo img{
+    width: 100px;
+    height: 100px;
+}
+
+.inputbox input{
+    width: 300px;
+    margin: 7px;
+    padding: 12px;
+    font-size: 15px;
+    display: block;
+    border-radius: 7%;
+    margin-left: 20px;
+}
+
+.inputbox i{
+    align-items: center;
+}
