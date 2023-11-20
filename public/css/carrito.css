@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+main {
+  width: 90%;
+  padding: 15px;
+  margin: 0 auto;
+}
+header {
+  display: flex;
+  background-color: #e9f1f1;
+}
+header button{
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000;
+  background-color: #fff;
+  border-radius: 70%;
+  right: 25px;
+  margin-top: 30px;
+}
+header nav ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 10px;
+  margin-top: 25px;
+  margin-left: 50px;
+  
+}
+header nav ul li a{
+    text-decoration: none;
+  color: #000;
+}
+header nav ul  i {
+  font-size: 30px;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  right: 25px;
+  margin-top: 30px;
+  color: #000;
+}
+header img {
+  margin-left: 5px;
+  width: 100px;
+}
+main img {
+  width: 150px;
+  height: 150px;
+}
+#main-content {
+  display: flex;
+  padding: 0px 10px;
+}
+#resumen,
+#pagar {
+  margin-left: 20px;
+}
+#carrito {
+  display: flex;
+  flex-direction: column;
+}
+#resumenPago {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 300px;
+}
+#resumen{
+    padding: 10px;
+    margin: 15px;
+    margin-top: 5px;
+}
+#resumen p {
+    margin-bottom: 10px; /* Ajusta este valor según tus necesidades */
+  }
+#pagar{
+    margin-top: 90px;
+    margin-bottom: 10px;
+}
+.logo {
+  width: 100px;
+  height: 100px;
+}
+footer {
+  background-color: #e9f1f1;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding: 40px;
+}
+footer p {
+  margin: 5px;
+  text-align: center;
+}
+footer div a {
+  display: flex;
+ justify-content: center;
+  text-decoration: none;
+  color: #000;
+}
+footer img  {
+    width: 100px;
+    height: 100px;
+  float: left;
+  }
