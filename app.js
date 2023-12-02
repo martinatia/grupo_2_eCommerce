@@ -7,7 +7,11 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.listen(3000, () => console.log("Servidor corriendo"));
 
+/* Responsabilidad de Luana
 
+modificar este archvo
+para que se ajuste al View Engine
+*/
 //Sistema de ruteo
 app.get("/", (req, res) => {
   res.sendFile(path.resolve("./src/views/products/index.html"));
