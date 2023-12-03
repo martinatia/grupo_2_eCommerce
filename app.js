@@ -14,21 +14,40 @@ para que se ajuste al View Engine
 */
 //Sistema de ruteo
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve("./src/views/products/index.html"));
+  res.sendFile(path.resolve("./src/views/products/index.ejs"));
+});
+
+//app.get("/carrito", (req, res) => {
+  //res.sendFile(path.resolve("./src/views/products/carrito.ejs"));
+//});
+
+//app.get("/login", (req, res) => {
+  //res.sendFile(path.resolve("./src/views/users/login.ejs"));
+//});
+
+//app.get("/produc-description", (req, res) => {
+  //res.sendFile(path.resolve("./src/views/products/produc-description.ejs"));
+//});
+
+//app.get("/registration", (req, res) => {
+  //res.sendFile(path.resolve("./src/views/users/registration.ejs"));
+//});
+app.get("/", (req, res) => {
+  res.render("products/index");
 });
 
 app.get("/carrito", (req, res) => {
-  res.sendFile(path.resolve("./src/views/products/carrito.html"));
+  res.render("products/carrito");
 });
 
 app.get("/login", (req, res) => {
-  res.sendFile(path.resolve("./src/views/users/login.html"));
+  res.render("users/login");
 });
 
 app.get("/produc-description", (req, res) => {
-  res.sendFile(path.resolve("./src/views/products/produc-description.html"));
+  res.render("products/produc-description");
 });
 
 app.get("/registration", (req, res) => {
-  res.sendFile(path.resolve("./src/views/users/registration.html"));
+  res.render("users/registration");
 });
