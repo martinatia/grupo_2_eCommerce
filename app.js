@@ -14,7 +14,7 @@ para que se ajuste al View Engine
 */
 //Sistema de ruteo
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve("./src/views/products/index.ejs"));
+  res.render(path.resolve("./src/views/products/index.ejs"));
 });
 
 //app.get("/carrito", (req, res) => {
