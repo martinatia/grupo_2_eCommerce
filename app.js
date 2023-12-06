@@ -13,39 +13,22 @@ modificar este archvo
 para que se ajuste al View Engine
 */
 //Sistema de ruteo
-
-
-//app.get("/carrito", (req, res) => {
-  //res.sendFile(path.resolve("./src/views/products/carrito.ejs"));
-//});
-
-//app.get("/login", (req, res) => {
-  //res.sendFile(path.resolve("./src/views/users/login.ejs"));
-//});
-
-//app.get("/produc-description", (req, res) => {
-  //res.sendFile(path.resolve("./src/views/products/produc-description.ejs"));
-//});
-
-//app.get("/registration", (req, res) => {
-  //res.sendFile(path.resolve("./src/views/users/registration.ejs"));
-//});
 app.get("/", (req, res) => {
-  res.render("products/index");
+  res.render(path.resolve("./src/views/products/index.ejs"));
 });
 
 app.get("/carrito", (req, res) => {
-  res.render("products/carrito");
+  res.render(path.resolve("./src/views/products/carrito.ejs"));
 });
 
 app.get("/login", (req, res) => {
-  res.render("users/login");
+  res.render(path.resolve("./src/views/users/login.ejs"));
 });
 
 app.get("/produc-description", (req, res) => {
-  res.render("products/produc-description");
+  res.render(path.resolve("./src/views/products/produc-description.ejs"));
 });
 
 app.get("/registration", (req, res) => {
-  res.render("users/registration");
+  res.render(path.resolve("./src/views/users/registration.ejs"));
 });
