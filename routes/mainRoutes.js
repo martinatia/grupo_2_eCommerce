@@ -13,3 +13,5 @@ const routes = {
 router.get(routes.home, controller.index);
 router.get(routes.productDescription, controller.productDescription);
 routes.get(routes.carrito, controller.carrito);
+
+module.exports = router;
