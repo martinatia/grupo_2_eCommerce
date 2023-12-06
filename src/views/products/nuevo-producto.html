@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/nuevo-producto.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>Nuevo producto</title>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="main-navbar">
+        <img class="logo" src="/img/Zapp-alt.png" alt="Logo Zapp" />
+        <div class="opciones">
+          <ul>
+            <li><a href="#">Hombres</a></li>
+            <li><a href="#">Mujeres</a></li>
+            <li><a href="#">Niñ@</a></li>
+          </ul>
+        </div>
+        <div class="opciones">
+          <ul>
+            <li>
+              <a href="./carrito"><i class="fas fa-shopping-cart"></i></a>
+            </li>
+            <li>
+              <a href="./login"><i class="fas fa-user"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="menu">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <main>
+      <h3>Cargá la información del producto:</h3>
+      <form action="" method="POST" class="formulario">
+        <div class="form-label">
+          <label for="name">Nombre del producto:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Ej: Zapatillas Reebok"
+            class="form-input"
+          />
+        </div>
+        <div class="form-label">
+          <label for="price">Precio del producto:</label>
+          <input
+            type="text"
+            id="price"
+            name="price"
+            placeholder="Ej: 5678"
+            class="form-input"
+          />
+        </div>
+        <label for="category">Categoría:</label>
+        <div class="form-options">
+          <select name="category" id="category">
+            <option value="">Elegí</option>
+            <option value="hombres">Hombres</option>
+            <option value="ninios">Niños/as</option>
+            <option value="mujeres">Mujeres</option>
+          </select>
+        </div>
+        <div>
+          <!-- <label for="size">Talles:</label>
+            <select name="size" id="size">
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+            </select> -->
+          <p>Talles:</p>
+          <div class="form-checkbox">
+            <div class="talle">
+              <label for="talle32">32</label>
+              <input type="checkbox" id="talle32" name="talle32" value="32" />
+            </div>
+            <div class="talle">
+              <label for="talle33">33</label>
+              <input type="checkbox" id="talle33" name="talle33" value="33" />
+            </div>
+            <div class="talle">
+              <label for="talle34">34</label>
+              <input type="checkbox" id="talle34" name="talle34" value="34" />
+            </div>
+            <div class="talle">
+              <label for="talle35">35</label>
+              <input type="checkbox" id="talle35" name="talle35" value="35" />
+            </div>
+            <div class="talle">
+              <label for="talle36">36</label>
+              <input type="checkbox" id="talle36" name="talle36" value="36" />
+            </div>
+          </div>
+        </div>
+        <div class="form-description">
+          <label for="description">Descipción:</label>
+          <textarea
+            name="description"
+            id="description"
+            class="form-input"
+          ></textarea>
+        </div>
+      </form>
+      <div class="botones">
+        <button type="reset">Limpiar campos</button>
+        <button type="submit">Guardar producto</button>
+      </div>
+    </main>
+  </body>
+</html>
