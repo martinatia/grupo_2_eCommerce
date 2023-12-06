@@ -3,7 +3,7 @@ const {Router} = require('express');
 const controller = require('../controllers/mainController');
 const router = Router();
 
-
+/* rutas */
 const routes = {
     home: '/',
     productDescription: '/productDescription',

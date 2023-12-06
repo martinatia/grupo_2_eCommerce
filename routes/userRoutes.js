@@ -9,8 +9,8 @@ const routes = {
     registration: '/register',
 }
 
-router.get(routes.login, controller.login)
-router.get(routes.registration, controller.registration)
+router.get(routes.login, controller.login);
+router.get(routes.registration, controller.registration);
 
 
 
