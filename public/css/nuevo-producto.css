@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+.main-header {
+  background-color: #e9f1f1;
+  font-family: "Roboto", sans-serif;
+  padding: 0px 10px;
+  display: flex;
+}
+.logo {
+  width: 100px;
+  height: 100px;
+}
+.opciones {
+  display: none;
+}
+.main-navbar {
+  display: flex;
+  padding: 0;
+  margin-top: 0px;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+.main-header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.main-header a {
+  margin: 10px;
+  text-decoration: none;
+  color: #222222;
+  padding: 5px 0;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+}
+.menu {
+  text-align: center;
+  display: block;
+}
+.menu i {
+  text-align: center;
+  background-color: #161850;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 20px;
+  margin: 20px 0px 20px 0px;
+  padding: 10px;
+  width: 40px;
+}
+main{
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
+}
+.formulario{
+    margin: 10px;
+}
+
+
+
+.form-label{
+    display: flex;
+    flex-direction: column;
+}
+.form-options select{
+    width: 100%;
+}
+.form-checkbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.talle{
+    
+    justify-content: start;
+}
+.botones{
+    display: flex;
+    justify-content: space-between;
+}
