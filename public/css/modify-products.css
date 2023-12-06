@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+main {
+  width: 90%;
+  padding: 10px;
+  margin: 0 auto;
+}
+main article img{
+    width:50%; 
+    height:50%;
+}
+.main-header {
+    background-color: #E9F1F1;
+    font-family: "Roboto", sans-serif;
+    padding: 0px 10px;
+    display: flex;
+  }
+
+  .logo{
+    width: 100px;
+    height: 100px;
+    
+  }
+  
+
+.opciones{
+    display: none;
+}
+
+  .main-navbar {
+    display: flex;
+    padding: 0;
+    margin-top: 0px;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .main-header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+  }
+  .main-header a {
+    margin: 10px;
+    text-decoration: none;
+    color: #222222;
+    padding: 5px 0; 
+  }
+  .navbar{
+    display: flex;
+    justify-content: space-around;
+  }
+  .menu{
+    text-align: center;
+    display: block;
+}
+
+.menu i{
+    text-align: center;
+    background-color: #161850;
+    border-radius: 5px;
+    color: #FFF;
+    font-size: 20px;
+    margin: 20px 0px 20px 0px;
+    padding: 10px;
+    width: 40px;
+}
+
+/* aqui hacer estilizado main */
+
+
+
+footer{
+    display: flex;
+    background-color: #E9F1F1;
+    justify-content: space-around;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding: 10px;
+    padding: 10px;
+  }
+
+  .logo-footer{
+    display: none;
+  }
+ footer ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+ }
+ .redes{
+    width: 25%;
+    margin-right: 10px;
+ }
+
+ .redes h3{
+    text-align: center;
+ }
+
+ .redes-sociales{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+ }
+ 
+
+ .column h3{
+    text-align: center;
+ }
+
+ .ayuda a{
+    text-decoration-line: none;
+    color: black;
+ }

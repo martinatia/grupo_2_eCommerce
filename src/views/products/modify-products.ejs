@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/modify-products.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"  />
+    <title>Modificar producto</title>
+</head>
+<body>
+    <header class="main-header">
+
+        <div class="main-navbar">
+            <img class="logo" src="/img/Zapp-alt.png" alt="Logo Zapp">
+            
+            <div class="opciones">
+                <ul>
+                    <li><a href="#">Hombres</a></li>
+                    <li><a href="#">Mujeres</a></li>
+                    <li><a href="#">Niñ@</a></li>
+                </ul>
+            </div>
+            
+            <div class="opciones">
+                <ul>
+                    <li><a href="./carrito"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="./login"><i class="fas fa-user"></i></a></li>
+                </ul>
+            </div>
+            <div class="menu">
+                <i class="fas fa-bars"></i>
+            </div>
+
+        </div>
+
+    </header>
+    
+    <main>
+        
+        <form class="filtro-producto" action="#" method="get">
+            <label for="buscar-producto">
+                Buscar producto
+                <input type="text" name="buscar-producto" id="buscar-producto">
+            </label>
+            <button type="submit" class="bt-buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+
+        <div class="sobre-lista-productos">
+            
+            <div class="ordenar-por">
+                <label for="filter">
+                    Ordenar Por
+                    <select name="filter" id="filter">
+                        
+                        <option value="titulo-opciones">
+                            Elegí
+                        </option>
+                        
+                        <option value="nombre">
+                            Nombre
+                        </option>
+                        
+                        <optgroup label="Precio">
+                            <option value="mayor-precio">
+                                Mayor
+                            </option>
+                            <option value="menor-precio">
+                                Menor
+                            </option>
+                        </optgroup>
+                        
+                        <optgroup label="Categoría">
+                            <option value="categoria-mujer">
+                                Mujer
+                            </option>
+                            <option value="categoria-hombre">
+                                Hombre
+                            </option>
+                            <option value="categoria-ninios">
+                                Niñas y niños
+                            </option>
+                        </optgroup>
+                        
+                        <optgroup label="Talle">
+                            <option value="32">
+                                32
+                            </option>
+                            <option value="33">
+                                33
+                            </option>
+                            <option value="34">
+                                34
+                            </option>
+                            <option value="35">
+                                35
+                            </option>
+                            <option value="36">
+                                36
+                            </option>
+                        </optgroup>
+                    
+                    </select>
+            
+                </label>
+            </div>
+            
+            <div class="bt-agregar-producto">
+                <button class="bt-agregar-producto">Añadir producto</button>
+            </div>
+
+        </div>
+        
+        
+        <div class="form-lista-de-productos">
+            
+            <div class="caracteristicas-producto">
+                
+                <ul>
+                    <li>Nombre producto</li>
+                    <li>Precio</li>
+                    <li>Categoría</li>
+                    <li>Talles</li>
+                    <li>Descripcion</li>
+                    <li>Imágenes</li>
+                </ul>
+
+            </div>
+
+            <div class="lista-productos">
+                
+                <div class="bloque-caracteistica">
+                    <input type="text">
+                </div>
+                <div class="bloque-caracteistica">
+                    <input type="text">
+                </div>
+                <div class="bloque-caracteistica">
+                    
+                    <label for="categoria-mujeres"><input type="radio" id="categoria-mujeres">Mujeres</label>
+                    <label for="categoria-hombres"><input type="radio" id="categoria-hombres">Hombres</label>
+                    <label for="categoria-ninios"><input type="radio" id="categoria-ninios">Niñas y niños</label>
+                
+                </div>
+                <div class="bloque-caracteistica">
+                    
+                    <label for="talle-32"><input type="radio" id="talle-32">32</label>
+                    <label for="talle-33"><input type="radio" id="talle-33">33</label>
+                    <label for="talle-34"><input type="radio" id="talle-34">34</label>
+                    <label for="talle-35"><input type="radio" id="talle-35">35</label>
+                    <label for="talle-36"><input type="radio" id="talle-36">36</label>
+
+                </div>
+                <div class="bloque-caracteistica">
+                    <input type="text">
+                </div>
+                <div class="bloque-caracteistica">
+                    <input type="image">
+                </div>
+                <div class="bloque-caracteistica">
+                    <i class="fa-solid fa-pen"></i>
+                </div>
+                <div class="bloque-caracteistica">
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+
+            </div>
+        
+        </div>
+
+    </main>
+    
+    <footer>
+        
+        <div class="redes">
+            <h3>Nuestras Redes Sociales</h3>
+            <ul class="redes-sociales">
+                <li><a href="#" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    
+        <div class="column">
+            <h3>Contacto</h3>
+            <p>Dirección: xyz. Sgo del Estero - Arg.</p>
+            <p>Email: contacto@zapp.com</p>
+            <p>Teléfono: +5493854000000</p>
+        </div>
+    
+        <div class="column">
+            <h3>Ayuda</h3>
+            <ul class="ayuda">
+                <li><a href="#">Envíos y entregas</a></li>
+                <li><a href="#">Cambios</a></li>
+                <li><a href="#">Devoluciones</a></li>
+                <li><a href="#">Opciones de pago</a></li>
+                <li><a href="#">Prguntas frecuentes</a></li>
+            </ul>
+        </div>
+    
+        <div class="logo-footer">
+          <img class="logo" src="/img/Zapp-alt.png" alt="Zapp logo" />
+        </div>
+
+    </footer>
+</body>
+</html>
