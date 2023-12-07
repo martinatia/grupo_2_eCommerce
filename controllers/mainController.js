@@ -8,6 +8,9 @@ const controller = {
     },
     carrito: (req,res) =>{
         return res.send('carrito');
+    },
+    nuevoProducto: (req,res)=>{
+        return res.render('nuevo-producto');
     }
 }
 module.exports = controller;
