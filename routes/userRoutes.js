@@ -3,7 +3,6 @@ const {Router} = require('express');
 const router = Router();
 const controller = require('../controllers/userController')
 
-
 const routes = {
     login: '/login',
     registration: '/register',
@@ -11,7 +10,6 @@ const routes = {
 
 router.get(routes.login, controller.login);
 router.get(routes.registration, controller.registration);
-
 
 
 module.exports = router;
