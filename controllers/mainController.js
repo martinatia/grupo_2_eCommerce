@@ -1,16 +1,16 @@
 /* Responsabilidad de Martin*/
 const controller = {
     index: (req,res) => {
-        return res.render('index');
+        res.render('index');
     },
     productDescription:(req, res) =>{
-        return res.render('product-description');
+        res.render('produc-description');
     },
     carrito: (req,res) =>{
-        return res.send('carrito');
+        res.send('carrito');
     },
     nuevoProducto: (req,res)=>{
-        return res.render('nuevo-producto');
+        res.render('nuevo-producto');
     }
 }
 module.exports = controller;

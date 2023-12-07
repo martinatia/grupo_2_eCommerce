@@ -1,10 +1,17 @@
 const express = require("express");
 const app = express();
+const router = require('./routes/mainRoutes');
 const path = require("path");
 app.use(express.static("public"));
 
 
 app.set("view engine", "ejs");
+
+app.set('views', path.resolve('./src/views'))
+
+app.use(router);
+
+
 app.listen(3000, () => console.log("Servidor corriendo"));
 
 /* Responsabilidad de Luana
@@ -13,7 +20,9 @@ modificar este archvo
 para que se ajuste al View Engine
 */
 //Sistema de ruteo
-app.get("/", (req, res) => {
+/* 
+
+  app.get("/", (req, res) => {
   res.render(path.resolve("./src/views/products/index.ejs"));
 });
 
@@ -44,3 +53,5 @@ app.get("/registration", (req, res) => {
 app.get("/nuevo-producto", (req,res) => {
   res.render(path.resolve("./src/views/products/nuevo-producto.ejs"));
 });
+
+*/
