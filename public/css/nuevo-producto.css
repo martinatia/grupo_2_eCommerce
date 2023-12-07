@@ -5,6 +5,7 @@
 }
 body {
   font-family: "Roboto", sans-serif;
+  color: #161850;
 }
 .main-header {
   background-color: #e9f1f1;
@@ -73,20 +74,81 @@ main{
     display: flex;
     flex-direction: column;
 }
+.form-options{
+  margin: 5px 0px;
+}
 .form-options select{
     width: 100%;
+}
+.checkbox{
+  display: flex;
+  margin: 5px 0px;
+
 }
 .form-checkbox{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-left: 25px;
 
 }
 .talle{
     
     justify-content: start;
 }
+
 .botones{
     display: flex;
+    margin: 15px 50px;
     justify-content: space-between;
+}
+button{
+  color: white;
+  background-color: #161850;
+  border-color: #161850;
+  border-style: solid;
+  
+}
+.form-description{
+  display: flex;
+  flex-direction: column;
+}
+.form-images{
+  display: flex;
+  flex-direction: column;
+}
+label{
+  color: #161850;
+  font-weight: bold;
+  margin: 5px 0px;
+}
+
+
+@media (min-width: 361px){
+ 
+    .menu {
+        display: none;
+
+    }
+    .opciones{
+        display: flex;
+    }
+    
+ }
+
+ @media (min-width: 769px){
+    .menu {
+        display: none;
+    }
+    .opciones{
+        display: flex;
+    }
+    main section div.productos article{
+        width: 22%;
+    }
+    .logo-footer{
+        display: flex;
+      }
+
+
 }

@@ -41,8 +41,6 @@ app.get("/registration", (req, res) => {
   res.render(path.resolve("./src/views/users/registration.ejs"));
 });
 
-
-
 app.get("/nuevo-producto", (req,res) => {
   res.render(path.resolve("./src/views/products/nuevo-producto.ejs"));
 });
