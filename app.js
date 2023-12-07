@@ -21,17 +21,27 @@ app.get("/carrito", (req, res) => {
   res.render(path.resolve("./src/views/products/carrito.ejs"));
 });
 
-app.get("/login", (req, res) => {
-  res.render(path.resolve("./src/views/users/login.ejs"));
-});
-
 app.get("/produc-description", (req, res) => {
   res.render(path.resolve("./src/views/products/produc-description.ejs"));
+});
+
+app.get('/nuevo-producto', (req,res) => {
+  res.render(path.resolve('./src/views/products/nuevo-producto.ejs'))
+})
+
+app.get('/modificar-productos', (req,res) => {
+  res.render(path.resolve('./src/views/products/modify-products.ejs'))
+});
+
+app.get("/login", (req, res) => {
+  res.render(path.resolve("./src/views/users/login.ejs"));
 });
 
 app.get("/registration", (req, res) => {
   res.render(path.resolve("./src/views/users/registration.ejs"));
 });
+
+
 
 app.get("/nuevo-producto", (req,res) => {
   res.render(path.resolve("./src/views/products/nuevo-producto.ejs"));
