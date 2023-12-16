@@ -11,33 +11,7 @@
 </head>
 
 <body>
-
-    <header class="main-header">
-
-        <div class="main-navbar">
-            <img class="logo" src="/img/Zapp-alt.png" alt="Logo Zapp">
-            <div class="opciones">
-                <ul>
-                    <li><a href="#">Hombres</a></li>
-                    <li><a href="#">Mujeres</a></li>
-                    <li><a href="#">Niñ@</a></li>
-                </ul>
-            </div>
-            <div class="opciones">
-                <ul>
-                    <li>
-                        <a href="./shopping-cart"><i class="fas fa-shopping-cart"></i></a>
-                    </li>
-                    <li>
-                        <a href="./login"><i class="fas fa-user"></i></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="menu">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
+    <%- include("../partials/header")%>
     <main>
         <div class="main-content">
             <div class="contenedorFotos">
@@ -101,44 +75,7 @@
         </section>
 
     </main>
-    <footer>
-        <div class="redes">
-            <h3>Nuestras Redes Sociales</h3>
-            <ul class="redes-sociales">
-                <li>
-                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                </li>
-                <li>
-                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                </li>
-                <li>
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="column">
-            <h3>Contacto</h3>
-            <p>Dirección: xyz. Sgo del Estero - Arg.</p>
-            <p>Email: contacto@zapp.com</p>
-            <p>Teléfono: +5493854000000</p>
-        </div>
-
-        <div class="column">
-            <h3>Ayuda</h3>
-            <ul class="ayuda">
-                <li><a href="#">Envíos y entregas</a></li>
-                <li><a href="#">Cambios</a></li>
-                <li><a href="#">Devoluciones</a></li>
-                <li><a href="#">Opciones de pago</a></li>
-                <li><a href="#">Prguntas frecuentes</a></li>
-            </ul>
-        </div>
-
-        <div class="logo-footer">
-            <img class="logo" src="/img/Zapp-alt.png" alt="Zapp logo" />
-        </div>
-    </footer>
+ 
 </body>
-
+<%- include("../partials/footer")%>
 </html>

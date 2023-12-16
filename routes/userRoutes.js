@@ -6,7 +6,7 @@ const controller = require('../controllers/userController')
 
 const routes = {
     login: '/login',
-    registration: '/register',
+    registration: '/registration',
 }
 
 router.get(routes.login, controller.login);

@@ -8,31 +8,7 @@
     <script src="https://kit.fontawesome.com/6641947d89.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="main-header">
-        <img class="logo" src="/img/Zapp-alt.png" alt="Logo Zapp">
-        <div class="main-navbar">
-            <a href="/">
-                <button><i class="fa-solid fa-arrow-left"></i></button>
-                </a>
-          <div class="opciones">
-            <ul>
-              <li><a href="#">Hombres</a></li>
-              <li><a href="#">Mujeres</a></li>
-              <li><a href="#">Niñ@</a></li>
-            </ul>
-          </div>
-          <div class="opciones">
-            <ul>
-              <li>
-                <a href="./login"><i class="fas fa-user"></i></a>
-              </li>
-            </ul>
-          </div>
-          <div class="menu">
-            <i class="fas fa-bars"></i>
-          </div>
-        </div>
-      </header>
+  <%- include("../partials/userHeader")%>
 
     <main class="main-content">
         <section class="carrito">
@@ -60,16 +36,7 @@
         </section>
         </div>
     </main>
-    <footer>
-        <p>¿Tienes alguna duda?</p>
-        <p>Lunes - Viernes: 9:00 - 21:00</p>
-        <p>Sábado: 10:00 - 18:00</p>
-        <div>
-        <a class="referencias" href="#">Aviso de privacidad</a>
-        <a class="referencias" href="#">Términos y Condiciones</a>
-        <a class="referencias" href="#">Nuestros datos</a>
-        </div>
-        <p>Copyright® 2023 DH Venture Capitals. Todos los derechos reservados</p>
-    </footer>
+
 </body>
+<%- include("../partials/footer")%>
 </html>

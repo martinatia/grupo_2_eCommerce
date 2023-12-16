@@ -16,31 +16,7 @@
   </head>
   <body>
    
-    <header class="main-header">
-      <div class="main-navbar">
-        <img class="logo" src="/img/Zapp-alt.png" alt="Logo Zapp" />
-        <div class="opciones">
-          <ul>
-            <li><a href="#">Hombres</a></li>
-            <li><a href="#">Mujeres</a></li>
-            <li><a href="#">Niñ@</a></li>
-          </ul>
-        </div>
-        <div class="opciones">
-          <ul>
-            <li>
-              <a href="./shopping-cart"><i class="fas fa-shopping-cart"></i></a>
-            </li>
-            <li>
-              <a href="./login"><i class="fas fa-user"></i></a>
-            </li>
-          </ul>
-        </div>
-        <div class="menu">
-          <i class="fas fa-bars"></i>
-        </div>
-      </div>
-    </header>
+    <%- include("../partials/header")%>
     <main>
       <h3>Cargá la información del producto:</h3>
       <form action="" method="POST" class="formulario">
@@ -117,5 +93,7 @@
         <button type="submit">Guardar producto</button>
       </div>
     </main>
+
   </body>
+  <%- include("../partials/footer")%>
 </html>
