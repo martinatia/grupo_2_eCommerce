@@ -2,14 +2,13 @@
 const { Router } = require('express');
 const controller = require('../controllers/mainController');
 const router = Router();
-console.log("viene");
 /* rutas */
 const routes = {
     home: '/',
     productDescription: '/product-description',
     shoppingCart: '/shopping-cart',
     createProduct: '/create-product',
-    modifyProduct: '/modify-product/',
+    modifyProduct: '/modify-product/:id',
 };
 
 router.get(routes.home, controller.index);

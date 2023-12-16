@@ -13,6 +13,7 @@ const controller = {
         res.render('products/create-product');
     },
     modifyProduct: (req,res) =>{
+        console.log(req.params.id);
         res.render('products/modify-product')
     },
 }
