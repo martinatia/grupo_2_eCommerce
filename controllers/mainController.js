@@ -10,7 +10,7 @@ const controller = {
         res.render('products/carrito');
     },
     nuevoProducto: (req,res)=>{
-        res.render('products/nuevo-producto');
+        res.render('products/create-product');
     },
     modifyProducts: (req,res) =>{
         res.render('products/modify-products')

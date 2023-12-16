@@ -8,7 +8,7 @@ const routes = {
     home: '/',
     productDescription: '/productDescription',
     carrito: '/carrito',
-    nuevoProducto: '/nuevo-producto',
+    nuevoProducto: '/create-product',
     modifyProducts: '/producto-modificacion',
 }
 
