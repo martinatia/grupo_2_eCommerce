@@ -4,16 +4,16 @@ const controller = {
         res.render('products/index');
     },
     productDescription:(req, res) =>{
-        res.render('products/produc-description');
+        res.render('products/product-description');
     },
-    carrito: (req,res) =>{
-        res.render('products/carrito');
+    shoppingCart: (req,res) =>{
+        res.render('products/shopping-cart');
     },
-    nuevoProducto: (req,res)=>{
+    createProduct: (req,res)=>{
         res.render('products/create-product');
     },
-    modifyProducts: (req,res) =>{
-        res.render('products/modify-products')
+    modifyProduct: (req,res) =>{
+        res.render('products/modify-product')
     },
 }
 module.exports = controller;

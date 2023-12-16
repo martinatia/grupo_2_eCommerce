@@ -6,17 +6,17 @@ const router = Router();
 /* rutas */
 const routes = {
     home: '/',
-    productDescription: '/productDescription',
-    carrito: '/carrito',
-    nuevoProducto: '/create-product',
-    modifyProducts: '/producto-modificacion',
+    productDescription: '/product-description',
+    shoppingCart: '/shopping-cart',
+    createProduct: '/create-product',
+    modifyProduct: '/modify-product',
 }
 
 router.get(routes.home, controller.index);
 router.get(routes.productDescription, controller.productDescription);
-router.get(routes.carrito, controller.carrito);
-router.get(routes.nuevoProducto, controller.nuevoProducto);
-router.get(routes.modifyProducts, controller.modifyProducts);
+router.get(routes.shoppingCart, controller.shoppingCart);
+router.get(routes.createProduct, controller.createProduct);
+router.get(routes.modifyProduct, controller.modifyProduct);
 
 
 module.exports = router;
