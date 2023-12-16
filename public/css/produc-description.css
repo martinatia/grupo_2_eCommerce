@@ -136,9 +136,12 @@ main {
 }
 .titulos h3{
     display: flex;
+    margin-top:20px;
 }
 .titulos i{
     display: flex;
+    margin-top:20px;
+
 }
 
 div.productos i {
@@ -183,6 +186,7 @@ div.productos i {
     right: 25px;
     top: -15px;
   }
+
   footer{
     display: flex;
     background-color: #E9F1F1;
@@ -232,6 +236,21 @@ main section article{
 
 
 @media (min-width: 361px) {
+    main section article{
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    main section div.productos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    main section div.productos article{
+        width: 45%;
+    }
     .fotoSecundaria{
         display: flex;
         justify-content: space-between;
@@ -265,6 +284,9 @@ main section article{
 
     .logo-footer {
         display: flex;
+    }
+    main section div.productos article{
+        width: 22%;
     }
 }
 
