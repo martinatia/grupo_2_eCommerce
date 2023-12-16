@@ -78,7 +78,60 @@ main article img{
 
 /* aqui hacer estilizado main */
 
+main{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
+.filtro-producto{
+  margin-bottom: 30px;
+}
+
+.sobre-lista-productos{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.bt-agregar-producto{
+  background-color: #161850;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10%;
+  padding: 4px;
+}
+
+.form-lista-de-productos{
+  display: flex;
+  flex-direction: column;
+}
+
+.caracteristicas-producto{
+  background-color: #E9F1F1;
+  height: 50px;
+  
+}
+
+.caracteristicas-producto ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 15px;
+  text-decoration: none;
+}
+
+.caracteristicas-producto ul li{
+  list-style: none;
+}
+
+.lista-productos{
+  display: flex;
+}
+
+.bloque-caracteristica{
+  padding: 10px;
+}
 
 footer{
     display: flex;
