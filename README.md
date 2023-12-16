@@ -26,4 +26,3 @@ Lodi, Jose Marcelo: Soy Jose Lodi, sacha Contador Publico, comparado de joven co
 
 Tenaglia, Fausto: Soy Fausto, tengo 19 años, me gusta mucho tomar fernet y ver peliculas/series, gamer inutil como pocos pero me la banco. 
 
-asd
