@@ -6,7 +6,7 @@ const routes = {
     // productList: '/',
     createProduct: '/create-product',
     productDetail: '/:id/product-description',
-    postProduct: '/',
+    postProduct: '/create-product',
     editProduct: '/:id/edit-product',
     putProduct: '/:id/',
     deleteProduct: '/:id/'

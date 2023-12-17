@@ -26,6 +26,23 @@ const controller = {
     },
     postProduct:(req,res)=>{
         //TODO: 
+ 
+        const lastIdSaved = products[products.length-1].id;
+        let producto = {
+            id: lastIdSaved+1,
+            name: req.body.name,
+            description: req.body.description,
+            image: req.body.image,
+            category: req.body.category,
+            colors: req.body.color,
+            price: req.body.price,
+            sizes: req.body.sizes,
+            section: req.body.section
+        }
+        products.push(producto);
+        fs.writeFileSync(productsFilePath, JSON.stringify(products));
+	    res.redirect("/");
+        res.send(req.body);
 
 
         //res.redirect(....);
@@ -35,7 +52,7 @@ const controller = {
         const producto = products.find((producto) => producto.id == req.params.id);
         //debo encontrar los valores nuevos ingresados en el formulario, crear un objeto y actualizar dicho producto....
         //luego redireccionar
-        
+
 
     },
     deleteProduct:(req,res)=>{

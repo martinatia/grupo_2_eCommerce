@@ -1,48 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/create-product.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <title>Nuevo producto</title>
-  </head>
-  <body>
-   
-    <%- include("../partials/header")%>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/create-product.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <title>Nuevo producto</title>
+</head>
+
+<body>
+
+  <%- include("../partials/header")%>
     <main>
       <h3>Cargá la información del producto:</h3>
-      <form action="" method="POST" class="formulario">
+      <form action="/products/create-product" method="POST" class="formulario">
         <div class="form-label">
           <label for="name">Nombre del producto:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Ej: Zapatillas Reebok"
-            class="form-input"
-          />
+          <input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok" class="form-input" />
         </div>
         <div class="form-label">
           <label for="price">Precio del producto:</label>
-          <input
-            type="text"
-            id="price"
-            name="price"
-            placeholder="Ej: 5678"
-            class="form-input"
-          />
+          <input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input" />
         </div>
-        
+
         <div class="form-options">
-        <label for="category">Categoría:</label>
+          <label for="category">Categoría:</label>
           <select name="category" id="category">
             <option value="">Elegí</option>
             <option value="hombres">Hombres</option>
@@ -77,23 +61,35 @@
         </div>
         <div class="form-description">
           <label for="description">Descipción:</label>
-          <textarea
-            name="description"
-            id="description"
-            class="form-input"
-          ></textarea>
+          <textarea name="description" id="description" class="form-input"></textarea>
         </div>
         <div class="form-images">
-            <label for="imagen">Selecciona una imagen:</label>
-            <input type="file" id="imagen" name="imagen" accept="image/*">
+          <label for="imagen">Selecciona una imagen:</label>
+          <input type="file" id="imagen" name="imagen" accept="image/*">
         </div>
-      </form>
+        <div>
+          <label for="section">Sección</label>
+          <div class="form-options">
+              <label>
+                  <input type="radio" name="section" value="in-sale"> Ofertas
+              </label>
+              <label>
+                  <input type="radio" name="section" value="features"> Destacados
+              </label>
+              <label>
+                  <input type="radio" name="section" value="last-colection"> Última colección
+              </label>
+          </div>
+      </div>
       <div class="botones">
         <button type="reset">Limpiar campos</button>
         <button type="submit">Guardar producto</button>
       </div>
+      </form>
+      
     </main>
 
-  </body>
-  <%- include("../partials/footer")%>
+</body>
+<%- include("../partials/footer")%>
+
 </html>
