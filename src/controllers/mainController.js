@@ -12,19 +12,6 @@ const controller = {
         const featuredProducts = products.filter((product) => product.section == "featured");
         const lastColectionProducts = products.filter((product) => product.section == "last-colection");
         res.render('products/index', {inSaleProducts, featuredProducts, lastColectionProducts});
-    },
-    productDescription:(req, res) =>{
-        res.render('products/product-description');
-    },
-    shoppingCart: (req,res) =>{
-        res.render('products/shopping-cart');
-    },
-    createProduct: (req,res)=>{
-        res.render('products/create-product');
-    },
-    modifyProduct: (req,res) =>{
-        const producto = products.find((producto) => producto.id == req.params.id);
-        res.render('products/modify-product', {producto})
-    },
+    } 
 }
 module.exports = controller;
