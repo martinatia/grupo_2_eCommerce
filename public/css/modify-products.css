@@ -102,11 +102,22 @@ main article img{
   justify-content: space-around;
  
 }
-button{
+.botones button{
+  background-color:#ffffff;
+  border-radius: 5px;
+  color:#161850;
+  border:solid 1px #000000;
+  font-size: 20px;
+  margin-top:  15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 30%;
+  transition: background-color 500ms;
+  transition: color 500ms;
+}
+.botones button:hover{
   background-color: #161850;
-  border-style: none;
-  color: white;
-  padding: 2px;
+  color: #ffffff
 }
 .colores {
   display:flex;
