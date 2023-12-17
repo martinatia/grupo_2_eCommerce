@@ -213,7 +213,8 @@
                         <div class="colores">
                             <% const colorImages = ['Color1.png', 'Color2.png', 'Color3.jpg', 'Color4.png', 'Color5.png', 'Color6.png', 'Color7.png', 'Color8.png', 'Color9.png']; %>
                             <% colorImages.forEach(colorImage => { %>
-                                <label for="<%= colorImage %>">
+                                <label class="color-checkbox" for="<%= colorImage %>">
+                                    <input type="checkbox" id="<%= colorImage %>" name="colores[]" value="<%= colorImage %>">
                                     <img src="/img/<%= colorImage %>" alt="<%= colorImage %>">
                                 </label>
                             <% }); %>

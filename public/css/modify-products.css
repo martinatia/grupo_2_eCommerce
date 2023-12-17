@@ -112,8 +112,8 @@ main article img{
   margin-bottom: 15px;
   padding: 10px;
   width: 30%;
-  transition: background-color 500ms;
-  transition: color 500ms;
+  transition: background-color 800ms;
+  transition: color 800ms;
 }
 .botones button:hover{
   background-color: #161850;
