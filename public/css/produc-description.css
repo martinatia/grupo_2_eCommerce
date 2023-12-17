@@ -121,7 +121,8 @@ main {
 }
 .colores img{
     margin: 1px;
-
+    border-radius: 5px;
+    border:solid 1px #000000;
 }
 .botonAñadir button{
     margin-top: 10px;

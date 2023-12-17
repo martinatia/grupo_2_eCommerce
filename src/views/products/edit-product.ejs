@@ -173,6 +173,24 @@
                         </div>
                     </div>
                     <div>
+                        <label for="section">Sección</label>
+                        <div class="contenedor-secundario">
+                            <label>
+
+                                <input type="radio" name="seccion" value="Ofertas" <% if(producto.section==="in-sale" ) {
+                                    %>checked<% } %>> Ofertas
+                            </label>
+                            <label>
+                                <input type="radio" name="seccion" value="Destacados" <% if(producto.section==="featured" )
+                                    { %>checked<% } %>> Destacados
+                            </label>
+                            <label>
+                                <input type="radio" name="seccion" value="Ultima coleccion" <% if(producto.section==="last-colection" ) {
+                                    %>checked<% } %>> Ultima coleccion
+                            </label>
+                        </div>
+                    </div>
+                    <div>
                         <label for="sizes">Talles:</label>
                         <div class="contenedor-secundario">
                             <% const sizes=producto.sizes || []; const availableSizes=(producto.category==="Kids" ) ?
@@ -189,6 +207,17 @@
                                     <% }); %>
                         </div>
 
+                    </div>
+                    <div>
+                        <label for="colores">Colores:</label>
+                        <div class="colores">
+                            <% const colorImages = ['Color1.png', 'Color2.png', 'Color3.jpg', 'Color4.png', 'Color5.png', 'Color6.png', 'Color7.png', 'Color8.png', 'Color9.png']; %>
+                            <% colorImages.forEach(colorImage => { %>
+                                <label for="<%= colorImage %>">
+                                    <img src="/img/<%= colorImage %>" alt="<%= colorImage %>">
+                                </label>
+                            <% }); %>
+                        </div>
                     </div>
                     <div>
                         <label>Subir imagen</label>
