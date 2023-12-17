@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/modify-products.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"  />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" />
     <title>Modificar producto</title>
 </head>
+
 <body>
     <%- include("../partials/header")%>
-    
-    <main>
-        
-        <form class="filtro-producto" action="#" method="get">
+
+        <main>
+
+            <!-- <form class="filtro-producto" action="#" method="get">
             <label for="buscar-producto">
                 Buscar producto
                 <input type="text" name="buscar-producto" id="buscar-producto">
@@ -140,9 +142,68 @@
             </div>
         
         </div>
+    -->
+            <div class="contenedor-principal">
 
-    </main>
-    
+                <form action="">
+                    <div class="inputs">
+                        <label for="name">Nombre del producto: <% producto.name %></label>
+                        <input type="text" name="name" value="<%=producto.name %>">
+                    </div>
+                    <div class="inputs">
+                        <label for="price">Precio:</label>
+                        <input type="text" name="price" value="<%= producto.price %>">
+                    </div>
+                    <div>
+                        <label for="categoria">Categoria</label>
+                        <div class="contenedor-secundario">
+                            <label>
+
+                                <input type="radio" name="categoria" value="hombres" <% if(producto.category==="Men" ) {
+                                    %>checked<% } %>> Hombres
+                            </label>
+                            <label>
+                                <input type="radio" name="categoria" value="mujeres" <% if(producto.category==="Women" )
+                                    { %>checked<% } %>> Mujeres
+                            </label>
+                            <label>
+                                <input type="radio" name="categoria" value="niños" <% if(producto.category==="Kids" ) {
+                                    %>checked<% } %>> Niños
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="size">Talles:</label>
+                        <div class="contenedor-secundario">
+                            <% const sizes=producto.sizes || []; const availableSizes=(producto.category==="Kids" ) ?
+                                [22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35] : [36, 37, 38, 39, 40, 41, 42,
+                                43, 44]; %>
+                                
+                                <% availableSizes.forEach(size=> { %>
+                                    <label>
+                                        <input type="checkbox" name="sizes" value="<%= size %>" <% if
+                                            (sizes.includes(size)) { %>console.log("entra");checked<% } %>>
+                                            <%= size %>
+                                            
+                                    </label>
+                                    <% }); %>
+                        </div>
+
+                    </div>
+                    <div>
+                        <label>Subir imagen</label>
+                        <input type="file">
+                    </div>
+
+                    <div class="botones">
+                        <button>Descartar cambios <i class="fas fa-trash"></i></button>
+                        <button>Guardar cambios <i class="fas fa-save"></i></button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
 </body>
-<%- include("../partials/footer")%>
+
+
 </html>

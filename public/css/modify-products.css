@@ -1,143 +1,111 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body{
-    font-family: 'Roboto', sans-serif;
-}
-main {
-  width: 90%;
-  padding: 10px;
-  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
 }
 main article img{
-    width:50%; 
-    height:50%;
+  width:50%; 
+  height:50%;
 }
 .main-header {
-    background-color: #E9F1F1;
-    font-family: "Roboto", sans-serif;
-    padding: 0px 10px;
-    display: flex;
-  }
-
-  .logo{
-    width: 100px;
-    height: 100px;
-    
-  }
-  
-
-.opciones{
-    display: none;
+  background-color: #E9F1F1;
+  font-family: "Roboto", sans-serif;
+  padding: 0px 10px;
+  display: flex;
 }
 
-  .main-navbar {
-    display: flex;
-    padding: 0;
-    margin-top: 0px;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
-  }
+.logo{
+  width: 100px;
+  height: 100px;
   
-  .main-header ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+}
 
-  }
-  .main-header a {
-    margin: 10px;
-    text-decoration: none;
-    color: #222222;
-    padding: 5px 0; 
-  }
-  .navbar{
-    display: flex;
-    justify-content: space-around;
-  }
-  .menu{
-    text-align: center;
-    display: block;
+
+.opciones{
+  display: none;
+}
+
+.main-navbar {
+  display: flex;
+  padding: 0;
+  margin-top: 0px;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main-header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+}
+.main-header a {
+  margin: 10px;
+  text-decoration: none;
+  color: #222222;
+  padding: 5px 0; 
+}
+.navbar{
+  display: flex;
+  justify-content: space-around;
+}
+.menu{
+  text-align: center;
+  display: block;
 }
 
 .menu i{
-    text-align: center;
-    background-color: #161850;
-    border-radius: 5px;
-    color: #FFF;
-    font-size: 20px;
-    margin: 20px 0px 20px 0px;
-    padding: 10px;
-    width: 40px;
+  text-align: center;
+  background-color: #161850;
+  border-radius: 5px;
+  color: #FFF;
+  font-size: 20px;
+  margin: 20px 0px 20px 0px;
+  padding: 10px;
+  width: 40px;
 }
-
-/* aqui hacer estilizado main */
-
-<<<<<<< HEAD
-main{
+.contenedor-principal{
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  margin-top: 15px;
   width: 100%;
 }
-
-.filtro-producto{
-  margin-bottom: 30px;
+.contenedor-principal form{
+  width: 60%;
 }
-
-.sobre-lista-productos{
+.contenedor-principal div{
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.inputs{
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 15px;
-}
-
-.bt-agregar-producto{
-  background-color: #161850;
-  color: white;
-  border: 1px solid white;
-  border-radius: 10%;
-  padding: 4px;
-}
-
-.form-lista-de-productos{
-  display: flex;
-  flex-direction: column;
-}
-
-.caracteristicas-producto{
-  background-color: #E9F1F1;
-  height: 50px;
   
 }
-
-.caracteristicas-producto ul{
+.inputs input{
+  width: 50%;
+}
+.contenedor-secundario{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding-top: 15px;
-  text-decoration: none;
+  flex-direction: column;
+  align-items: center;
 }
-
-.caracteristicas-producto ul li{
-  list-style: none;
-}
-
-.lista-productos{
+.botones{
   display: flex;
+  gap: 10px; 
 }
-
-.bloque-caracteristica{
-  padding: 10px;
-}
-
-=======
->>>>>>> 72a748bb6fda73393bb76262ae758c0ed339bf50
 footer{
   display: flex;
+  width: 100%;
+  bottom: 0;
+  /* position: fixed; */
   background-color: #E9F1F1;
   justify-content: space-around;
   padding-top: 25px;
@@ -179,4 +147,35 @@ footer ul{
   text-decoration-line: none;
   color: black;
 }
+@media (min-width: 361px){
 
+  .logo-footer{
+      display: flex;
+    }
+  footer{
+    position: fixed; 
+
+  }
+}
+@media (min-width: 769px){
+  .menu {
+      display: none;
+  }
+  .opciones{
+      display: flex;
+  }
+  main section div.productos article{
+      width: 22%;
+  }
+  .logo-footer{
+      display: flex;
+    }
+  /* footer{
+    position: fixed; 
+
+  }  */
+}
+label {
+display: block;
+margin-bottom: 8px;
+}
