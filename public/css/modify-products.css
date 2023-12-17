@@ -99,7 +99,14 @@ main article img{
 }
 .botones{
   display: flex;
-  gap: 10px; 
+  justify-content: space-around;
+ 
+}
+button{
+  background-color: #161850;
+  border-style: none;
+  color: white;
+  padding: 2px;
 }
 footer{
   display: flex;

@@ -173,15 +173,15 @@
                         </div>
                     </div>
                     <div>
-                        <label for="size">Talles:</label>
+                        <label for="sizes">Talles:</label>
                         <div class="contenedor-secundario">
                             <% const sizes=producto.sizes || []; const availableSizes=(producto.category==="Kids" ) ?
                                 [22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35] : [36, 37, 38, 39, 40, 41, 42,
                                 43, 44]; %>
                                 
                                 <% availableSizes.forEach(size=> { %>
-                                    <label>
-                                        <input type="checkbox" name="sizes" value="<%= size %>" <% if
+                                    <label for="size">
+                                        <input type="checkbox" name="size" value="<%= size %>" <% if
                                             (sizes.includes(size)) { %>checked<% } %>>
                                             <%= size %>
                                             
