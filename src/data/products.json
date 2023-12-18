@@ -121,13 +121,13 @@
     "section": "last-colection"
   },
   {
-    "id": 12,
+    "id": "12",
     "name": "ZAPP#11",
-    "description": "Urbano",
+    "description": "lorem ipsum, quien es lorena?",
     "image": "Zapp14.png",
     "category": "Kids",
     "colors": ["White", "Blue", "Green"],
-    "price": 60000,
+    "price": "60000",
     "sizes": ["32", "33", "34"],
     "section": "in-sale"
   }

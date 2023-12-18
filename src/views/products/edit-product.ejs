@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/modify-products.css" />
+    <link rel="stylesheet" href="/css/edit-products.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" />
     <title>Modificar producto</title>
@@ -12,194 +12,72 @@
 
 <body>
     <%- include("../partials/header")%>
-
         <main>
-
-            <!-- <form class="filtro-producto" action="#" method="get">
-            <label for="buscar-producto">
-                Buscar producto
-                <input type="text" name="buscar-producto" id="buscar-producto">
-            </label>
-            <button type="submit" class="bt-buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-
-        <div class="sobre-lista-productos">
-            
-            <div class="ordenar-por">
-                <label for="filter">
-                    Ordenar Por
-                    <select name="filter" id="filter">
-                        
-                        <option value="titulo-opciones">
-                            Elegí
-                        </option>
-                        
-                        <option value="nombre">
-                            Nombre
-                        </option>
-                        
-                        <optgroup label="Precio">
-                            <option value="mayor-precio">
-                                Mayor
-                            </option>
-                            <option value="menor-precio">
-                                Menor
-                            </option>
-                        </optgroup>
-                        
-                        <optgroup label="Categoría">
-                            <option value="categoria-mujer">
-                                Mujer
-                            </option>
-                            <option value="categoria-hombre">
-                                Hombre
-                            </option>
-                            <option value="categoria-ninios">
-                                Niñas y niños
-                            </option>
-                        </optgroup>
-                        
-                        <optgroup label="Talle">
-                            <option value="32">
-                                32
-                            </option>
-                            <option value="33">
-                                33
-                            </option>
-                            <option value="34">
-                                34
-                            </option>
-                            <option value="35">
-                                35
-                            </option>
-                            <option value="36">
-                                36
-                            </option>
-                        </optgroup>
-                    
-                    </select>
-            
-                </label>
-            </div>
-            
-            <button class="bt-agregar-producto">Añadir producto</button>
-
-        </div>
-        
-        <div class="form-lista-de-productos">
-            
-            <div class="caracteristicas-producto">
-                
-                <ul>
-                    <li>Nombre producto</li>
-                    <li>Precio</li>
-                    <li>Categoría</li>
-                    <li>Talles</li>
-                    <li>Descripcion</li>
-                    <li>Imágenes</li>
-                </ul>
-
-            </div>
-
-            <div class="lista-productos">
-                
-                <div class="bloque-caracteistica">
-                    <input type="text">
-                </div>
-                <div class="bloque-caracteistica">
-                    <input type="text">
-                </div>
-                <div class="bloque-caracteistica">
-                    
-                    <label for="categoria-mujeres"><input type="radio" id="categoria-mujeres">Mujeres</label>
-                    <label for="categoria-hombres"><input type="radio" id="categoria-hombres">Hombres</label>
-                    <label for="categoria-ninios"><input type="radio" id="categoria-ninios">Niñas y niños</label>
-                
-                </div>
-                <div class="bloque-caracteistica">
-                    
-                    <label for="talle-32"><input type="radio" id="talle-32">32</label>
-                    <label for="talle-33"><input type="radio" id="talle-33">33</label>
-                    <label for="talle-34"><input type="radio" id="talle-34">34</label>
-                    <label for="talle-35"><input type="radio" id="talle-35">35</label>
-                    <label for="talle-36"><input type="radio" id="talle-36">36</label>
-
-                </div>
-                <div class="bloque-caracteistica">
-                    <input type="text">
-                </div>
-                <div class="bloque-caracteistica">
-                    <label>Subir imagen</label>
-                    <input type="file" >
-                </div>
-                <div class="bloque-caracteistica">
-                    <i class="fas fa-pen"></i>
-                </div>
-                <div class="bloque-caracteistica">
-                    <i class="fas fa-trash"></i>
-                </div>
-
-            </div>
-        
-        </div>
-    -->
             <div class="contenedor-principal">
 
-                <form action="">
+                <form action="/products/<%= producto.id  %>?_method=PUT" method="POST">
                     <div class="inputs">
                         <label for="name">Nombre del producto: <% producto.name %></label>
-                        <input type="text" name="name" value="<%=producto.name %>">
+                        <input type="text" name="name" id="name" value="<%=producto.name %>">
                     </div>
                     <div class="inputs">
                         <label for="price">Precio:</label>
-                        <input type="text" name="price" value="<%= producto.price %>">
+                        <input type="number" name="price" id="price" value="<%= producto.price %>">
                     </div>
+                    <div class="inputs">
+                        <label for="description">Descipción:</label>
+                        <input name="description" id="description"></textarea>
+                      </div>
+                      <div class="form-images">
+                        <label for="imagenProduto">Selecciona una imagen:</label>
+                        <input type="file" id="imagenProduto" name="imagenProduto" accept="image/*">
+                      </div>
                     <div>
                         <label for="categoria">Categoria</label>
                         <div class="contenedor-secundario">
                             <label>
 
-                                <input type="radio" name="categoria" value="hombres" <% if(producto.category==="Men" ) {
+                                <input type="radio" name="categoria" id="categoria" value="hombres" <% if(producto.category==="Men" ) {
                                     %>checked<% } %>> Hombres
                             </label>
                             <label>
-                                <input type="radio" name="categoria" value="mujeres" <% if(producto.category==="Women" )
+                                <input type="radio" name="categoria" id="categoria" value="mujeres" <% if(producto.category==="Women" )
                                     { %>checked<% } %>> Mujeres
                             </label>
                             <label>
-                                <input type="radio" name="categoria" value="niños" <% if(producto.category==="Kids" ) {
+                                <input type="radio" name="categoria" id="categoria" value="niños" <% if(producto.category==="Kids" ) {
                                     %>checked<% } %>> Niños
                             </label>
                         </div>
                     </div>
                     <div>
-                        <label for="section">Sección</label>
+                        <label for="seccion">Sección</label>
                         <div class="contenedor-secundario">
                             <label>
 
-                                <input type="radio" name="seccion" value="Ofertas" <% if(producto.section==="in-sale" ) {
+                                <input type="radio" name="seccion" id="seccion" value="Ofertas" <% if(producto.section==="in-sale" ) {
                                     %>checked<% } %>> Ofertas
                             </label>
                             <label>
-                                <input type="radio" name="seccion" value="Destacados" <% if(producto.section==="featured" )
+                                <input type="radio" name="seccion" id="seccion" value="Destacados" <% if(producto.section==="featured" )
                                     { %>checked<% } %>> Destacados
                             </label>
                             <label>
-                                <input type="radio" name="seccion" value="Ultima coleccion" <% if(producto.section==="last-colection" ) {
+                                <input type="radio" name="seccion" id="seccion" value="Ultima coleccion" <% if(producto.section==="last-colection" ) {
                                     %>checked<% } %>> Ultima coleccion
                             </label>
                         </div>
                     </div>
-                    <div>
-                        <label for="sizes">Talles:</label>
+                
+                        <h3>Talles:</h3>
                         <div class="contenedor-secundario">
                             <% const sizes=producto.sizes || []; const availableSizes=(producto.category==="Kids" ) ?
                                 [22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35] : [36, 37, 38, 39, 40, 41, 42,
                                 43, 44]; %>
                                 
                                 <% availableSizes.forEach(size=> { %>
-                                    <label for="size">
-                                        <input type="checkbox" name="size" value="<%= size %>" <% if
+                                    <label for="size<% size%>">
+                                        <input type="checkbox" name="size <% size%>" id="size <% size%>" value="<%= size %>" <% if
                                             (sizes.includes(size)) { %>checked<% } %>>
                                             <%= size %>
                                             
@@ -207,27 +85,27 @@
                                     <% }); %>
                         </div>
 
-                    </div>
+                    
                     <div>
-                        <label for="colores">Colores:</label>
+                        <h3>Colores:</h3>
                         <div class="colores">
-                            <% const colorImages = ['Color1.png', 'Color2.png', 'Color3.jpg', 'Color4.png', 'Color5.png', 'Color6.png', 'Color7.png', 'Color8.png', 'Color9.png']; %>
+                            <% const colorImages = ['Amarillo', 'Azul', 'Blanco', 'Marron', 'Negro', 'Rojo', 'Rosa', 'Verde', 'Violeta']; %>
                             <% colorImages.forEach(colorImage => { %>
-                                <label class="color-checkbox" for="<%= colorImage %>">
-                                    <input type="checkbox" id="<%= colorImage %>" name="colores[]" value="<%= colorImage %>">
-                                    <img src="/img/<%= colorImage %>" alt="<%= colorImage %>">
+                                <label class="color-checkbox" for="<%= colorImage %>"> 
+                                    <input type="checkbox" id="<%= colorImage %>" name="<%= colorImage%>" value="<%= colorImage %>">
+                                    <img src="/img/utils/<%= colorImage %>.png" alt="<%= colorImage %>">
                                 </label>
                             <% }); %>
                         </div>
                     </div>
                     <div>
-                        <label>Subir imagen</label>
-                        <input type="file">
+                        <label for="imagen">Subir imagen</label>
+                        <input type="file" id="imagen" name="imagen" accept="image/*">
                     </div>
 
                     <div class="botones">
-                        <button>Descartar cambios <i class="fas fa-trash"></i></button>
-                        <button>Guardar cambios <i class="fas fa-save"></i></button>
+                        <button type="reset">Descartar cambios <i class="fas fa-trash"></i></button>
+                        <button type="submit">Guardar cambios <i class="fas fa-save"></i></button>
                     </div>
                 </form>
             </div>

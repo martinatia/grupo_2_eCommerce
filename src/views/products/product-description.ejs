@@ -2,101 +2,112 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descripción del Producto</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/produc-description.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Descripción del Producto</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/produc-description.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
 </head>
 
 <body>
-    <%- include("../partials/header")%>
+  <%- include("../partials/header")%>
     <main>
-        <div class="main-content">
-            <div class="contenedorFotos">
-                <div class="fotoPrimaria">
-                    <img src="/img/Zapp3.jpg" alt="Foto del Producto">
-                </div>
-                <div class="fotoSecundaria">
+      <form action="">
+      <div class="main-content">
+        <div class="contenedorFotos">
+          <div class="fotoPrimaria">
+            <img src="/img/mercaderia/<%= product.image  %>" alt="Foto del Producto" />
+          </div>
+          <!-- <div class="fotoSecundaria">
                     <img src="/img/Zapp5.jpg" alt="Foto del Producto">
                     <img src="/img/Zapp6.jpg" alt="Foto del Producto">
-                </div>
-            </div>
-
-            <div class="contenedorDescripcion">
-                <h2>Modelo ZAPP#1</h2>
-                <h3 class="price">$70000 </h3>
-                <h2>Color</h2>
-                <span class="colores">
-                    <img src="/img/Color1.png" alt="Color 1" width="40" height="40">
-                    <img src="/img/Color2.png" alt="Color 2" width="40" height="40">
-                    <img src="/img/Color3.jpg" alt="Color 3" width="40" height="40">
-                </span>
-
-                <label for="talles"><h3 class="tallesss">Seleccioná un talle</h3></label>
-                <select name="talle" id="talle">
-                    <option value="34">34</option>
-                    <option value="35">35</option>
-                    <option value="36">36</option>
-                    <option value="37">37</option>
-                </select>
-                <div class="botonAñadir">
-                    <button onclick="window.location.href='./shopping-cart'">Añadir <i class="fas fa-shopping-cart"></i>
-                    </button>
-                </div>
-            </div>
+                </div> -->
         </div>
 
-        <div class="descripcionTextual">
-            <h1>Descripción:</h1>
-            <p>Sed condimentum diam orci, eget condimentum ipsum convallis quis. Sed ut perspiciatis, unde omnis iste
-                natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo
-                inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,
-                quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione
-                voluptatem sequi nesciunt.</p>
+        <div class="contenedorDescripcion">
+          <h2>Modelo: <%= product.name %>
+          </h2>
+          <h3 class="price">Precio: $<%= product.price %>
+          </h3>
+          <div>
+            <label for="color">Colores disponibles:</label>
+            <div class="contenedor-secundario">
+              <% const availableColors=product.colors %>
+                <% availableColors.forEach(color=> { %>
+                  <label for="color">
+                    <%= color %>
+                      <input type="radio" name="color" value="<%= color %>" />
+                  </label>
+                  <% }); %>
+            </div>
+          </div>
+          <label for="talles">
+            <h3 class="tallesss">Talles disponibles</h3>
+          </label>
+          <select name="talles" id="talles">
+            <% const availableSizes=product.sizes%>
+              <% availableSizes.forEach((size)=>{ %>
+                <option name="talles" id="talles" value="<%= size %>">
+                  <%= size %>
+                </option>
+
+                <% }) %>
+          </select>
+          <div class="botonAñadir">
+            <button onclick="window.location.href='./shopping-cart'">
+              Añadir <i class="fas fa-shopping-cart"></i>
+            </button>
+          </div>
         </div>
-        <section class="relacionados">
-            <div class="titulos">
-              <h3>Relacionados</h3>
-              <i class="fas fa-arrow-left"></i>
-              <i class="fas fa-arrow-right"></i>
+      </div>
+
+      <div class="descripcionTextual">
+        <h1>Descripción:</h1>
+        <p>
+          <%= product.description %>
+        </p>
+      </div>
+    </form>
+      <!-- <section class="relacionados">
+        <div class="titulos">
+          <h3>Relacionados</h3>
+          <i class="fas fa-arrow-left"></i>
+          <i class="fas fa-arrow-right"></i>
+        </div>
+
+        <div class="productos">
+          <article>
+            <img src="img/Zapp12.jpg" alt="ZAPP#8" />
+            <div class="main-product">
+              <i class="fas fa-cart-plus"></i>
             </div>
-      
-            <div class="productos">
-      
-              <article>
-                <img src="img/Zapp12.jpg" alt="ZAPP#8" />
-                <div class="main-product">
-                  <i class="fas fa-cart-plus"></i>
-                </div>
-              </article>
-      
-              <article>
-                <img src="img/Zapp1.png" alt="ZAPP#1" />
-                <div class="main-product">
-                  <i class="fas fa-cart-plus"></i>
-                </div>
-              </article>
-      
-              <article>
-                <img src="img/Zapp2.jpg" alt="Ultraboost" />
-                <div class="main-product">
-                  <i class="fas fa-cart-plus"></i>
-                </div>
-              </article>
-      
-              <article>
-                <img src="img/Zapp11.jpg" alt="Ultraboost" />
-                <div class="main-product">
-                  <i class="fas fa-cart-plus"></i>
-                </div>
-              </article>
-      
+          </article>
+
+          <article>
+            <img src="img/Zapp1.png" alt="ZAPP#1" />
+            <div class="main-product">
+              <i class="fas fa-cart-plus"></i>
             </div>
-      
-          </section>
+          </article>
+
+          <article>
+            <img src="img/Zapp2.jpg" alt="Ultraboost" />
+            <div class="main-product">
+              <i class="fas fa-cart-plus"></i>
+            </div>
+          </article>
+
+          <article>
+            <img src="img/Zapp11.jpg" alt="Ultraboost" />
+            <div class="main-product">
+              <i class="fas fa-cart-plus"></i>
+            </div>
+          </article>
+        </div>
+      </section> -->
     </main>
 </body>
 <%- include("../partials/footer")%>
+
 </html>

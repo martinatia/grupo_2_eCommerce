@@ -96,7 +96,17 @@ main{
     
     justify-content: start;
 }
-
+/* .colores {
+  display:flex;
+  justify-content: space-evenly;
+}
+.colores img{
+  margin: 1px;
+  border-radius: 5px;
+  border:solid 1px #000000;
+  width:20px;
+  height: 20px;
+} */
 .botones{
     display: flex;
     margin: 15px 50px;
