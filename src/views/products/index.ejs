@@ -23,11 +23,15 @@
       <div class="productos">
         <% inSaleProducts.forEach((product) => {  %>
           <article>
+            <h4><%= product.name %></h4> <!-- Nombre del producto arriba de la imagen -->
             <img src="/img/mercaderia/<%= product.image %>"  />
             <div class="main-product">
-  
               <i class="fas fa-cart-plus"></i>
+              
+                <h3 class="precioZapp">$ <%= product.price %></h3>  <!-- Precio del producto abajo de la imagen  -->
+              
             </div>
+            
           </article>
         <% }) %>
       </div>
@@ -44,11 +48,14 @@
         <% featuredProducts.forEach((product) =>{ %>
           
             <article>
+              <h4><%= product.name %></h4>
               <img src="/img/mercaderia/<%= product.image %>"  />
               <div class="main-product">
     
                 <i class="fas fa-cart-plus"></i>
+                <h3 class="precioZapp">$ <%= product.price %></h3>
               </div>
+            
             </article>
           
         <% } )%>
@@ -69,11 +76,13 @@
         <% lastColectionProducts.forEach((product) =>{ %>
           
           <article>
+            <h4><%= product.name %></h4>
             <img src="/img/mercaderia/<%= product.image %>"  />
             <div class="main-product">
-  
               <i class="fas fa-cart-plus"></i>
+              <h3 class="precioZapp">$ <%= product.price %></h3>
             </div>
+            
           </article>
         
       <% } )%>

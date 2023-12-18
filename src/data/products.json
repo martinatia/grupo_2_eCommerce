@@ -6,7 +6,7 @@
     "image": "ultraboost.jpg",
     "category": "Men",
     "colors": ["White", "Black", "Blue"],
-    "price": 50000,
+    "price": "50.000",
     "sizes": ["37", "38", "39"],
     "section": "in-sale"
   },
@@ -17,7 +17,7 @@
     "image": "Zapp1.png",
     "category": "Men",
     "colors": ["Blue", "Black", "Red"],
-    "price": 60000,
+    "price": "60.000",
     "sizes": ["35", "36", "37", "40"],
     "section": "featured"
   },
@@ -28,7 +28,7 @@
     "image": "Zapp2.jpg",
     "category": "Kids",
     "colors": ["Pink", "Yellow", "Green"],
-    "price": 40000,
+    "price": "40.000",
     "sizes": ["32", "33", "34"],
     "section": "last-colection"
   },
@@ -39,7 +39,7 @@
     "image": "Zapp7.png",
     "category": "Men",
     "colors": ["Blue", "White", "Black"],
-    "price": 70000,
+    "price": "70.000",
     "sizes": ["40", "41", "42"],
     "section": "featured"
   },
@@ -50,7 +50,7 @@
     "image": "Zapp8.jpg",
     "category": "Women",
     "colors": ["Pink", "Black", "White"],
-    "price": 80000,
+    "price": "80.000",
     "sizes": ["37", "38", "39"],
     "section": "last-colection"
   },
@@ -61,7 +61,7 @@
     "image": "Zapp9.jpg",
     "category": "Women",
     "colors": ["Black", "Purple", "White"],
-    "price": 60000,
+    "price": "60.000",
     "sizes": ["36", "37", "38"],
     "section": "featured"
   },
@@ -72,7 +72,7 @@
     "image": "Zapp10.jpg",
     "category": "Kids",
     "colors": ["Red", "Black", "White"],
-    "price": 50000,
+    "price": "50.000",
     "sizes": ["32", "33", "34"],
     "section": "featured"
   },
@@ -83,7 +83,7 @@
     "image": "Zapp11.jpg",
     "category": "Men",
     "colors": ["White", "Black", "Brown"],
-    "price": 80000,
+    "price": "80.000",
     "sizes": ["37", "38", "39"],
     "section": "in-sale"
   },
@@ -94,7 +94,7 @@
     "image": "Zapp12.jpg",
     "category": "Women",
     "colors": ["Blue", "Yellow", "Green"],
-    "price": 80000,
+    "price": "80.000",
     "sizes": ["36", "37", "38"],
     "section": "last-colection"
   },
@@ -105,7 +105,7 @@
     "image": "Zapp13.jpg",
     "category": "Men",
     "colors": ["Black", "Blue", "White"],
-    "price": 70000,
+    "price": "70.000",
     "sizes": ["40", "41", "42"],
     "section": "in-sale"
   },
@@ -116,7 +116,7 @@
     "image": "Zapp3.jpg",
     "category": "Women",
     "colors": ["White", "Black", "Blue"],
-    "price": 80000,
+    "price": "80.000",
     "sizes": ["37", "38", "39"],
     "section": "last-colection"
   },
@@ -127,7 +127,7 @@
     "image": "Zapp14.png",
     "category": "Kids",
     "colors": ["White", "Blue", "Green"],
-    "price": "60000",
+    "price": "60.000",
     "sizes": ["32", "33", "34"],
     "section": "in-sale"
   }
