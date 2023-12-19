@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Descripción del Producto</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/produc-description.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <%- include("../partials/header")%>
+    <main>
+      <form action="">
+      <div class="main-content">
+        <div class="contenedorFotos">
+          <div class="fotoPrimaria">
+            <img src="/img/mercaderia/<%= product.image  %>" alt="Foto del Producto" />
+          </div>
+          <!-- <div class="fotoSecundaria">
+                    <img src="/img/Zapp5.jpg" alt="Foto del Producto">
+                    <img src="/img/Zapp6.jpg" alt="Foto del Producto">
+                </div> -->
+        </div>
+
+        <div class="contenedorDescripcion">
+          <h2>Modelo: <%= product.name %>
+          </h2>
+          <h3 class="price">Precio: $<%= product.price %>
+          </h3>
+          <div>
+            <label for="color">Colores disponibles:</label>
+            <div class="contenedor-secundario">
+              <% const availableColors=product.colors %>
+                <% availableColors.forEach(color=> { %>
+                  <label for="color">
+                    <%= color %>
+                      <input type="radio" name="color" value="<%= color %>" />
+                  </label>
+                  <% }); %>
+            </div>
+          </div>
+          <label for="talles">
+            <h3 class="tallesss">Talles disponibles</h3>
+          </label>
+          <select name="talles" id="talles">
+            <% const availableSizes=product.sizes%>
+              <% availableSizes.forEach((size)=>{ %>
+                <option name="talles" id="talles" value="<%= size %>">
+                  <%= size %>
+                </option>
+
+                <% }) %>
+          </select>
+          <div class="botonAñadir">
+            <button onclick="window.location.href='./shopping-cart'">
+              Añadir <i class="fas fa-shopping-cart"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="descripcionTextual">
+        <h1>Descripción:</h1>
+        <p>
+          <%= product.description %>
+        </p>
+      </div>
+    </form>
+    <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
+      <button>Eliminar producto <i class="fa-solid fa-trash"></i></button>
+    </form>
+      <!-- <section class="relacionados">
+        <div class="titulos">
+          <h3>Relacionados</h3>
+          <i class="fas fa-arrow-left"></i>
+          <i class="fas fa-arrow-right"></i>
+        </div>
+
+        <div class="productos">
+          <article>
+            <img src="img/Zapp12.jpg" alt="ZAPP#8" />
+            <div class="main-product">
+              <i class="fas fa-cart-plus"></i>
+            </div>
+          </article>
+
+          <article>
+            <img src="img/Zapp1.png" alt="ZAPP#1" />
+            <div class="main-product">
+              <i class="fas fa-cart-plus"></i>
+            </div>
+          </article>
+
+          <article>
+            <img src="img/Zapp2.jpg" alt="Ultraboost" />
+            <div class="main-product">
+              <i class="fas fa-cart-plus"></i>
+            </div>
+          </article>
+
+          <article>
+            <img src="img/Zapp11.jpg" alt="Ultraboost" />
+            <div class="main-product">
+              <i class="fas fa-cart-plus"></i>
+            </div>
+          </article>
+        </div>
+      </section> -->
+    </main>
+</body>
+<%- include("../partials/footer")%>
+
+</html>

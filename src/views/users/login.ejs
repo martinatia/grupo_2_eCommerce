@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <title>Iniciar sesión</title>
+</head>
+
+<body>
+  <%- include("../partials/userHeader")%>
+  <main>
+
+    <div class="contenedor-principal">
+      <h3>Bienvenido/a</h3>
+      <p>Inicia sesión o <a href="/registration">crea una cuenta</a></p>
+      <div class="contenedor-formulario">
+        <form action="/" method="">
+          <div class="input">
+            <i class="fas fa-envelope"></i>
+          <input type="text" placeholder="Introduzca su email">
+          </div>
+          <div class="input">
+            <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Introduzca su contraseña">
+          </div>
+          <button type="submit">Iniciar sesión</button>
+        </form>
+
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Copyright® 2023 DH Venture Capitals. Todos los derechos reservados</p>
+  </footer>
+</body>
+
+</html>

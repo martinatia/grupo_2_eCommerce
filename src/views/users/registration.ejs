@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/registration.css">
+    <title>Registrarse</title>
+</head>
+
+<body>
+    <%- include("../partials/userHeader")%>
+    <main>
+        <div class="contenedorPrincipal">
+            <h3>Por favor, indique sus datos:</h3>
+
+            <form action='/' method="GET">
+                <div class="formu">
+                    <input type="text" name="name" required placeholder="Nombre y Apellido">
+                    <input type="email" name="email" required placeholder="Correo electrónico">
+                    <input type="email" name="mailConfirmation" required placeholder="Confirme su correo">
+                    <input type="password" name="pass" required placeholder="Indique la contraseña">
+                    <div class="terminos-condiciones">
+                        <div class="contenedor-terminos">
+                            <input type="checkbox" name="checkbox_terminos_y_condiciones"
+                            id="checkbox_terminos_y_condiciones">
+                      
+                            <label for="checkbox_terminos_y_condiciones">He leído los y acepto los <a href="">
+                                Términos y Condiciones</a> de DH Venture Capitals y su
+                            <a href="">Política de privacidad.</a></label>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit">Registrarme</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>Copyright® 2023 DH Venture Capitals. Todos los derechos reservados</p>
+    </footer>
+</body>
+
+</html>

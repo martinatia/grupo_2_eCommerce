@@ -1,0 +1,7 @@
+AZUL MARINO: #161850
+BLANCO: #ecf4ff
+NEGRO: #22232f
+GRISCLARO: #E9F1F1
+GRIS: #666b91
+
+https://uicolors.app/create

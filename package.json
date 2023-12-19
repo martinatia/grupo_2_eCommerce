@@ -1,0 +1,19 @@
+{
+  "name": "grupo_2_ecommerce",
+  "version": "1.0.0",
+  "description": "El proyecto sobre la aplicacion web se llama \"ZAPP\". Zapp es un e-commerce sobre venta de zapatillas y esta en estado de desarrollo.\r Zapp le da la posibilidad al usuario de filtrar las zapatillas por sus gustos y tener todo tipo de talle y modelo de las principales marcas del mercado.\r Zapp es una aplicacion que busca romper en el mercado dandole medios distintos al usuario para la visualizacion de los productos. \r Zapp, ademas, es una aplicacion simple que busca que todos los consumidores tengan una clara y superior experiencia.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.5-lts.1"
+  }
+}
