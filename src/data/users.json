@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "name": "Martin",
+      "surname": "Atia",
+      "email": "martin.atia1@hotmail.com",
+      "password": "martin123",
+      "category": "administrador",
+      "image": "Avatar1.png"
+    },
+    {
+      "id": 2,
+      "name": "Fausto",
+      "surname": "Tenaglia",
+      "email": "fausto.tenaglia1@hotmail.com",
+      "password": "fausto123",
+      "category": "administrador",
+      "image": "Avatar2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Jose",
+      "surname": "Lodi",
+      "email": "jose.lodi1@hotmail.com",
+      "password": "jose123",
+      "category": "comprador",
+      "image": "Avatar3.jpeg"
+    },
+    {
+        "id": 3,
+        "name": "luana",
+        "surname": "capilla",
+        "email": "luana.capilla1@hotmail.com",
+        "password": "luana123",
+        "category": "comprador",
+        "image": "Avatar4.png"
+      }
+]
