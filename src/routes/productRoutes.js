@@ -2,7 +2,7 @@ const { Router } = require('express');
 const controller = require('../controllers/productController');
 const path = require('path');
 const router = Router();
-//TODO: 
+
 const multer = require('multer');
 const multerDiskStorage = multer.diskStorage({
     destination:(req,file,callback) =>{
@@ -16,8 +16,6 @@ const multerDiskStorage = multer.diskStorage({
 });
 
 const fileUpload = multer({storage: multerDiskStorage});
-
-
 
 const routes = {
     // productList: '/',
@@ -35,12 +33,13 @@ router.get(routes.productDetail, controller.productDetail);//Listo
 router.post(routes.postProduct, fileUpload.single('imagenProduto'), controller.postProduct);//Listo
 
 router.get(routes.editProduct,controller.editProduct);//TODO: Ahora
-router.put(routes.putProduct, fileUpload.single('imagen'), controller.putProduct);
+router.put(routes.putProduct, fileUpload.single('imagenProducto'), controller.putProduct);
+//TODO: NO SE PORQUE NO ENTRA POR EL IF (REQ.FILE) CUANDO SI ESTOY ADJUNTANDO UNA IMAGEN!!!!
 
 
 router.delete(routes.deleteProduct, controller.deleteProduct);
 
-//TODO: putProduct deleteProduct
+//TODO: deleteProduct
 
 
 

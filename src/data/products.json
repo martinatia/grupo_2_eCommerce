@@ -1,16 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Ultraboost",
-    "description": "Deportivo",
-    "image": "ultraboost.jpg",
-    "category": "Men",
-    "colors": ["White", "Black", "Blue"],
-    "price": "50.000",
-    "sizes": ["37", "38", "39"],
-    "section": "in-sale"
-  },
-  {
     "id": 2,
     "name": "ZAPP#1",
     "description": "Deportivo",
@@ -22,14 +11,23 @@
     "section": "featured"
   },
   {
-    "id": 3,
+    "id": "3",
     "name": "ZAPP#2",
     "description": "Urbano",
     "image": "Zapp2.jpg",
-    "category": "Kids",
-    "colors": ["Pink", "Yellow", "Green"],
+    "category": "Niños",
+    "colors": [
+      "Amarillo",
+      "Azul",
+      "Blanco",
+      "Marron",
+      "Negro",
+      "Rojo",
+      "Rosa",
+      "Verde",
+      "Violeta"
+    ],
     "price": "40.000",
-    "sizes": ["32", "33", "34"],
     "section": "last-colection"
   },
   {
@@ -122,13 +120,12 @@
   },
   {
     "id": "12",
-    "name": "ZAPP#11",
-    "description": "lorem ipsum, quien es lorena?",
+    "name": "ZAPP#11 algo",
+    "description": "descripción ",
     "image": "Zapp14.png",
-    "category": "Kids",
+    "category": "Mujeres",
     "colors": ["White", "Blue", "Green"],
-    "price": "60.000",
-    "sizes": ["32", "33", "34"],
+    "price": "61.000",
     "section": "in-sale"
   }
 ]
