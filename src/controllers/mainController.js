@@ -11,11 +11,6 @@ const controller = {
         const inSaleProducts = products.filter((product) => product.section=="in-sale");
         const featuredProducts = products.filter((product) => product.section == "featured");
         const lastColectionProducts = products.filter((product) => product.section == "last-colection");
-        console.log("viendo lodi");
-        console.log(products);
-        console.log(inSaleProducts);
-        console.log(featuredProducts);
-        console.log(lastColectionProducts);
         res.render('products/index', {inSaleProducts, featuredProducts, lastColectionProducts});
     } 
 }
