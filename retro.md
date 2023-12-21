@@ -54,3 +54,30 @@
 
 # -Registro de Decisiones: Iniciar el registro de las decisiones tomadas y lecciones aprendidas durante el sprint para aplicarlas en futuros proyectos. Esto contribuirá a la acumulación de conocimiento y mejora continua.
 # -Agendar citas: Para establecer una comunicacion y un intercambio de ideas o desacuerdos de manera más fluida, es necesario considerar más reuniones para pantear estos puntos importantes para el desarrollo de las tareas asignadas
+
+# ----- Retrospectiva - Estrella de mar SPRINT 4 -----
+# Al implementar la Retrospectiva Estrella de Mar, el equipo puede identificar con mas claridad que aspectos mejorar y establecer acciones concretas para optimizar el desarrollo del proyecto. Esto permite tener un enfoque mas efectivo y colaborativo
+
+# Keep Doing (Seguir haciendo)
+
+# -Reuniones: Seguir manteniendo reuniones con normalidad y comunicacion entre los pares.
+
+# More of (Más de)
+
+# -Investigaciones Ajenas: Aumentar la investigación sobre proyectos realizados por otras personas para obtener una base más sólida e información relevante.
+# -Comunicacion: Aumentar la comunicacion entre los integrantes sobre el proyecto.
+# -Reuniones: Para concluir con los sprit y aplicar detalles finales deberia ser necesario una ultima reunión para una mejor presentación del proyecto y una primer reunion nomas terminado el sprint para planear y plantear el siguiente.
+
+# Less of (Menos de)
+
+# -Trabajo Aislado: Disminuir el tiempo individual en el diseño para fomentar más colaboración y revisión conjunta
+
+# Stop Doing (Dejar de hacer)
+
+# -Postergar Retroalimentación: Dejar de posponer la retroalimentación y revisión del trabajo entre miembros del equipo.
+# -Reuniones: No programar reuniones todas las semanas, ya que afecta al rendimiento del proyecto y no permite un avance fluido en las tareas asignadas.
+# -Comunicacion: No avisar inconvenientes y demas al grupo. 
+
+# Start Doing (Empezar a hacer)
+
+# -Daily Report: En vez de tener que hacer una reunion diaria, utilizar WhatsApp para poder mantener la comunicacion y conocer sobre como va cada uno con su trabajo.
