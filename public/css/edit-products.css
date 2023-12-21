@@ -171,7 +171,8 @@ main article img{
 footer{
   display: flex;
   width: 100%;
-  bottom: 0;
+  /* bottom: 0; */
+  position: relative;
   /* position: fixed; */
   background-color: #E9F1F1;
   justify-content: space-around;
@@ -219,10 +220,10 @@ footer ul{
   .logo-footer{
       display: flex;
     }
-  footer{
+  /* footer{
     position: fixed; 
 
-  }
+  } */
 }
 @media (min-width: 769px){
   .menu {
