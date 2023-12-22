@@ -15,7 +15,7 @@
         <main>
             <div class="contenedor-principal">
 
-                <form action="/products/<%= producto.id  %>?_method=PUT" method="POST">
+                <form action="/products/<%= producto.id  %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="inputs">
                         <label for="name">Nombre del producto: <% producto.name %></label>
                         <input type="text" name="name" id="name" value="<%=producto.name %>">
