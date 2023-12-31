@@ -37,6 +37,18 @@
         <div class="checkbox">
           <label>Talles:</label>
           <div class="form-checkbox">
+            
+            <% for(let i = 32; i < 37; i++){%>
+              <div class="talle">
+                <label for="talle"><%= i%></label>
+                <input type="checkbox" id="talle<%= i%>" name="talle" value="<%= i%>" />
+              </div>
+            <% }%>
+
+            <!--
+
+              aqui reemplace este codigo por colocando un ciclo for
+
             <div class="talle">
               <label for="talle">32</label>
               <input type="checkbox" id="talle32" name="talle" value="32" />
@@ -57,6 +69,7 @@
               <label for="talle">36</label>
               <input type="checkbox" id="talle36" name="talle" value="36" />
             </div>
+             -->
           </div>
         </div>
         <div class="form-description">
@@ -84,7 +97,21 @@
       <div class="checkbox">
         <label>Colores:</label>
         <div class="form-checkbox">
-          <div class="colores">
+          
+          <% const colores = ["Rojo", "Azul", "Verde", "Blanco", "Negro", "Rosa", "Amarillo", "Violeta", "Marrón"]%>
+          <% for(let i = 0; i < colores.length; i++){%>
+            <%let color = colores[i]%>
+            <div class="colores">
+              <label for="color<%=color%>"><%=color%></label>
+              <input type="checkbox" id="color<%=color%>" name="color" value="<%=color%>" />
+            </div>
+          <% } %>
+          
+          <!-- 
+
+            aqui hice reemplace este codigo por un ciclo y los colores los agregue en un array
+
+            <div class="colores">
             <label for="color">Rojo</label>
             <input type="checkbox" id="colorRojo" name="color" value="Rojo" />
           </div>
@@ -121,6 +148,9 @@
             <input type="checkbox" id="colorMarron" name="color" value="Marrón" />
           </div>
         </div>
+
+           -->
+          
       </div>
       <div class="botones">
         <button type="reset">Limpiar campos</button>
