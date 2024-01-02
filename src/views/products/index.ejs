@@ -14,6 +14,7 @@
   <%- include("../partials/header")%>
   <main>
     <section class="sec-ofertas">
+      
       <div class="titulos">
         <h3>Ofertas</h3>
         <i class="fas fa-arrow-left"></i>
@@ -21,16 +22,15 @@
       </div>
 
       <div class="productos">
-        <% inSaleProducts.forEach((product) => {  %>
+        <% inSaleProducts.forEach((product) => { %>
           <article>
+            
             <h4><%= product.name %></h4> <!-- Nombre del producto arriba de la imagen -->
             <img src="/img/mercaderia/<%= product.image %>"  />
-            <div class="main-product">
-              <i class="fas fa-cart-plus"></i>
-              
+              <div class="main-product">
+                <i class="fas fa-cart-plus"></i>
                 <h3 class="precioZapp">$ <%= product.price %></h3>  <!-- Precio del producto abajo de la imagen  -->
-              
-            </div>
+              </div>
             
           </article>
         <% }) %>
@@ -38,6 +38,7 @@
 
     </section>
     <section class="sec-prod-destacados">
+      
       <div class="titulos">
         <h3>Productos Destacados</h3>
         <i class="fas fa-arrow-left"></i>
@@ -47,24 +48,23 @@
       <div class="productos">
         <% featuredProducts.forEach((product) =>{ %>
           
-            <article>
-              <h4><%= product.name %></h4>
-              <img src="/img/mercaderia/<%= product.image %>"  />
+          <article>
+            
+            <h4><%= product.name %></h4>
+            <img src="/img/mercaderia/<%= product.image %>"  />
               <div class="main-product">
-    
                 <i class="fas fa-cart-plus"></i>
                 <h3 class="precioZapp">$ <%= product.price %></h3>
               </div>
             
-            </article>
+          </article>
           
         <% } )%>
-
       </div>
-
 
     </section>
     <section class="sec-ultima-coleccion">
+      
       <div class="titulos">
         <h3>Última Colección</h3>
         <i class="fas fa-arrow-left"></i>
@@ -72,7 +72,6 @@
       </div>
 
       <div class="productos">
-
         <% lastColectionProducts.forEach((product) =>{ %>
           
           <article>
@@ -85,13 +84,11 @@
             
           </article>
         
-      <% } )%>
-
+        <% } )%>
       </div>
-
+    
     </section>
   </main>
- 
+  <%- include("../partials/footer")%>
 </body>
- <%- include("../partials/footer")%>
-</html>
+ </html>

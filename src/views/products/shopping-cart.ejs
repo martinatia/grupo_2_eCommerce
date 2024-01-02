@@ -8,35 +8,39 @@
     <script src="https://kit.fontawesome.com/6641947d89.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <%- include("../partials/userHeader")%>
+    <%- include("../partials/userHeader")%>
 
     <main class="main-content">
+        
         <section class="carrito">
-            <h2>Tu carrito</h2>
             
+            <h2>Tu carrito</h2>
             <img src="img/ultraboost.jpg" alt="Zapatilla 1" width="200" height="200" >
             <img src="img/ultraboost.jpg" alt="Zapatilla 2" width="200" height="200" >
             
         </section>
+        
         <div class="resumenPago">
-        <section class="resumen">
-            <h2>Resumen del pedido</h2>
-            <p>Entrega: 15/12</p>
-            <p>Productos: 2</p>
-            <p>Total a pagar: $15000</p>
-        </section>
+        
+            <section class="resumen">
+                <h2>Resumen del pedido</h2>
+                <p>Entrega: 15/12</p>
+                <p>Productos: 2</p>
+                <p>Total a pagar: $15000</p>
+            </section>
 
-        <section class="pagar">
-            <h2>Opciones de pago</h2>
-            <div>
-            <p><i class="fa-brands fa-cc-visa" ></i></p>
-            <p><i class="fa-brands fa-cc-mastercard" ></i></p>
-            </div>
-            <button class="pago">IR A PAGAR</button>
-        </section>
+            <section class="pagar">
+                <h2>Opciones de pago</h2>
+                <div>
+                    <p><i class="fa-brands fa-cc-visa" ></i></p>
+                    <p><i class="fa-brands fa-cc-mastercard" ></i></p>
+                </div>
+                <button class="pago">IR A PAGAR</button>
+            </section>
+            
         </div>
-    </main>
 
+    </main>
+    <%- include("../partials/footer")%>
 </body>
-<%- include("../partials/footer")%>
 </html>
