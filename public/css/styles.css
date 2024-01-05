@@ -5,6 +5,7 @@
   }
   body{
       font-family: 'Roboto', sans-serif;
+
   }
   main {
     width: 90%;
@@ -72,7 +73,7 @@
     
     .opciones h4:hover a {
       color: #E9F1F1;
-      background-color: #04087c;
+      background-color: #27374D;
       border: 1px solid #000000;
       transform: scale(1.4); 
     }
@@ -123,6 +124,8 @@
   .titulos h3{
       display: flex;
       margin-bottom: 10px;
+      margin-left: 10%;
+      
   }
   .titulos i{
       display: flex;
@@ -130,6 +133,60 @@
   .flechas{
       display: flex;
   }
+
+
+.slider-frame {
+	width: 100%;
+  height: 20%;
+	overflow: hidden;
+}
+
+.slider-frame ul {
+	display: flex;
+	padding: 0;
+	width: 200%;
+	animation: slide 20s infinite alternate ease-in-out;
+}
+
+.slider-frame li {
+	width: 100%;
+	list-style: none;
+}
+
+.slider-frame img {
+	width: 100%;
+}
+.slider-frame video{
+  width:100%;
+  height:50%;
+}
+
+@keyframes slide{
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	25% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+}
+
+  main section .productos article {
+    background-color: #fff;
+    margin: 10px 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden; /* Agregamos overflow: hidden para ocultar el desbordamiento de los elementos internos */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Agregamos transición para transform y box-shadow */
+  }
+  
+  main section .productos article:hover {
+    transform: scale(1.1); /* Agrandar el elemento al pasar el mouse */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Cambiar la sombra al pasar el mouse */
+  }
+  
+
+
   .sec-ofertas,
   .sec-prod-destacados,
   .sec-ultima-coleccion{
