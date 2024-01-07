@@ -17,19 +17,19 @@
 
                 <form action="/products/<%= producto.id  %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="inputs">
-                        <label for="name">Nombre del producto: <%= producto.name %></label>
+                        <label for="name"><h3>Nombre del producto</h3></label>
                         <input type="text" name="name" id="name" value="<%=producto.name %>">
                     </div>
                     <div class="inputs">
-                        <label for="price">Precio:</label>
+                        <label for="price"><h3>Precio</h3></label>
                         <input type="number" name="price" id="price" value="<%= producto.price %>">
                     </div>
                     <div class="inputs">
-                        <label for="description">Descripción:</label>
+                        <label for="description"><h3>Descripción</h3></label>
                         <input name="description" id="description" value="<%= producto.description%>"></textarea>
                     </div>
                     <div class="contenedor-secundario">
-                        <label for="categoria">Categoría</label>
+                        <label for="categoria"><h3>Categoría</h3></label>
 
                         <label>
                             
@@ -58,7 +58,7 @@
                     </div>
 
                     <div>
-                        <label for="seccion">Sección</label>
+                        <label for="seccion"><h3>Sección</h3></label>
                         <div class="contenedor-secundario">
                             <label>
 
@@ -105,21 +105,22 @@
 
                     </div>
 
-
                     <div>
                         <h3>Colores:</h3>
                         <div class="colores">
-
-                            <% const colorImages=['Amarillo', 'Azul' , 'Blanco' , 'Marron' , 'Negro' , 'Rojo' , 'Rosa', 'Verde' , 'Violeta' ] %>
-                            <% colorImages.forEach(colorImage=> { %>
-                                <label class="color-checkbox" for="colors">
-                                    <input type="checkbox" id="colors" name="<%= colorImage %>" value="<%= colorImage %>">
+                            <% const colorImages=['Yellow', 'Blue' , 'White' , 'Brown' , 'Black' , 'Red' , 'Pink', 'Green' , 'Violet' ]; %>
+                            <% const colors=producto.colors || [] %>
+                            <% colorImages.forEach((colorImage, index) => { %>
+                                <label class="color-checkbox" for="color_<%= index %>">
+                                    <input type="checkbox" id="color_<%= index %>" name="<%= colorImage %>" value="<%= colorImage %>"
+                                        <% if(colors.includes(colorImage)) { %>checked<% } %>>
                                         <img src="/img/utils/<%= colorImage %>.png" alt="<%= colorImage %>">
                                 </label>
-                            <% }) %>
+                            <% }); %>
 
                         </div>
                     </div>
+
                     <div>
                         <label for="imagenProducto">Subir imagen</label>
                         <input type="file" id="imagenProducto" name="imagenProducto" accept="image/*">
