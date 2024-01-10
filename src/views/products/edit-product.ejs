@@ -32,7 +32,7 @@
                         <label for="categoria"><h3>Categoría</h3></label>
 
                         <label>
-
+                            
                             <input type="radio" name="categoria" id="categoria" value="Hombres" 
                             <% if(producto.category === "Men" ) { %>checked
                             <% } %>
@@ -51,7 +51,7 @@
                             
                             <input type="radio" name="categoria" id="categoria" value="Niños" 
                             <% if(producto.category === "Kids"){%>checked
-                            <% } %>
+                            <% }%> 
                             > Niños
 
                         </label>
@@ -88,11 +88,11 @@
 
                     <h3>Talles:</h3>
                     <div class="contenedor-secundario">
-
+                        
                         <% const sizesKids = [22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]%>
                         <% const sizesAdult = [36, 37, 38, 39, 40, 41, 42, 43, 44]%>
                         <% const sizes=producto.sizes || [] %>
-                        <% const availableSizes=(producto.category==="Kids" ) ? sizesKids : sizesAdult%>
+                        <% const availableSizes=(producto.category==="Kids") ? sizesKids : sizesAdult%>
 
                         <% availableSizes.forEach(size=> { %>
                             <label for="size<%= size %>">
@@ -101,7 +101,7 @@
                                 <% } %>>
                                 <%= size %>
                             </label>
-                        <% }); %>
+                        <% }) %>
 
                     </div>
 
@@ -117,6 +117,7 @@
                                         <img src="/img/utils/<%= colorImage %>.png" alt="<%= colorImage %>">
                                 </label>
                             <% }); %>
+
                         </div>
                     </div>
 
