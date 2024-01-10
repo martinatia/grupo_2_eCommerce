@@ -38,9 +38,9 @@ main article img{
 
 .opciones h4:hover a {
   color: #E9F1F1;
-  background-color: #04087c;
+  background-color: #27374D;
   border: 1px solid #000000;
-  transform: scale(1.4); 
+  transform: scale(1.4);
 }
 
 .opciones h4 a {
@@ -168,56 +168,79 @@ main article img{
   width:20px;
   height: 20px;
 }
-footer{
+
+
+footer .foot {
   display: flex;
-  width: 100%;
-  /* bottom: 0; */
-  position: relative;
-  /* position: fixed; */
   background-color: #E9F1F1;
   justify-content: space-around;
-  padding-top: 25px;
-  padding-bottom: 25px;
+
   padding: 10px;
   padding: 10px;
 }
 
+.foot .logo-footer {
+  padding-top: 17px;
+}
 .logo-footer{
   display: none;
 }
-footer ul{
+footer .column ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  
-}
-.redes{
-  width: 25%;
-  margin-right: 10px;
-}
 
-.redes h3{
-  text-align: center;
 }
-
-.redes-sociales{
+footer .redes {
+  width: 100%;
+  padding: 0.5rem 8%;
+  background-color: #E9F1F1;
   display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-top:  1px solid #cdcaca;
+}
+
+.redes a {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  border: 1px solid #999898;
+  margin: 1rem;
+  background-position: center;
+  background-size: 40%;
+  transition: background-color 250ms, filter 250ms;
+}
+
+.redes i {
+  margin: 1rem;
+  color: #262f75
 }
 
 
-.column h3{
-  text-align: center;
+.redes a:hover {
+  background-color: #919d62;
+  filter: invert(1);
+
 }
 
-.ayuda a{
+footer h3, footer a, footer p{
+  margin-bottom: 10px;
+  font-family: 'Fira Sans', sans-serif;
+
+}
+footer .foot h3{
+  color:#120462;
+  padding-top:10px;
+}
+footer .ayuda li a, footer p {
+  color: #262f75;
+}
+
+.ayuda a {
   text-decoration-line: none;
-  color: black;
 }
-
-
-
 
 
 @media (min-width: 361px){

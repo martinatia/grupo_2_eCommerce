@@ -17,9 +17,7 @@ body {
   width: 100px;
   height: 100px;
 }
-.opciones {
-  display: none;
-}
+
 .main-navbar {
   display: flex;
   padding: 0;
@@ -41,6 +39,49 @@ body {
   color: #222222;
   padding: 5px 0;
 }
+
+.opciones {
+  text-align: justify;
+}
+
+.opciones h4 a {
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #161850;
+  padding: 5px;
+  border-radius: 50px;
+  transition: color 500ms, background-color 500ms, border 500ms, transform 300ms;
+}
+
+.opciones h4:hover a {
+  color: #E9F1F1;
+  background-color: #27374D;
+  border: 1px solid #000000;
+  transform: scale(1.4);
+}
+
+.opciones h4 a {
+  box-shadow: 0px 0px 10px rgb(146, 146, 146);
+}
+
+.opciones ul li a i {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.opciones ul li a:hover i {
+  transform: scale(1.4);
+}
+
+.logo {
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.2);
+}
+
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -64,38 +105,71 @@ main{
     display: flex;
     flex-direction: column;
 }
-.formulario{
-    margin: 10px;
+
+
+
+.contenedor-principal{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  width: 100%;
 }
-
-
-
+.contenedor-principal form{
+  width: 60%;
+}
+.contenedor-principal div{
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
 .form-label{
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
 }
+
+.form-label input{
+  width: 50%;
+}
+
 .form-options{
-  margin: 5px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
 }
 .form-options select{
-    width: 100%;
+  width: 50%;
 }
-.checkbox{
+.form-description{
   display: flex;
-  margin: 5px 0px;
+  padding-top:20px;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
 
+.form-description textarea{
+  width: 50%;
 }
-.form-checkbox{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 25px;
+.form-images{
+  display: flex;
+  padding-top: 20px;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
 
+.contenedor-secundario{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.talle{
-    
-    justify-content: start;
+.contenedor-secundario input{
+  display: flex;
+  flex-direction: column;
 }
+
+
 /* .colores {
   display:flex;
   justify-content: space-evenly;
@@ -107,10 +181,29 @@ main{
   width:20px;
   height: 20px;
 } */
+
+
 .botones{
-    display: flex;
-    margin: 15px 50px;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-around;
+ 
+}
+.botones button{
+  background-color:#ffffff;
+  border-radius: 5px;
+  color:#161850;
+  border:solid 1px #000000;
+  font-size: 20px;
+  margin-top:  15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 30%;
+  transition: background-color 800ms;
+  transition: color 800ms;
+}
+.botones button:hover{
+  background-color: #161850;
+  color: #ffffff
 }
 button{
   color: white;
@@ -119,63 +212,86 @@ button{
   border-style: solid;
   
 }
-.form-description{
-  display: flex;
-  flex-direction: column;
-}
-.form-images{
-  display: flex;
-  flex-direction: column;
-}
+
+
 label{
   color: #161850;
   font-weight: bold;
   margin: 5px 0px;
 }
 
-footer{
+footer .foot {
   display: flex;
   background-color: #E9F1F1;
   justify-content: space-around;
-  padding-top: 25px;
-  padding-bottom: 25px;
+
   padding: 10px;
   padding: 10px;
 }
 
+.foot .logo-footer {
+  padding-top: 17px;
+}
 .logo-footer{
   display: none;
 }
-footer ul{
+footer .column ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  
-}
-.redes{
-  width: 25%;
-  margin-right: 10px;
-}
 
-.redes h3{
-  text-align: center;
 }
-
-.redes-sociales{
+footer .redes {
+  width: 100%;
+  padding: 0.5rem 8%;
+  background-color: #E9F1F1;
   display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-top:  1px solid #cdcaca;
+}
+
+.redes a {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  border: 1px solid #999898;
+  margin: 1rem;
+  background-position: center;
+  background-size: 40%;
+  transition: background-color 250ms, filter 250ms;
+}
+
+.redes i {
+  margin: 1rem;
+  color: #262f75
 }
 
 
-.column h3{
-  text-align: center;
+.redes a:hover {
+  background-color: #919d62;
+  filter: invert(1);
+
 }
 
-.ayuda a{
+footer h3, footer a, footer p{
+  margin-bottom: 10px;
+  font-family: 'Fira Sans', sans-serif;
+
+}
+footer .foot h3{
+  color:#120462;
+  padding-top:10px;
+}
+footer .ayuda li a, footer p {
+  color: #262f75;
+}
+
+.ayuda a {
   text-decoration-line: none;
-  color: black;
 }
+
 @media (min-width: 361px){
  
     .menu {
