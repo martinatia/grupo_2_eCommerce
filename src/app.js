@@ -22,7 +22,7 @@ app.use(methodOverride('_method'));
 
 app.use("/",mainRouter);
 app.use("/products", productRouter);
-app.use("/user",userRouter);
+app.use("/users",userRouter);
 
 
 app.listen(3000, () => console.log("Servidor corriendo"));

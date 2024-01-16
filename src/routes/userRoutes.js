@@ -14,6 +14,7 @@ const routes = {
 
 router.get(routes.login, controller.login);
 router.get(routes.registration, controller.registration);
+router.get(routes.shoppingCart, controller.shoppingCart);
 
 
 module.exports = router;

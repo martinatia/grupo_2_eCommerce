@@ -6,5 +6,8 @@ const controller = {
     registration:(req, res) =>{
         res.render('users/registration');
     },
+    shoppingCart: (req,res)=>{
+        res.render('users/shopping-cart');
+    }
 }
 module.exports = controller;
