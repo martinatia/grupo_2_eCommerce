@@ -14,12 +14,14 @@
         <div class="contenedorPrincipal">
             <h3>Por favor, indique sus datos:</h3>
 
-            <form action='/' method="GET">
+            <form action='/users/registration' method="POST">
                 <div class="formu">
                     <input type="text" name="name" required placeholder="Nombre y Apellido">
                     <input type="email" name="email" required placeholder="Correo electrónico">
                     <input type="email" name="mailConfirmation" required placeholder="Confirme su correo">
                     <input type="password" name="pass" required placeholder="Indique la contraseña">
+                    <label for="image">Imagen de Perfil:</label>
+                    <input type="file" id="image" name="image" accept="image/*" required>
                     <div class="terminos-condiciones">
                         <div class="contenedor-terminos">
                             <input type="checkbox" name="checkbox_terminos_y_condiciones" id="checkbox_terminos_y_condiciones">
