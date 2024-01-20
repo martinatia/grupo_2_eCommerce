@@ -17,11 +17,24 @@ main article img{
   display: flex;
 }
 
-.logo{
+.logo {
   width: 100px;
   height: 100px;
-  
+
 }
+
+.logo img{
+  
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.2);
+}
+
+
 .opciones {
   text-align: justify;
 }
@@ -54,13 +67,7 @@ main article img{
 .opciones ul li a:hover i {
   transform: scale(1.4); 
 }
-.logo {
-  transition: transform 0.3s ease;
-}
 
-.logo:hover {
-  transform: scale(1.2);
-}
 
 .opciones{
   display: none;

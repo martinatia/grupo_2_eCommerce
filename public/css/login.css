@@ -12,14 +12,18 @@ header{
 }
 .logo{
     display: flex;
-    
     justify-content: center;
 }
 .logo img{
     width: 100px;
     height: 100px;
-    text-align: center;
-}
+    transition: transform 0.3s ease;
+  }
+
+  .logo img:hover {
+    transform: scale(1.2);
+  }
+
 
 .contenedor-principal{
     display: flex;
@@ -63,6 +67,28 @@ header{
     color: white;
     border: solid 1px #161850;
 }
+.botones{
+    display: flex;
+    justify-content: space-around;
+   
+  }
+  .botones button{
+    background-color:#ffffff;
+    border-radius: 5px;
+    color:#161850;
+    border:solid 1px #000000;
+    font-size: 20px;
+    margin-top:  15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 70%;
+    transition: background-color 800ms;
+    transition: color 800ms;
+  }
+  .botones button:hover{
+    background-color: #161850;
+    color: #ffffff
+  }
 footer{
     background-color: #E9F1F1;
     width: 100%;

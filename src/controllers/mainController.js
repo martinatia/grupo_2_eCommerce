@@ -45,8 +45,8 @@ const controller = {
         res.render('users/registration');
     },
     newUser: (req, res) => {
-        if (req.body.name && req.body.email && req.body.mailConfirmation && req.body.pass && req.file) {
-            const hashedPassword = bcrypt.hashSync(req.body.pass, 10);
+        if (req.body.name && req.body.email && req.body.mailConfirmation && req.body.password && req.file) {
+            const hashedPassword = bcrypt.hashSync(req.body.password, 10);
 
             // último ID
             const lastIdSaved = users[users.length - 1].id;
@@ -56,7 +56,7 @@ const controller = {
                 name: req.body.name,
                 email: req.body.email,
                 mailConfirmation: req.body.mailConfirmation,
-                pass: hashedPassword,
+                password: hashedPassword,
                 image: req.file.filename,
             };
             //agrega el ID creado

@@ -14,8 +14,6 @@ const controller = {
   },
   productDetail: (req, res) => {
     const product = products.find((product) => product.id == req.params.id);
-    console.log("en el productDetail:");
-    console.log(product);
     res.render("products/product-description", { product });
   },
   createProduct: (req, res) => {

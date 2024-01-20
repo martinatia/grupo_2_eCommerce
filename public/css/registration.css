@@ -3,27 +3,33 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
+main, header{
     font-family: 'Roboto', sans-serif;
 }
 main{
     text-align: center;
-    
-
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto;
 }
 header{
     background-color: #E9F1F1;
-}
-
-.logo img{
-    width: 100px;
-    height: 100px;
 }
 
 .logo{
     display: flex;
     justify-content: center;
 }
+.logo img{
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s ease;
+  }
+
+  .logo img:hover {
+    transform: scale(1.2);
+  }
+
 .contenedorPrincipal{
     display:flex;
     flex-direction: column;
@@ -76,6 +82,23 @@ header{
 .checkbox-registro a{
     color: blue
 }
+.inputs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+  }
+  .inputs input{
+    width: 50%;
+  }
+
+h2{
+    margin-bottom: 30px;
+}
+.terminos-condiciones{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 footer {
     position: fixed;
     width: 100%;
@@ -88,3 +111,25 @@ footer p{
     margin-bottom: 15px;
     font-size: 10px;
 }
+.botones{
+    display: flex;
+    justify-content: space-around;
+   
+  }
+  .botones button{
+    background-color:#ffffff;
+    border-radius: 5px;
+    color:#161850;
+    border:solid 1px #000000;
+    font-size: 20px;
+    margin-top:  15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 30%;
+    transition: background-color 800ms;
+    transition: color 800ms;
+  }
+  .botones button:hover{
+    background-color: #161850;
+    color: #ffffff
+  }

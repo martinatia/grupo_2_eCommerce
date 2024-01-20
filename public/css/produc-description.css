@@ -25,11 +25,7 @@ main article img{
     display: flex;
   }
   
-  .logo{
-    width: 100px;
-    height: 100px;
-    
-  }
+
   .opciones {
     text-align: justify;
   }
@@ -63,13 +59,23 @@ main article img{
     transform: scale(1.4); 
   }
   .logo {
+    width: 100px;
+    height: 100px;
+
+  }
+
+  .logo img{
+    
+    width: 100px;
+    height: 100px;
     transition: transform 0.3s ease;
   }
-  
-  .logo:hover {
+
+  .logo img:hover {
     transform: scale(1.2);
   }
-  
+
+
   .opciones{
     display: none;
   }
@@ -266,14 +272,7 @@ main section article{
     main section div.productos article{
         width: 45%;
     }
-    .fotoSecundaria{
-        display: flex;
-        justify-content: space-between;
-        margin-left: 5px;
-        margin-right: 5px;
-        margin-top: 5px;
-        flex-direction: column;
-    }
+
     .menu {
         display: none;
 
