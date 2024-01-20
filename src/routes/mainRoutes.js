@@ -28,6 +28,7 @@ const routes = {
 
 router.get(routes.home, controller.index);
 router.get(routes.login, controller.login);
+router.post(routes.login, controller.userLogin)
 router.get(routes.registration, controller.registration)
 router.post(routes.registration, fileUpload.single('image'), controller.newUser);
 
