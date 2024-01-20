@@ -20,7 +20,10 @@ const controller = {
     login: (req, res) => {
         res.render('users/login');
     },
-    registration: (req, res) => {
+    registration: (req,res) => {
+        res.render('users/registration');
+    },
+    newUser: (req, res) => {
         if (req.body.name && req.body.email && req.body.mailConfirmation && req.body.pass && req.file) {
             const hashedPassword = bcrypt.hashSync(req.body.pass, 10);
 
