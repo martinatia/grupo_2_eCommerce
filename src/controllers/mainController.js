@@ -45,6 +45,7 @@ const controller = {
         res.render('users/registration');
     },
     newUser: (req, res) => {
+
         if (req.body.name && req.body.email && req.body.mailConfirmation && req.body.password && req.file) {
             const hashedPassword = bcrypt.hashSync(req.body.password, 10);
 
