@@ -17,18 +17,29 @@
 
 <body>
   <%- include("../partials/userHeader")%>
+  
   <main>
+    
+    <% if (typeof errors != 'undefined') {%>
+      <ul>
+        <% for(let i = 0; i < errors.length; i++){ %>
+          <li>
+            <%= errors[i].msg %>
+          </li>
+          <% } %> 
+      </ul> 
+    <% } %>
 
     <div class="contenedor-principal">
       <h3>Bienvenido/a</h3>
       <p>Inicia sesión o <a href="/users/registration">crea una cuenta</a></p>
       <div class="contenedor-formulario">
         
-        <form action="/login" method="POST">
+        <form action="/users/login" method="POST">
           
           <div class="input">
             <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Introduzca su email" name="email">
+            <input type="text" placeholder="Introduzca su email" name="email">
           </div>
           
           <div class="input">

@@ -1,9 +1,8 @@
 /* Responsabilidad de Martin */
 const fs = require ('fs');
 const path = require('path');
-const productsFilePath = path.join(__dirname, '../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const bcrypt = require('bcrypt');
+const { validationResult } = require('express-validator');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -15,25 +14,35 @@ const controller = {
         res.render('users/login');
     },
     userLogin: (req,res) => {
+
         const loginData = {
             email: req.body.email,
             password: req.body.pass,
-        }
-        if(loginData.email && loginData.password){
-            let userDate = users.find((user) => {
-                return user.email === loginData.email && user.password === loginData.password;
-            })
-            if(userDate){
-                res.redirect('/')
-            }else{
-                res.redirect('/login')
-                //res.send('Usuario y/o contraseña incorrectos')
-            }    
-            
+        }        
+        
+        const errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            //verificacion de usuario logueado
+            let userToLogin;
+
+            for(let i = 0; i < users.length; i++){
+                if(users[i].email == loginData.email){
+                    if(bcrypt.compare(req.body.pass) == users[i].password){
+                        userToLogin = users[i];
+                        res.redirect('/')
+                        break;
+                    }
+                }
+            }
+
+            if(!userToLogin){
+                res.render('users/login', {errors: [{msg: 'Credenciales invalidas'}]});
+            }
         }else{
-            res.redirect('/login')
-            //res.send('Por favor complete los campos')
-        }
+            res.render('users/login', {errors: errors.errors})
+        }  
+        
     },
     registration: (req,res) => {
         res.render('users/registration');

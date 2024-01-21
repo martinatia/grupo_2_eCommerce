@@ -3,6 +3,18 @@ const {Router} = require('express');
 const router = Router();
 const controller = require('../controllers/userController')
 const path = require('path');
+const {body} = require('express-validator')
+
+const validations = [
+    body('email')
+    .notEmpty()
+    .isEmail()
+    .withMessage('Escribe un email válido'),
+    body('pass')
+    .notEmpty()
+    .isLength({min: 5})
+    .withMessage('Escribe una contraseña con mas de 4 caracteres')
+]
 
 
 const multer = require('multer');
@@ -28,7 +40,7 @@ const routes = {
 
 router.get(routes.shoppingCart, controller.shoppingCart);
 router.get(routes.login, controller.login);
-router.post(routes.login, controller.userLogin)
+router.post(routes.login, validations, controller.userLogin)
 router.get(routes.registration, controller.registration)
 router.post(routes.registration, fileUpload.single('image'), controller.newUser);
 
