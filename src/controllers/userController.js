@@ -31,7 +31,7 @@ const controller = {
                     if(bcrypt.compareSync(loginData.password, users[i].password)){
                         userToLogin = users[i];
                         req.session.userToLoggedIn = userToLogin;
-                        res.redirect('/');
+                        res.redirect('/users/profiles');
                         break;
                     }
                 }
@@ -90,7 +90,7 @@ const controller = {
         res.render('users/shopping-cart');
     },
     profiles: (req, res) => {
-        res.render('users/profiles');
+        res.render('users/profiles', {user: req.session.userToLoggedIn});
     }
 }
 module.exports = controller;
