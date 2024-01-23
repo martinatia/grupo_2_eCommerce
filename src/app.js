@@ -23,7 +23,7 @@ app.use(express.json());
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
-app.use(session({secret: 'Secreto en reunion mala educacion'}));
+app.use(session({secret: 'Secreto en reunion mala educacion', resave: false, saveUninitialized: false}));
 app.use(cookieParser());
 app.use(rememberMiddleware)
 

@@ -17,7 +17,7 @@
     <div class="opciones">
       <ul>
         <li>
-          <a href="./users/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
+          <a href="./users/<%= locals.userToLogin ? userToLogin.id : null %>/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
         </li>
         <li>
           <a href="./users/login"><i class="fas fa-user"></i></a>

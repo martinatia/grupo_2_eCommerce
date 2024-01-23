@@ -30,6 +30,7 @@ const controller = {
                 if(users[i].email == loginData.email){
                     if(bcrypt.compareSync(loginData.password, users[i].password)){
                         userToLogin = users[i];
+                        req.session.userToLoggedIn = userToLogin;
                         res.redirect('/');
                         break;
                     }
@@ -37,12 +38,10 @@ const controller = {
             }
 
             if(!userToLogin){
-                res.render('users/login', {errors: [{msg: 'Credenciales invalidas'}]}); //revisar
+                res.render('users/login', {errors: {email: {msg: 'El correo electrónico no se encuentra en nuestra base de datos'}}}); 
             }
 
-            req.session.userToLoggedIn = userToLogin;
-
-            if(res.body.remember != undefined){
+            if(req.body.remember != undefined){
                 res.cookie('remember', userToLogin.email, { maxAge: 60000 }); //revisar
             }
             
@@ -89,6 +88,9 @@ const controller = {
     },
     shoppingCart: (req, res) => {
         res.render('users/shopping-cart');
+    },
+    profiles: (req, res) => {
+        res.render('users/profiles');
     }
 }
 module.exports = controller;

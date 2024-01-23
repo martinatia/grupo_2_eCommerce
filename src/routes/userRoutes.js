@@ -62,14 +62,16 @@ const routes = {
     /* aqui iria otra pagina como editUser, que reciba un id/edit */
     login: '/login',
     registration: '/registration',
-    shoppingCart: '/:id/shopping-cart'
+    shoppingCart: '/:id/shopping-cart',
+    profiles: '/profiles',
 }
 
-router.get(routes.shoppingCart, controller.shoppingCart);
 router.get(routes.login, controller.login);
 router.post(routes.login, loginValidations, controller.userLogin)
 router.get(routes.registration, controller.registration)
 router.post(routes.registration, fileUpload.single('image'), registrationValidations, controller.newUser);
+router.get(routes.shoppingCart, controller.shoppingCart);
+router.get(routes.profiles, controller.profiles);
 
 
 module.exports = router;
