@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/profiles.css">
-    <title>Document</title>
+    <title>Perfiles</title>
 </head>
 <body>
     <%- include("../partials/userHeader")%>
 
     <main>
-        <h2> Bienvenido <%= %></h2>
+        <h2> Bienvenido <%= user.name%></h2>
 
-        <img src="<%= %>" alt="imagen de usuario">
+        <img src="/img/usersImageProfile/<%= user.image %>" alt="imagen de usuario">
 
-        <p>Correo electronico: <%= %></p>
+        <p>Correo electrónico: <%= user.email%></p>
     </main>
     
     <footer><p>Copyright® 2023 DH Venture Capitals. Todos los derechos reservados</p></footer>
