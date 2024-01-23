@@ -17,7 +17,7 @@ const controller = {
 
         const loginData = {
             email: req.body.email,
-            password: req.body.pass,
+            password: req.body.password,
         }        
         
         const errors = validationResult(req);
@@ -28,19 +28,26 @@ const controller = {
 
             for(let i = 0; i < users.length; i++){
                 if(users[i].email == loginData.email){
-                    if(bcrypt.compare(req.body.pass) == users[i].password){
+                    if(bcrypt.compareSync(loginData.password, users[i].password)){
                         userToLogin = users[i];
-                        res.redirect('/')
+                        res.redirect('/');
                         break;
                     }
                 }
             }
 
             if(!userToLogin){
-                res.render('users/login', {errors: [{msg: 'Credenciales invalidas'}]});
+                res.render('users/login', {errors: [{msg: 'Credenciales invalidas'}]}); //revisar
             }
+
+            req.session.userToLoggedIn = userToLogin;
+
+            if(res.body.remember != undefined){
+                res.cookie('remember', userToLogin.email, { maxAge: 60000 }); //revisar
+            }
+            
         }else{
-            res.render('users/login', {errors: errors.errors})
+            res.render('users/login', { errors: errors.mapped()});
         }  
         
     },
@@ -49,7 +56,10 @@ const controller = {
     },
     newUser: (req, res) => {
 
-        if (req.body.name && req.body.email && req.body.mailConfirmation && req.body.password && req.file) {
+        const errors = validationResult(req);
+        
+        if(errors.isEmpty()){
+            
             const hashedPassword = bcrypt.hashSync(req.body.password, 10);
 
             // último ID
@@ -69,9 +79,13 @@ const controller = {
             fs.writeFileSync(usersFilePath, JSON.stringify(users));
 
             res.redirect('/');
-        } else {
-            res.send('Por favor complete todos los campos del formulario.');
+
+        }else{
+
+            res.render('users/registration', { errors: errors.mapped(), oldDate: req.body });
+
         }
+
     },
     shoppingCart: (req, res) => {
         res.render('users/shopping-cart');

@@ -5,17 +5,44 @@ const controller = require('../controllers/userController')
 const path = require('path');
 const {body} = require('express-validator')
 
-const validations = [
+const loginValidations = [
     body('email')
-    .notEmpty()
-    .isEmail()
-    .withMessage('Escribe un email válido'),
-    body('pass')
-    .notEmpty()
-    .isLength({min: 5})
-    .withMessage('Escribe una contraseña con mas de 4 caracteres')
+    .notEmpty().withMessage('Por favor completa con un correo electrónico')
+    .isEmail().withMessage('Por favor completa con un correo electrónico válido'),
+    body('password')
+    .notEmpty().withMessage('Por favor completa con una contraseña'),
 ]
 
+const registrationValidations = [
+    body('name')
+    .notEmpty().withMessage('Por favor completa con tu nombre y apellido').bail(),
+    body('email')
+    .notEmpty().withMessage('Por favor completa con un correo electrónico')
+    .isEmail().withMessage('Por favor completa con un correo electrónico válido'),
+    body('emailConfirmation')
+    .notEmpty().withMessage('Por favor completa con un correo electrónico')
+    .isEmail().withMessage('Por favor completa con un email válido'),
+    body('password')
+    .notEmpty().withMessage('Por favor completa con una contraseña válida')
+    .isLength({ min: 5 }).withMessage('Por favor completa con una contraseña con mas de 5 caracteres'),
+    body('checkbox_terminos_y_condiciones')
+    .notEmpty().withMessage('Debes aceptar los Términos y Condiciones para continuar'),
+    body('image').custom((value, { req }) => {
+        let file = req.file;
+        let acceptedExtensions = ['jpg', 'gif', 'png'];
+
+        if(!file){
+            throw new Error('Por favor adjunta una imagen');
+        }else{
+            let fileExtension = path.extname(file.originalname);
+            if(!acceptedExtensions.includes(fileExtension)){
+                throw new Error(`Las exteciones permitidas son ${acceptedExtensions.join(', ')}`);
+            }
+        }
+
+        return true;
+    })
+]
 
 const multer = require('multer');
 const multerDiskStorage = multer.diskStorage({
@@ -40,9 +67,9 @@ const routes = {
 
 router.get(routes.shoppingCart, controller.shoppingCart);
 router.get(routes.login, controller.login);
-router.post(routes.login, validations, controller.userLogin)
+router.post(routes.login, loginValidations, controller.userLogin)
 router.get(routes.registration, controller.registration)
-router.post(routes.registration, fileUpload.single('image'), controller.newUser);
+router.post(routes.registration, fileUpload.single('image'), registrationValidations, controller.newUser);
 
 
 module.exports = router;

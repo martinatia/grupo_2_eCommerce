@@ -20,16 +20,6 @@
   
   <main>
     
-    <% if (typeof errors != 'undefined') {%>
-      <ul>
-        <% for(let i = 0; i < errors.length; i++){ %>
-          <li>
-            <%= errors[i].msg %>
-          </li>
-          <% } %> 
-      </ul> 
-    <% } %>
-
     <div class="contenedor-principal">
       <h3>Bienvenido/a</h3>
       <p>Inicia sesión o <a href="/users/registration">crea una cuenta</a></p>
@@ -41,10 +31,21 @@
             <i class="fas fa-envelope"></i>
             <input type="text" placeholder="Introduzca su email" name="email">
           </div>
+          <% if(locals.errors && errors.email){ %>
+            <%= errors.email.msg %>        
+          <%}%>
           
           <div class="input">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Introduzca su contraseña" name="pass">
+            <input type="password" placeholder="Introduzca su contraseña" name="password">
+          </div>
+          <% if(locals.errors && errors.password){ %>
+            <%= errors.password.msg %>        
+          <%}%>
+
+          <div>
+            <label for="remember">Recordame</label>
+            <input type="checkbox" name="remember">
           </div>
           
           <div class="botones">

@@ -16,31 +16,60 @@
 <body>
     <%- include("../partials/userHeader")%>
         <main>
+
             <div class="contenedorPrincipal">
+                
+                <% if(locals.errors && errors.checkbox_terminos_y_condiciones){ %>
+                    <%= errors.checkbox_terminos_y_condiciones.msg %>        
+                <%}%>
+
                 <h2>Por favor, indique sus datos:</h2>
 
-                <form action='/registration' method="POST" enctype="multipart/form-data">
+                <form action='/users/registration' method="POST" enctype="multipart/form-data">
                     <div class="formu">
                         <div class="inputs">
                             <label for="name"><h3>Nombre y Apellido: </h3></label>
-                            <input type="text" name="name" required placeholder="Nombre y Apellido">
+                            <input type="text" name="name" placeholder="Nombre y Apellido" value="<%= locals.oldDate ? oldDate.name : null %>">
+                        </div>
+                        <div>
+                            <% if(locals.errors && errors.name){ %>
+                                <%= errors.name.msg %>        
+                            <%}%>
                         </div>
                         <div class="inputs">
-                            <label for="name"><h3>Correo: </h3></label>
-                            <input type="email" name="email" required placeholder="Correo electrónico">
+                            <label for="email"><h3>Correo: </h3></label>
+                            <input type="text" name="email" placeholder="Correo electrónico" value="<%= locals.oldDate ? oldDate.email : null %>">
+                        </div>
+                        <div>
+                            <% if(locals.errors && errors.email){ %>
+                                <%= errors.email.msg %>        
+                            <%}%>
                         </div>
                         <div class="inputs">
-                            <label for="name"><h3>Confirmar Correo: </h3></label>
-                            <input type="email" name="mailConfirmation" required placeholder="Confirme su correo">
+                            <label for="emailComfirmation"><h3>Confirmar Correo: </h3></label>
+                            <input type="text" name="mailConfirmation" placeholder="Confirme su correo" value="<%= locals.oldDate ? oldDate.emailConfirmation : null %>">
+                        </div>
+                        <div>
+                            <% if(locals.errors && errors.emailConfirmation){ %>
+                                <%= errors.emailConfirmation.msg %>        
+                            <%}%>
                         </div>
                         <div class="inputs">
-                            <label for="name"><h3>Contraseña: </h3></label>
-                            <input type="password" name="password" required placeholder="Indique la contraseña">
+                            <label for="password"><h3>Contraseña: </h3></label>
+                            <input type="password" name="password" placeholder="Indique la contraseña">
+                        </div>
+                        <div>
+                            <% if(locals.errors && errors.password){ %>
+                                <%= errors.password.msg %>        
+                            <%}%>
                         </div>
                         <div class="inputs">
                             <label for="image"><h3>Imagen de Perfil: </h3></label>
-                            <input type="file" id="image" name="image" accept="image/*" required>
+                            <input type="file" id="image" name="image" accept="image/*">
                         </div>
+                        <% if(locals.errors && errors.image){ %>
+                            <%= errors.image.msg %>        
+                        <%}%>
 
                         <div class="terminos-condiciones">
                             <div class="contenedor-terminos">
