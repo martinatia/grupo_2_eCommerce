@@ -38,9 +38,6 @@ const controller = {
                         res.redirect('/users/profiles');
                     } 
                 }
-                // else{
-                //     res.render('users/login', {errors: {email: {msg: 'El correo electrónico no se encuentra en nuestra base de datos'}}});
-                // }
             }
 
             if(!userToLogin){

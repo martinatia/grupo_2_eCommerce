@@ -1,9 +1,11 @@
 /* Responsabilidad de Lodi */
 const {Router} = require('express');
 const router = Router();
-const controller = require('../controllers/userController')
+const controller = require('../controllers/userController');
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 const path = require('path');
-const {body} = require('express-validator')
+const {body} = require('express-validator');
 
 const loginValidations = [
     body('email')
@@ -66,12 +68,12 @@ const routes = {
     profiles: '/profiles',
 }
 
-router.get(routes.login, controller.login);
+router.get(routes.login, guestMiddleware, controller.login);
 router.post(routes.login, loginValidations, controller.userLogin)
-router.get(routes.registration, controller.registration)
+router.get(routes.registration, guestMiddleware, controller.registration)
 router.post(routes.registration, fileUpload.single('image'), registrationValidations, controller.newUser);
 router.get(routes.shoppingCart, controller.shoppingCart);
-router.get(routes.profiles, controller.profiles);
+router.get(routes.profiles, authMiddleware, controller.profiles);
 
 
 module.exports = router;
