@@ -25,25 +25,29 @@ const controller = {
         if(errors.isEmpty()){
             //verificacion de usuario logueado
             let userToLogin;
-
+            //HACER EN UN MIDDLEWARE
             for(let i = 0; i < users.length; i++){
                 if(users[i].email == loginData.email){
                     if(bcrypt.compareSync(loginData.password, users[i].password)){
                         userToLogin = users[i];
+                        delete userToLogin.password;
                         req.session.userToLoggedIn = userToLogin;
+                        if(req.body.remember != undefined){
+                            res.cookie('remember', userToLogin.email, { maxAge: 60000 }); 
+                        }
                         res.redirect('/users/profiles');
-                        break;
-                    }
+                    } 
                 }
+                // else{
+                //     res.render('users/login', {errors: {email: {msg: 'El correo electrónico no se encuentra en nuestra base de datos'}}});
+                // }
             }
 
             if(!userToLogin){
-                res.render('users/login', {errors: {email: {msg: 'El correo electrónico no se encuentra en nuestra base de datos'}}}); 
+                res.render('users/login', {errors: {email: {msg: 'El correo electrónico no se encuentra en nuestra base de datos'}}});
             }
 
-            if(req.body.remember != undefined){
-                res.cookie('remember', userToLogin.email, { maxAge: 60000 }); //revisar
-            }
+          
             
         }else{
             res.render('users/login', { errors: errors.mapped()});
