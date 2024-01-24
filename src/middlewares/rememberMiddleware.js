@@ -14,11 +14,12 @@ function rememberMiddleware(req, res, next) {
         for(let i = 0; i < users.length; i++){
             if(users[i].email == req.cookies.remember){
                 userToLogin = users[i];
+                req.session.userToLoggedIn = userToLogin;
                 break;
             }
         }
 
-        req.session.userToLoggedIn = userToLogin;
+        
         
     }
     
