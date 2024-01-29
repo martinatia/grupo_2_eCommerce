@@ -31,12 +31,13 @@ const registrationValidations = [
     .notEmpty().withMessage('Debes aceptar los Términos y Condiciones para continuar'),
     body('image').custom((value, { req }) => {
         let file = req.file;
-        let acceptedExtensions = ['jpg', 'gif', 'png'];
+        let acceptedExtensions = ['.jpg', '.gif', '.png'];
 
         if(!file){
             throw new Error('Por favor adjunta una imagen');
         }else{
             let fileExtension = path.extname(file.originalname);
+            console.log(fileExtension)
             if(!acceptedExtensions.includes(fileExtension)){
                 throw new Error(`Las exteciones permitidas son ${acceptedExtensions.join(', ')}`);
             }

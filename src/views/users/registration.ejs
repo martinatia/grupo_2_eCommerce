@@ -47,7 +47,7 @@
                         </div>
                         <div class="inputs">
                             <label for="emailComfirmation"><h3>Confirmar Correo: </h3></label>
-                            <input type="text" name="mailConfirmation" placeholder="Confirme su correo" value="<%= locals.oldDate ? oldDate.emailConfirmation : null %>">
+                            <input type="text" name="emailConfirmation" placeholder="Confirme su correo" value="<%= locals.oldDate ? oldDate.emailConfirmation : null %>">
                         </div>
                         <div>
                             <% if(locals.errors && errors.emailConfirmation){ %>
