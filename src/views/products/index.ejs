@@ -32,16 +32,22 @@
 
       <div class="productos">
         <% inSaleProducts.forEach((product) => { %>
-          <article>
+          <form action="./products/<%= product.id %>">
+            <button type="submit">
+            <article>
             
-            <h4><%= product.name %></h4> <!-- Nombre del producto arriba de la imagen -->
-            <img src="/img/mercaderia/<%= product.image %>"  />
-              <div class="main-product">
-                <i class="fas fa-cart-plus"></i>
-                <h3 class="precioZapp">$ <%= product.price %></h3>  <!-- Precio del producto abajo de la imagen  -->
-              </div>
-            
-          </article>
+              <h4><%= product.name %></h4> <!-- Nombre del producto arriba de la imagen -->
+             
+                <img src="/img/mercaderia/<%= product.image %>"  />
+              
+                <div class="main-product">
+                  <i class="fas fa-cart-plus"></i>
+                  <h3 class="precioZapp">$ <%= product.price %></h3>  <!-- Precio del producto abajo de la imagen  -->
+                </div>
+              
+            </article>
+          </button>
+          </form>
         <% }) %>
       </div>
 
@@ -57,16 +63,20 @@
       <div class="productos">
         <% featuredProducts.forEach((product) =>{ %>
           
-          <article>
+          <form action="./products/<%= product.id %>">
+            <button type="submit">
+              <article>
             
-            <h4><%= product.name %></h4>
-            <img src="/img/mercaderia/<%= product.image %>"  />
-              <div class="main-product">
-                <i class="fas fa-cart-plus"></i>
-                <h3 class="precioZapp">$ <%= product.price %></h3>
-              </div>
-            
-          </article>
+                <h4><%= product.name %></h4>
+                <img src="/img/mercaderia/<%= product.image %>"  />
+                  <div class="main-product">
+                    <i class="fas fa-cart-plus"></i>
+                    <h3 class="precioZapp">$ <%= product.price %></h3>
+                  </div>
+                
+              </article>
+            </button>
+          </form>
           
         <% } )%>
       </div>
@@ -82,7 +92,7 @@
 
       <div class="productos">
         <% lastColectionProducts.forEach((product) =>{ %>
-          
+          <!-- Esto tambien debes modificar, te dejo como referencia -->
           <article>
             <h4><%= product.name %></h4>
             <img src="/img/mercaderia/<%= product.image %>"  />
