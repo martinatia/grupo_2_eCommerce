@@ -14,3 +14,7 @@ Domingo 17: Reunión, Luana y Martin....
 - Martin - Luana: Modificación de estructura de la carpeta public (public/img...se agregaron carpetas)
 - Martin - Luana: modificamos la ruta del logo de la pagina en los partials del header y footer
 - Martin: Modifico product-description para que se muestre dinamicamente
+
+
+Dia 3 Febrero:
+Reunion de grupo

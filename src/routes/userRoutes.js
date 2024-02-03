@@ -1,9 +1,11 @@
 /* Responsabilidad de Lodi */
 const {Router} = require('express');
 const router = Router();
-const controller = require('../controllers/userController')
+const controller = require('../controllers/userController');
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 const path = require('path');
-const {body} = require('express-validator')
+const {body} = require('express-validator');
 
 const loginValidations = [
     body('email')
@@ -29,12 +31,13 @@ const registrationValidations = [
     .notEmpty().withMessage('Debes aceptar los Términos y Condiciones para continuar'),
     body('image').custom((value, { req }) => {
         let file = req.file;
-        let acceptedExtensions = ['jpg', 'gif', 'png'];
+        let acceptedExtensions = ['.jpg', '.gif', '.png'];
 
         if(!file){
             throw new Error('Por favor adjunta una imagen');
         }else{
             let fileExtension = path.extname(file.originalname);
+            console.log(fileExtension)
             if(!acceptedExtensions.includes(fileExtension)){
                 throw new Error(`Las exteciones permitidas son ${acceptedExtensions.join(', ')}`);
             }
@@ -66,12 +69,12 @@ const routes = {
     profiles: '/profiles',
 }
 
-router.get(routes.login, controller.login);
+router.get(routes.login, guestMiddleware, controller.login);
 router.post(routes.login, loginValidations, controller.userLogin)
-router.get(routes.registration, controller.registration)
+router.get(routes.registration, guestMiddleware, controller.registration)
 router.post(routes.registration, fileUpload.single('image'), registrationValidations, controller.newUser);
 router.get(routes.shoppingCart, controller.shoppingCart);
-router.get(routes.profiles, controller.profiles);
+router.get(routes.profiles, authMiddleware, controller.profiles);
 
 
 module.exports = router;
