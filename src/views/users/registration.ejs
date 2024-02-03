@@ -27,49 +27,49 @@
 
                 <form action='/users/registration' method="POST" enctype="multipart/form-data">
                     <div class="formu">
-                        <div class="inputs">
+                        <div class="inputs-datos">
                             <label for="name"><h3>Nombre y Apellido: </h3></label>
-                            <input type="text" name="name" placeholder="Nombre y Apellido" value="<%= locals.oldDate ? oldDate.name : null %>">
+                            <input type="text" name="name" placeholder="Nombre y Apellido" class="<%= locals.errors && errors.name ? 'error' : 'success' %>" value="<%= locals.oldDate ? oldDate.name : null %>">
                         </div>
                         <div>
                             <% if(locals.errors && errors.name){ %>
-                                <%= errors.name.msg %>        
-                            <%}%>
+                                <h6 class="mensaje-de-error"><%= errors.name.msg %></h6>
+                            <% } %>
                         </div>
-                        <div class="inputs">
+                        <div class="inputs-datos">
                             <label for="email"><h3>Correo: </h3></label>
-                            <input type="text" name="email" placeholder="Correo electrónico" value="<%= locals.oldDate ? oldDate.email : null %>">
+                            <input type="text" name="email" placeholder="Correo electrónico" class="<%= locals.errors && errors.email ? 'error' : 'success' %>" value="<%= locals.oldDate ? oldDate.email : null %>">
                         </div>
                         <div>
                             <% if(locals.errors && errors.email){ %>
-                                <%= errors.email.msg %>        
-                            <%}%>
+                                <h6 class="mensaje-de-error"><%= errors.email.msg %></h6>
+                            <% } %>
                         </div>
-                        <div class="inputs">
+                        <div class="inputs-datos">
                             <label for="emailComfirmation"><h3>Confirmar Correo: </h3></label>
-                            <input type="text" name="mailConfirmation" placeholder="Confirme su correo" value="<%= locals.oldDate ? oldDate.emailConfirmation : null %>">
+                            <input type="text" name="mailConfirmation" placeholder="Confirme su correo" class="<%= locals.errors && errors.emailConfirmation ? 'error' : 'success' %>" value="<%= locals.oldDate ? oldDate.emailConfirmation : null %>">
                         </div>
                         <div>
                             <% if(locals.errors && errors.emailConfirmation){ %>
-                                <%= errors.emailConfirmation.msg %>        
+                                <h6 class="mensaje-de-error"><%= errors.emailConfirmation.msg %></h6>
                             <%}%>
                         </div>
-                        <div class="inputs">
+                        <div class="inputs-datos">
                             <label for="password"><h3>Contraseña: </h3></label>
-                            <input type="password" name="password" placeholder="Indique la contraseña">
+                            <input type="password" name="password" placeholder="Indique la contraseña" class="<%= locals.errors && errors.password ? 'error' : 'success' %>">
                         </div>
                         <div>
                             <% if(locals.errors && errors.password){ %>
-                                <%= errors.password.msg %>        
+                                <h6 class="mensaje-de-error"><%= errors.password.msg %></h6>
                             <%}%>
                         </div>
-                        <div class="inputs">
+                        <div class="inputs-datos">
                             <label for="image"><h3>Imagen de Perfil: </h3></label>
-                            <input type="file" id="image" name="image" accept="image/*">
+                            <input type="file" id="image" name="image" accept="image/*" class="<%= locals.errors && errors.image ? 'error' : (locals.oldDate && acceptedExtensions.includes(locals.oldDate.imageExtension) ? 'success' : '') %>">
                         </div>
                         <% if(locals.errors && errors.image){ %>
-                            <%= errors.image.msg %>        
-                        <%}%>
+                            <h6 class="mensaje-de-error"><%= errors.image.msg %></h6>
+                        <% } %>
 
                         <div class="terminos-condiciones">
                             <div class="contenedor-terminos">
