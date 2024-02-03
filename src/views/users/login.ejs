@@ -29,23 +29,23 @@
           
           <div class="input">
             <i class="fas fa-envelope"></i>
-            <input type="text" placeholder="Introduzca su email" name="email" class="<%= (locals.errors && errors.email) ? 'error' : 'success' %>">
+            <input type="text" placeholder="Introduzca su email" name="email">
           </div>
             <% if(locals.errors && errors.email){ %>
-              <div class="error-message">
-                <h6><%= errors.email.msg %></h6> 
-            </div>     
+              <div>
+                <%= errors.email.msg %> 
+              </div>      
             <%}%>
           
           
           <div class="input">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Introduzca su contraseña" name="password" class="<%= (locals.errors && errors.password) ? 'error' : 'success' %>">
+            <input type="password" placeholder="Introduzca su contraseña" name="password">
           </div>
           
           <% if(locals.errors && errors.password){ %>
-            <div class="error-message">
-              <h6><%= errors.password.msg %></h6>  
+            <div>
+              <%= errors.password.msg %>  
             </div>     
           <%}%>
 

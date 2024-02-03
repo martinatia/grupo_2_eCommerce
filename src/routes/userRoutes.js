@@ -7,36 +7,36 @@ const {body} = require('express-validator')
 
 const loginValidations = [
     body('email')
-    .notEmpty().withMessage('Por favor, completa con un correo electrónico')
-    .isEmail().withMessage('Por favor, completa con un correo electrónico válido'),
+    .notEmpty().withMessage('Por favor completa con un correo electrónico')
+    .isEmail().withMessage('Por favor completa con un correo electrónico válido'),
     body('password')
-    .notEmpty().withMessage('Por favor, completa con una contraseña'),
+    .notEmpty().withMessage('Por favor completa con una contraseña'),
 ]
 
 const registrationValidations = [
     body('name')
-    .notEmpty().withMessage('Por favor, completa con tu nombre y apellido.').bail(),
+    .notEmpty().withMessage('Por favor completa con tu nombre y apellido').bail(),
     body('email')
-    .notEmpty().withMessage('Por favor, completa con un correo electrónico.')
-    .isEmail().withMessage('Por favor, completa con un correo electrónico válido.'),
+    .notEmpty().withMessage('Por favor completa con un correo electrónico')
+    .isEmail().withMessage('Por favor completa con un correo electrónico válido'),
     body('emailConfirmation')
-    .notEmpty().withMessage('Por favor, completa con un correo electrónico.')
-    .isEmail().withMessage('Por favor, completa con un email válido.'),
+    .notEmpty().withMessage('Por favor completa con un correo electrónico')
+    .isEmail().withMessage('Por favor completa con un email válido'),
     body('password')
-    .notEmpty().withMessage('Por favor, completa con una contraseña válida.')
-    .isLength({ min: 5 }).withMessage('Por favor, completa con una contraseña con mas de 5 caracteres.'),
-    body('checkbox_terminos_y_condiciones.')
+    .notEmpty().withMessage('Por favor completa con una contraseña válida')
+    .isLength({ min: 5 }).withMessage('Por favor completa con una contraseña con mas de 5 caracteres'),
+    body('checkbox_terminos_y_condiciones')
     .notEmpty().withMessage('Debes aceptar los Términos y Condiciones para continuar'),
     body('image').custom((value, { req }) => {
         let file = req.file;
         let acceptedExtensions = ['jpg', 'gif', 'png'];
 
         if(!file){
-            throw new Error('Por favor, adjunta una imagen.');
+            throw new Error('Por favor adjunta una imagen');
         }else{
             let fileExtension = path.extname(file.originalname);
             if(!acceptedExtensions.includes(fileExtension)){
-                throw new Error(`Las exteciones permitidas son ${acceptedExtensions.join(', ')}.`);
+                throw new Error(`Las exteciones permitidas son ${acceptedExtensions.join(', ')}`);
             }
         }
 
