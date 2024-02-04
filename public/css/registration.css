@@ -11,6 +11,7 @@ main{
     width: 90%;
     padding: 10px;
     margin: 0 auto;
+    margin-bottom: 80px;
 }
 header{
     background-color: #E9F1F1;
@@ -43,6 +44,7 @@ header{
     margin-top:15px;
     margin-bottom:15px;
     width: 90%;
+    border-radius: 5px;
 }
 
 
@@ -82,15 +84,38 @@ header{
 .checkbox-registro a{
     color: blue
 }
-.inputs{
+.inputs-datos{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     
   }
-  .inputs input{
-    width: 50%;
+  .inputs-datos label{
+    margin-top: 13px;
   }
+  .inputs-datos input{
+    width: 50%;
+    text-align: center;
+    border: 1px solid #ccc; /* Color de borde predeterminado */
+    border-radius: 10px;
+  }
+  
+/* Estilo para resaltar en rojo los campos con error */
+.inputs-datos input.error {
+    border: 2px solid red;
+    background-color: rgb(255, 240, 240);
+}
+
+/* Estilo para resaltar en verde los campos sin error */
+.inputs-datos input.success {
+    border: 1px solid green;
+}
+
+.mensaje-de-error { /* Cambiado de 'mensaje de error' a 'mensaje-de-error' */
+    color: red;
+    margin-bottom: 15px;
+    margin-left: 350px;
+}
 
 h2{
     margin-bottom: 30px;
@@ -105,6 +130,7 @@ footer {
     bottom: 0;
     background-color:#E9F1F1;
     text-align: center; 
+    height: 40px; 
 }
 footer p{
     margin-top: 15px;
@@ -118,8 +144,10 @@ footer p{
   }
   .botones button{
     background-color:#ffffff;
+    background-color:#161850;
     border-radius: 5px;
     color:#161850;
+    color:#ffffff;
     border:solid 1px #000000;
     font-size: 20px;
     margin-top:  15px;
@@ -131,5 +159,7 @@ footer p{
   }
   .botones button:hover{
     background-color: #161850;
-    color: #ffffff
+    color: #ffffff;
+    background-color: #ffffff;
+    color: #161850
   }

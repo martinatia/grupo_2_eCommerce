@@ -23,7 +23,28 @@ header{
   .logo img:hover {
     transform: scale(1.2);
   }
-
+  .input input {
+    text-align: center;
+    border: 1px solid #ccc; /* Color de borde predeterminado */
+    border-radius: 10px; /* Añade este estilo para redondear las esquinas */
+  }
+  
+  /* Estilo para resaltar en rojo los campos con error */
+  .input input.error {
+    border: 2px solid red;
+    background-color: rgb(255, 240, 240);
+  
+  }
+  
+  /* Estilo para resaltar en verde los campos sin error */
+  .input input.success {
+    border: 1px solid green;
+  }
+  .error-message {
+    color: red;
+    margin-bottom: 15px;
+  }
+  
 
 .contenedor-principal{
     display: flex;
@@ -48,7 +69,7 @@ header{
     margin-top: 20px;
 }
 .input{
-    margin-bottom: 15px;
+
     width: 300px;
     
 }
@@ -58,7 +79,7 @@ header{
 }
 .input input{
     text-align: center;
-    
+    margin-bottom: 15px;
 }
 
 .contenedor-formulario button{
@@ -74,20 +95,25 @@ header{
   }
   .botones button{
     background-color:#ffffff;
-    border-radius: 5px;
+    background-color:#161850;
+    border-radius: 10px;
     color:#161850;
+    color:#ffffff;
     border:solid 1px #000000;
     font-size: 20px;
     margin-top:  15px;
     margin-bottom: 15px;
     padding: 10px;
-    width: 70%;
+    width: 50%;
+    height: 30%;
     transition: background-color 800ms;
     transition: color 800ms;
   }
   .botones button:hover{
     background-color: #161850;
-    color: #ffffff
+    color: #ffffff;
+    background-color: #ffffff;
+    color: #161850
   }
 footer{
     background-color: #E9F1F1;
