@@ -210,16 +210,16 @@
     border-radius: 20px;
     position: relative;
     overflow: hidden;
-    /* Agregamos overflow: hidden para ocultar el desbordamiento de los elementos internos */
+    
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Agregamos transición para transform y box-shadow */
+  
   }
 
   main section .productos article:hover {
     transform: scale(1.1);
-    /* Agrandar el elemento al pasar el mouse */
+ 
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-    /* Cambiar la sombra al pasar el mouse */
+
   }
 
 
@@ -249,6 +249,7 @@
     padding-bottom: 5px;
     text-align: center;
   }
+
 
   main section .productos article .main-product .precioZapp {
     width: 100%;
@@ -310,6 +311,7 @@
     position: relative;
     margin-bottom: 15px;
   }
+
   .foot .logo-footer {
     padding-top: 17px;
 }
@@ -389,48 +391,33 @@
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
   }
 
-
+  .productos button {
+    display: contents;
+  }
   @media (min-width: 361px) {
-    main section article {
-      box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    }
-
     main section div.productos {
       display: flex;
-      flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
-      align-items: flex-start;
     }
+  
 
-    main section div.productos article {
-      width: 45%;
-    }
-
-    .menu {
-      display: none;
-
-    }
-
-    .opciones {
-      display: flex;
-    }
+  
+  
 
   }
-
+  
+  
   @media (min-width: 769px) {
+
     .menu {
       display: none;
+
     }
 
     .opciones {
       display: flex;
     }
-
-    main section div.productos article {
-      width: 22%;
-    }
-
     .logo-footer {
       display: flex;
     }
