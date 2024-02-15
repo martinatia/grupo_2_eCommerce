@@ -66,15 +66,17 @@ const routes = {
     login: '/login',
     registration: '/registration',
     shoppingCart: '/:id/shopping-cart',
-    profiles: '/profiles',
+    profile: '/profile',
+    logout: '/logout'
 }
 
 router.get(routes.login, guestMiddleware, controller.login);
 router.post(routes.login, loginValidations, controller.userLogin)
+router.post(routes.logout, controller.logout)
 router.get(routes.registration, guestMiddleware, controller.registration)
 router.post(routes.registration, fileUpload.single('image'), registrationValidations, controller.newUser);
 router.get(routes.shoppingCart, controller.shoppingCart);
-router.get(routes.profiles, authMiddleware, controller.profiles);
+router.get(routes.profile, authMiddleware, controller.profile);
 
 
 module.exports = router;

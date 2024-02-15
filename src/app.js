@@ -5,6 +5,7 @@ const mainRouter = require('./routes/mainRoutes');
 const productRouter = require('./routes/productRoutes');
 const userRouter = require('./routes/userRoutes');
 const rememberMiddleware = require('./middlewares/rememberMiddleware')
+const userMiddleware = require('./middlewares/userMiddleware')
 
 const path = require("path");
 
@@ -16,7 +17,6 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.set('views', path.resolve(__dirname+'/views'));
 
-
 app.use(express.urlencoded({extended :false}));
 app.use(express.json());
 
@@ -26,6 +26,7 @@ app.use(methodOverride('_method'));
 app.use(session({secret: 'Secreto en reunion mala educacion', resave: false, saveUninitialized: false}));
 app.use(cookieParser());
 app.use(rememberMiddleware)
+app.use(userMiddleware)
 
 app.use("/",mainRouter);
 app.use("/products", productRouter);

@@ -49,6 +49,10 @@
     display: none;
   }
 
+  .image-login-cierre{
+    color: #463f3f;
+  }
+
   .main-navbar {
     display: flex;
     padding: 0;

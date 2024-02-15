@@ -35,7 +35,7 @@ const controller = {
                         if(req.body.remember != undefined){
                             res.cookie('remember', userToLogin.email, { maxAge: 60000 }); 
                         }
-                        res.redirect('/users/profiles');
+                        res.redirect('/users/profile');
                     } 
                 }
             }
@@ -50,6 +50,10 @@ const controller = {
             res.render('users/login', { errors: errors.mapped()});
         }  
         
+    },
+    logout: (req, res) => {
+        req.session.destroy()
+        res.redirect('/users/login')
     },
     registration: (req,res) => {
         res.render('users/registration');
@@ -90,8 +94,8 @@ const controller = {
     shoppingCart: (req, res) => {
         res.render('users/shopping-cart');
     },
-    profiles: (req, res) => {
-        res.render('users/profiles', {user: req.session.userToLoggedIn});
+    profile: (req, res) => {
+        res.render('users/profile', {user: req.session.userToLoggedIn});
     }
 }
 module.exports = controller;

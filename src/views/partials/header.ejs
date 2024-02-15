@@ -16,12 +16,26 @@
     </div>
     <div class="opciones">
       <ul>
+        <% if(!locals.isLoggedIn){ %>
+        <li>
+          <a href="./users/login" class= "image-login-cierre" ><i class="fas fa-user"></i></a>
+        </li>
+        <% }else{ %>
         <li>
           <a href="./users/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
         </li>
         <li>
-          <a href="./users/login"><i class="fas fa-user"></i></a>
+          <i class="fas fa-user"></i>
+          <p>Hola!, <%= user.name %></p> 
         </li>
+        <li>
+        
+          <form action="/users/logout" method="POST">
+            <button type="submit">Cerrar Sesión</button>
+          </form>
+        
+        </li>
+        <% } %>
       </ul>
     </div>
     <div class="menu">

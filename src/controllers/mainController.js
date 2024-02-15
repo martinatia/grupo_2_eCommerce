@@ -9,7 +9,7 @@ const controller = {
         const inSaleProducts = products.filter((product) => product.section=="in-sale");
         const featuredProducts = products.filter((product) => product.section == "featured");
         const lastColectionProducts = products.filter((product) => product.section == "last-colection");
-        res.render('products/index', {inSaleProducts, featuredProducts, lastColectionProducts});
+        res.render('products/index', {inSaleProducts, featuredProducts, lastColectionProducts,user: req.session.userToLoggedIn});
     },
 }
 module.exports = controller;
