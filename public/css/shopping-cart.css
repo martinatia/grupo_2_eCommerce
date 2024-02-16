@@ -3,38 +3,37 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body{
   font-family: 'Roboto', sans-serif;
 }
+
 main{
   width: 90%;
   padding: 10px;
   margin: 0 auto;
 }
+
 header{
   background-color: #E9F1F1;
 }
 
-.logo {
+.logo{
   width: 100px;
   height: 100px;
-
 }
 
 .logo img{
-  
   width: 100px;
   height: 100px;
   transition: transform 0.3s ease;
 }
 
-.logo img:hover {
+.logo img:hover{
   transform: scale(1.2);
 }
 
-
-
-header button {
+header button{
   padding: 5px;
   width: 30px;
   height: 30px;
@@ -43,8 +42,8 @@ header button {
   border-radius: 70%;
   right: 25px;
   margin-top: 15px;
-  
 }
+
 header{
     display: flex;
     padding: 0;
@@ -54,10 +53,10 @@ header{
     justify-content: space-around;
     align-items: center;
 }
-.opciones {
+
+.opciones{
   display: none;
 }
-
 
 .main-header ul {
   list-style: none;
@@ -65,12 +64,14 @@ header{
   padding: 0;
   display: flex;
 }
+
 .main-header a {
   margin: 10px;
   text-decoration: none;
   color: #222222;
   padding: 5px 0;
 }
+
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -78,16 +79,15 @@ header{
 
 body main button.pago{
   background-color: #161850; 
-    border: none; 
-    color: white; 
-    padding: 15px 32px;  
-    text-decoration: none; 
-    display: inline-block;
-    font-size: 16px; 
-    margin: 4px 2px; 
-    cursor: pointer; 
-    border-radius: 18px; 
-    
+  border: none; 
+  color: white; 
+  padding: 15px 32px;  
+  text-decoration: none; 
+  display: inline-block;
+  font-size: 16px; 
+  margin: 4px 2px; 
+  cursor: pointer; 
+  border-radius: 18px;   
 }
 
 body main p i.fa-cc-visa {
@@ -114,6 +114,7 @@ body main p i.fa-cc-mastercard:hover {
 body main p i.fa-brands fa-cc-visa{
   color: #161850;
 }
+
 main section div{
   display: flex;
 }
@@ -135,23 +136,21 @@ main img {
 
 .resumen p {
     margin-bottom: 10px; 
-  }
+}
+
 .pagar{
     margin-top: 90px;
     margin-bottom: 10px;
 }
-
 
 .logo {
   width: 100px;
   height: 100px;
 }
 
-
 .main-content{
   display:flex;
   justify-content: space-between;
-
 }
 
 .main-content section .carrito{
@@ -165,17 +164,14 @@ main img {
   justify-content: space-evenly;
 }
 
-
-
 .foot .logo-footer {
   padding-top: 17px;
 }
+
 footer .foot {
   display: flex;
   background-color: #E9F1F1;
   justify-content: space-around;
-
-  padding: 10px;
   padding: 10px;
 }
 
@@ -187,9 +183,7 @@ footer .column ul {
   list-style: none;
   margin: 0;
   padding: 0;
-
 }
-
 
 footer .redes {
   width: 100%;
@@ -218,22 +212,21 @@ footer .redes {
   color: #262f75
 }
 
-
 .redes a:hover {
   background-color: #919d62;
   filter: invert(1);
-
 }
 
 footer h3, footer a, footer p{
   margin-bottom: 10px;
   font-family: 'Fira Sans', sans-serif;
-
 }
+
 footer .foot h3{
   color:#120462;
   padding-top:10px;
 }
+
 footer .ayuda li a, footer p {
   color: #262f75;
 }
@@ -242,12 +235,17 @@ footer .ayuda li a, footer p {
   text-decoration-line: none;
 }
 
+label {
+  display: block;
+  margin-bottom: 8px;
+}
 
 @media (min-width: 361px) {
   
   .menu {
     display: none;
   }
+  
   .opciones {
     display: flex;
   }
@@ -255,19 +253,18 @@ footer .ayuda li a, footer p {
 }
   
 @media (min-width: 769px) {
+  
   .menu {
     display: none;
   }
+
   .opciones {
     display: flex;
-}
-.logo-footer {
+  }
+  
+  .logo-footer {
   display: flex;
+  }
+
 }
 
-
-}
-label {
-  display: block;
-  margin-bottom: 8px;
-}

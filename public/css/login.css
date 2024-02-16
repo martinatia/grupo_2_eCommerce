@@ -3,59 +3,66 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
+
+body{
     font-family: 'Roboto', sans-serif;
 }
+
 header{
     background-color: #E9F1F1;
     width: 100%;
 }
+
 .logo{
     display: flex;
     justify-content: center;
 }
+
 .logo img{
     width: 100px;
     height: 100px;
     transition: transform 0.3s ease;
-  }
+}
 
-  .logo img:hover {
+.logo img:hover{
     transform: scale(1.2);
-  }
-  .input input {
+}
+  
+.input input{
     text-align: center;
     border: 1px solid #ccc; /* Color de borde predeterminado */
     border-radius: 10px; /* Añade este estilo para redondear las esquinas */
-  }
+}
   
-  /* Estilo para resaltar en rojo los campos con error */
-  .input input.error {
+/* Estilo para resaltar en rojo los campos con error */
+.input input.error {
     border: 2px solid red;
     background-color: rgb(255, 240, 240);
   
-  }
+}
   
-  /* Estilo para resaltar en verde los campos sin error */
-  .input input.success {
+/* Estilo para resaltar en verde los campos sin error */
+.input input.success {
     border: 1px solid green;
-  }
-  .error-message {
+}
+  
+.error-message {
     color: red;
     margin-bottom: 15px;
-  }
+}
   
-
 .contenedor-principal{
     display: flex;
     flex-direction: column;
     text-align: center;
     margin-top: 50px;
 }
+
 .contenedor-principal h3{
     color: #161850;
 
 }
+
 .contenedor-formulario{
     display: flex;
     align-items: center;
@@ -68,15 +75,16 @@ header{
 .contenedor-principal p{
     margin-top: 20px;
 }
-.input{
 
-    width: 300px;
-    
+.input{
+    width: 300px;    
 }
+
 .input i{
     margin-right: 10px;
     color: #161850;
 }
+
 .input input{
     text-align: center;
     margin-bottom: 15px;
@@ -88,12 +96,14 @@ header{
     color: white;
     border: solid 1px #161850;
 }
+
 .botones{
     display: flex;
     justify-content: space-around;
    
-  }
-  .botones button{
+}
+
+.botones button{
     background-color:#ffffff;
     background-color:#161850;
     border-radius: 10px;
@@ -108,15 +118,16 @@ header{
     height: 30%;
     transition: background-color 800ms;
     transition: color 800ms;
-  }
-  .botones button:hover{
+}
+  
+.botones button:hover{
     background-color: #161850;
     color: #ffffff;
     background-color: #ffffff;
     color: #161850
-  }
+}
 
-  footer{
+footer{
     background-color: #E9F1F1;
     width: 100%;
     bottom: 0;
@@ -133,17 +144,21 @@ footer p{
 @media (min-width:361px){
 
 }
+
 @media (min-width:769px){
     
     form{
         width: 450px;
     }
+
     .input{
         width: 100%;
         display: flex;
         justify-content: flex-start;
     }
+
     .input input{
         width: 100%;
     }
+
 }

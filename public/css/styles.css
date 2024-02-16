@@ -1,433 +1,423 @@
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  width: 90%;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+main article img {
+  width: 50%;
+  height: 50%;
+}
+
+.main-header {
+  background-color: #E9F1F1;
+  font-family: "Roboto", sans-serif;
+  padding: 0px 10px;
+  display: flex;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+
+}
+
+.logo img {
+
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.2);
+}
+
+
+.opciones {
+  display: none;
+}
+
+.image-login-cierre {
+  color: #463f3f;
+}
+
+.main-navbar {
+  display: flex;
+  padding: 0;
+  margin-top: 0px;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main-header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+}
+
+.main-header a {
+  margin: 10px;
+  text-decoration: none;
+  color: #222222;
+  padding: 5px 0;
+}
+
+.opciones {
+  text-align: justify;
+}
+
+.opciones h4 a {
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #161850;
+  padding: 5px;
+  border-radius: 50px;
+  transition: color 500ms, background-color 500ms, border 500ms, transform 300ms;
+}
+
+.opciones h4:hover a {
+  color: #E9F1F1;
+  background-color: #27374D;
+  border: 1px solid #000000;
+  transform: scale(1.4);
+}
+
+.opciones h4 a {
+  box-shadow: 0px 0px 10px rgb(146, 146, 146);
+}
+
+.opciones ul li a i {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.opciones ul li a:hover i {
+  transform: scale(1.4);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu {
+  text-align: center;
+  display: block;
+}
+
+.menu i {
+  text-align: center;
+  background-color: #161850;
+  border-radius: 5px;
+  color: #FFF;
+  font-size: 20px;
+  margin: 20px 0px 20px 0px;
+  padding: 10px;
+  width: 40px;
+}
+
+.titulos {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+
+}
+
+.titulos h3 {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-left: 10%;
+  font-size: 23px;
+}
+
+.titulos i {
+  display: flex;
+  margin-top: 10px;
+}
+
+.flechas {
+  display: flex;
+
+}
+
+.slider-frame {
+  width: 100%;
+  height: 20%;
+  overflow: hidden;
+}
+
+.slider-frame ul {
+  display: flex;
+  padding: 0;
+  width: 200%;
+  animation: slide 20s infinite alternate ease-in-out;
+}
+
+.slider-frame li {
+  width: 100%;
+  list-style: none;
+}
+
+.slider-frame img {
+  width: 100%;
+}
+
+.slider-frame video {
+  width: 100%;
+  height: 50%;
+}
+
+@keyframes slide {
+  
+  0% {
+    margin-left: 0;
   }
 
-  body {
-    font-family: 'Roboto', sans-serif;
-
+  20% {
+    margin-left: 0;
   }
 
-  main {
-    width: 90%;
-    padding: 10px;
-    margin: 0 auto;
+  25% {
+    margin-left: -100%;
   }
 
-  main article img {
-    width: 50%;
-    height: 50%;
+  45% {
+    margin-left: -100%;
   }
 
-  .main-header {
-    background-color: #E9F1F1;
-    font-family: "Roboto", sans-serif;
-    padding: 0px 10px;
+}
+
+main section .productos article {
+  background-color: #fff;
+  margin: 10px 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main section .productos article:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sec-ofertas,
+.sec-prod-destacados,
+.sec-ultima-coleccion {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.titulos i {
+  font-size: 20px;
+  border-radius: 50px;
+  border: #FFF;
+  padding: 5px;
+  transition: border-radius 0.8s ease, border 0.8s ease;
+}
+
+.titulos i:hover {
+  border-radius: 50px;
+  border: 1px solid #000000;
+}
+
+main section .productos article h4 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+main section .productos article .main-product .precioZapp {
+  width: 100%;
+  text-align: center;
+  color: #39b54a;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+main section article {
+  background-color: #fff;
+  margin: 10px 0px;
+  border-radius: 10px;
+}
+
+main section {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+main section article img {
+  width: 100%;
+}
+
+main section article i {
+  display: block;
+  font-size: 16px;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #39b54a;
+  background-color: #FFF;
+  border-radius: 50%;
+  position: absolute;
+  right: 25px;
+  top: -15px;
+}
+
+div.productos i {
+  border: 2px solid #39b54a;
+  border-radius: 50%;
+  color: #39b54a;
+  transition: transform 0.7s ease;
+}
+
+main section .productos article:hover .main-product i {
+  transform: rotate(-360deg);
+}
+
+section article div.main-product {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  border-top: 1px solid #ebebeb;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.foot .logo-footer {
+  padding-top: 17px;
+}
+
+footer .foot {
+  display: flex;
+  background-color: #E9F1F1;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.logo-footer {
+  display: none;
+}
+
+footer .column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .redes {
+  width: 100%;
+  padding: 0.5rem 8%;
+  background-color: #E9F1F1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-top: 1px solid #cdcaca;
+}
+
+.redes a {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  border: 1px solid #999898;
+  margin: 1rem;
+  background-position: center;
+  background-size: 40%;
+  transition: background-color 250ms, filter 250ms;
+}
+
+.redes i {
+  margin: 1rem;
+  color: #262f75
+}
+
+.redes a:hover {
+  background-color: #919d62;
+  filter: invert(1);
+}
+
+footer h3,
+footer a,
+footer p {
+  margin-bottom: 10px;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+footer .foot h3 {
+  color: #120462;
+  padding-top: 10px;
+}
+
+footer .ayuda li a,
+footer p {
+  color: #262f75;
+}
+
+.ayuda a {
+  text-decoration-line: none;
+}
+
+main section article {
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.productos button {
+  display: contents;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+@media (min-width: 361px) {
+  
+  main section div.productos {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
-  .logo {
-    width: 100px;
-    height: 100px;
-
-  }
-
-  .logo img{
-    
-    width: 100px;
-    height: 100px;
-    transition: transform 0.3s ease;
-  }
-
-  .logo img:hover {
-    transform: scale(1.2);
-  }
+}
 
 
-  .opciones {
+@media (min-width: 769px) {
+
+  .menu {
     display: none;
   }
 
-  .image-login-cierre{
-    color: #463f3f;
-  }
-
-  .main-navbar {
-    display: flex;
-    padding: 0;
-    margin-top: 0px;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .main-header ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-
-  }
-
-  .main-header a {
-    margin: 10px;
-    text-decoration: none;
-    color: #222222;
-    padding: 5px 0;
-  }
-
   .opciones {
-    text-align: justify;
-  }
-
-  .opciones h4 a {
-    display: inline-block;
-    margin-left: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #161850;
-    padding: 5px;
-    border-radius: 50px;
-    transition: color 500ms, background-color 500ms, border 500ms, transform 300ms;
-  }
-
-  .opciones h4:hover a {
-    color: #E9F1F1;
-    background-color: #27374D;
-    border: 1px solid #000000;
-    transform: scale(1.4);
-  }
-
-  .opciones h4 a {
-    box-shadow: 0px 0px 10px rgb(146, 146, 146);
-  }
-
-  .opciones ul li a i {
-    font-size: 18px;
-    transition: transform 0.3s ease;
-  }
-
-  .opciones ul li a:hover i {
-    transform: scale(1.4);
-  }
-
-
-  .navbar {
     display: flex;
-    justify-content: space-around;
-  }
-
-  .menu {
-    text-align: center;
-    display: block;
-  }
-
-  .menu i {
-    text-align: center;
-    background-color: #161850;
-    border-radius: 5px;
-    color: #FFF;
-    font-size: 20px;
-    margin: 20px 0px 20px 0px;
-    padding: 10px;
-    width: 40px;
-  }
-
-  .titulos {
-    display: inline-flex;
-    width: 100%;
-    justify-content: space-between;
-
-  }
-
-  .titulos h3 {
-    display: flex;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    margin-left: 10%;
-    font-size: 23px;
-
-  }
-
-  .titulos i {
-    display: flex;
-    margin-top: 10px;
-  }
-
-  .flechas {
-    display: flex;
-
-  }
-
-
-  .slider-frame {
-    width: 100%;
-    height: 20%;
-    overflow: hidden;
-  }
-
-  .slider-frame ul {
-    display: flex;
-    padding: 0;
-    width: 200%;
-    animation: slide 20s infinite alternate ease-in-out;
-  }
-
-  .slider-frame li {
-    width: 100%;
-    list-style: none;
-  }
-
-  .slider-frame img {
-    width: 100%;
-  }
-
-  .slider-frame video {
-    width: 100%;
-    height: 50%;
-  }
-
-  @keyframes slide {
-    0% {
-      margin-left: 0;
-    }
-
-    20% {
-      margin-left: 0;
-    }
-
-    25% {
-      margin-left: -100%;
-    }
-
-    45% {
-      margin-left: -100%;
-    }
-  }
-
-  main section .productos article {
-    background-color: #fff;
-    margin: 10px 0px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    position: relative;
-    overflow: hidden;
-    
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-  }
-
-  main section .productos article:hover {
-    transform: scale(1.1);
- 
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-
-  }
-
-
-
-  .sec-ofertas,
-  .sec-prod-destacados,
-  .sec-ultima-coleccion {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .titulos i {
-    font-size: 20px;
-    border-radius: 50px;
-    border: #FFF;
-    padding: 5px;
-    transition: border-radius 0.8s ease, border 0.8s ease;
-  }
-
-  .titulos i:hover {
-    border-radius: 50px;
-    border: 1px solid #000000;
-  }
-
-  main section .productos article h4 {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: center;
-  }
-
-
-  main section .productos article .main-product .precioZapp {
-    width: 100%;
-    text-align: center;
-    color: #39b54a;
-    border: 1px solid #dcdcdc;
-    border-radius: 5px;
-    text-align: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-
-  main section article {
-    background-color: #fff;
-    margin: 10px 0px;
-    border-radius: 10px;
-  }
-
-  main section {
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-
-  main section article img {
-    width: 100%;
-  }
-
-  main section article i {
-    display: block;
-    font-size: 16px;
-    padding: 5px;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #39b54a;
-    background-color: #FFF;
-    border-radius: 50%;
-    position: absolute;
-    right: 25px;
-    top: -15px;
-  }
-
-  div.productos i {
-    border: 2px solid #39b54a;
-    border-radius: 50%;
-    color: #39b54a;
-    transition: transform 0.7s ease;
-  }
-
-  main section .productos article:hover .main-product i {
-    transform: rotate(-360deg);
-  }
-
-  section article div.main-product {
-    width: 100%;
-    display: inline-flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    border-top: 1px solid #ebebeb;
-    position: relative;
-    margin-bottom: 15px;
-  }
-
-  .foot .logo-footer {
-    padding-top: 17px;
-}
-  footer .foot {
-    display: flex;
-    background-color: #E9F1F1;
-    justify-content: space-around;
-
-    padding: 10px;
-    padding: 10px;
   }
 
   .logo-footer {
-    display: none;
-  }
-
-  footer .column ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-  }
-
-
-  footer .redes {
-    width: 100%;
-    padding: 0.5rem 8%;
-    background-color: #E9F1F1;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    border-top:  1px solid #cdcaca;
   }
 
-  .redes a {
-    height: 50px;
-    width: 50px;
-    border-radius: 50px;
-    border: 1px solid #999898;
-    margin: 1rem;
-    background-position: center;
-    background-size: 40%;
-    transition: background-color 250ms, filter 250ms;
-  }
-
-  .redes i {
-    margin: 1rem;
-    color: #262f75
-  }
-
-
-  .redes a:hover {
-    background-color: #919d62;
-    filter: invert(1);
-
-  }
-
- footer h3, footer a, footer p{
-    margin-bottom: 10px;
-    font-family: 'Fira Sans', sans-serif;
-
-  }
-  footer .foot h3{
-    color:#120462;
-    padding-top:10px;
-  }
-  footer .ayuda li a, footer p {
-    color: #262f75;
 }
 
-  .ayuda a {
-    text-decoration-line: none;
-  }
-
-  main section article {
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-  }
-
-  .productos button {
-    display: contents;
-  }
-  @media (min-width: 361px) {
-    main section div.productos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-  
-
-  
-  
-
-  }
-  
-  
-  @media (min-width: 769px) {
-
-    .menu {
-      display: none;
-
-    }
-
-    .opciones {
-      display: flex;
-    }
-    .logo-footer {
-      display: flex;
-    }
-  }
-
-  label {
-    display: block;
-    margin-bottom: 8px;
-  }

@@ -3,9 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 main, header{
     font-family: 'Roboto', sans-serif;
 }
+
 main{
     text-align: center;
     width: 90%;
@@ -13,6 +15,7 @@ main{
     margin: 0 auto;
     margin-bottom: 80px;
 }
+
 header{
     background-color: #E9F1F1;
 }
@@ -21,15 +24,16 @@ header{
     display: flex;
     justify-content: center;
 }
+
 .logo img{
     width: 100px;
     height: 100px;
     transition: transform 0.3s ease;
-  }
+}
 
-  .logo img:hover {
+.logo img:hover{
     transform: scale(1.2);
-  }
+}
 
 .contenedorPrincipal{
     display:flex;
@@ -38,8 +42,8 @@ header{
     margin-top:15px;
     justify-content: center;
 }
-.formu input{
 
+.formu input{
     text-align: center;
     margin-top:15px;
     margin-bottom:15px;
@@ -47,14 +51,13 @@ header{
     border-radius: 5px;
 }
 
-
-
 .contenedorPrincipal button{
     background-color: #161850;
     color: white;
     width:50%;
     height: 10%;
 }
+
 .checkbox-registro{
     width: 50%;
     margin: 10px;
@@ -62,6 +65,7 @@ header{
     display: block;
     text-align: justify;
 }
+
 .terminos-condiciones{
     margin-bottom: 15px;
     width: 80%;
@@ -69,36 +73,41 @@ header{
     margin-left: 10%;
     display: flex;
 }
+
 .terminos-condiciones input{
     width: 10%;
 }
+
 .terminos-condiciones label{
     width: 90%;
     text-align: justify;
 
 }
+
 .contenedor-terminos{
-    display: flex;
-    
+    display: flex;    
 }
+
 .checkbox-registro a{
     color: blue
 }
+
 .inputs-datos{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
-  }
-  .inputs-datos label{
+}
+  
+.inputs-datos label{
     margin-top: 13px;
-  }
-  .inputs-datos input{
+}
+  
+.inputs-datos input{
     width: 50%;
     text-align: center;
     border: 1px solid #ccc; /* Color de borde predeterminado */
     border-radius: 10px;
-  }
+}
   
 /* Estilo para resaltar en rojo los campos con error */
 .inputs-datos input.error {
@@ -120,11 +129,13 @@ header{
 h2{
     margin-bottom: 30px;
 }
+
 .terminos-condiciones{
     margin-top: 20px;
     margin-bottom: 20px;
 }
-footer {
+
+footer{
     position: fixed;
     width: 100%;
     bottom: 0;
@@ -132,17 +143,19 @@ footer {
     text-align: center; 
     height: 40px; 
 }
+
 footer p{
     margin-top: 15px;
     margin-bottom: 15px;
     font-size: 10px;
 }
+
 .botones{
     display: flex;
     justify-content: space-around;
-   
-  }
-  .botones button{
+}
+
+.botones button{
     background-color:#ffffff;
     background-color:#161850;
     border-radius: 5px;
@@ -156,10 +169,11 @@ footer p{
     width: 30%;
     transition: background-color 800ms;
     transition: color 800ms;
-  }
-  .botones button:hover{
+}
+
+.botones button:hover{
     background-color: #161850;
     color: #ffffff;
     background-color: #ffffff;
     color: #161850
-  }
+}

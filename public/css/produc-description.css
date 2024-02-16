@@ -4,11 +4,11 @@
     box-sizing: border-box;
 }
 
-body {
+body{
     font-family: 'Roboto', sans-serif;
 }
 
-main {
+main{
     width: 90%;
     padding: 10px;
     margin: 0 auto;
@@ -17,20 +17,20 @@ main {
 main article img{
     width:50%; 
     height:50%;
-  }
-  .main-header {
+}
+
+.main-header{
     background-color: #E9F1F1;
     font-family: "Roboto", sans-serif;
     padding: 0px 10px;
     display: flex;
-  }
+}
   
-
-  .opciones {
+.opciones{
     text-align: justify;
-  }
+}
   
-  .opciones h4 a {
+.opciones h4 a{
     display: inline-block;
     margin-left: 5px;
     margin-bottom: 10px;
@@ -38,49 +38,49 @@ main article img{
     padding: 5px;
     border-radius: 50px;
     transition: color 500ms, background-color 500ms, border 500ms, transform 300ms;
-  }
+}
   
-  .opciones h4:hover a {
+.opciones h4:hover a{
     color: #E9F1F1;
     background-color: #27374D;
     border: 1px solid #000000;
     transform: scale(1.4);
-  }
+}
   
-  .opciones h4 a {
+.opciones h4 a{
     box-shadow: 0px 0px 10px rgb(146, 146, 146);
-  }
-  .opciones ul li a i {
+}
+
+.opciones ul li a i{
     font-size: 18px; 
     transition: transform 0.3s ease; 
-  }
+}
   
-  .opciones ul li a:hover i {
+.opciones ul li a:hover i{
     transform: scale(1.4); 
-  }
-  .logo {
+}
+  
+.logo{
     width: 100px;
     height: 100px;
+}
 
-  }
-
-  .logo img{
-    
+.logo img{
     width: 100px;
     height: 100px;
     transition: transform 0.3s ease;
-  }
+}
 
-  .logo img:hover {
+.logo img:hover {
     transform: scale(1.2);
-  }
+}
 
 
-  .opciones{
+.opciones{
     display: none;
-  }
+}
   
-  .main-navbar {
+.main-navbar {
     display: flex;
     padding: 0;
     margin-top: 0px;
@@ -88,36 +88,39 @@ main article img{
     width: 100%;
     justify-content: space-around;
     align-items: center;
-  }
+}
   
-  .main-header ul {
+.main-header ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
   
-  }
-  .main-header a {
+}
+  
+.main-header a {
     margin: 10px;
     text-decoration: none;
     color: #222222;
     padding: 5px 0; 
-  }
-
+}
 
 .main-content{
     display:flex;
     justify-content: space-between;
 }
+
 .main-content .contenedorFotos{
     width: 50%;
 }
+
 .main-content .contenedorDescripcion{
     width: 45%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
+
 .fotoPrimaria img{
     width: 100%;
 }
@@ -126,38 +129,42 @@ main article img{
     display: flex;
     flex-wrap: wrap;
 }
+
 .contenedorDescripcion .price{
     color:#666b91;
-
 }
 
 main .contenedorDescripcion form div{
-
     margin-bottom: 20px;
 }
+
 .colores {
     display:flex;
     justify-content: space-evenly;
-  }
-  .colores img{
+}
+
+.colores img{
     margin: 1px;
     border-radius: 5px;
     border:solid 1px #000000;
     width:20px;
     height: 20px;
-  }
+}
+
 .colores img{
     margin: 1px;
     border-radius: 5px;
     border:solid 1px #000000;
 }
+
 .boton button{
     margin-top: 10px;
     width: 50%;
     font-weight:bolder;
     padding:10px
 }
-button {
+
+button{
     background-color:#ffffff;
     border-radius: 5px;
     color:#161850;
@@ -170,36 +177,37 @@ button {
     width: 30%;
     transition: background-color 800ms;
     transition: color 800ms;
-  }
-   button:hover{
+}
+
+button:hover{
     background-color: #161850;
     color: #ffffff
-  }
-
+}
 
 footer .foot {
     display: flex;
     background-color: #E9F1F1;
     justify-content: space-around;
-  
     padding: 10px;
-    padding: 10px;
-  }
+}
   
   
-  .foot .logo-footer {
+.foot .logo-footer {
     padding-top: 17px;
-  }
-  .logo-footer{
+}
+  
+.logo-footer{
     display: none;
-  }
-  footer .column ul {
+}
+  
+footer .column ul {
     list-style: none;
     margin: 0;
     padding: 0;
   
-  }
-  footer .redes {
+}
+  
+footer .redes {
     width: 100%;
     padding: 0.5rem 8%;
     background-color: #E9F1F1;
@@ -208,9 +216,9 @@ footer .foot {
     align-items: center;
     flex-direction: row;
     border-top:  1px solid #cdcaca;
-  }
+}
   
-  .redes a {
+.redes a {
     height: 50px;
     width: 50px;
     border-radius: 50px;
@@ -219,44 +227,49 @@ footer .foot {
     background-position: center;
     background-size: 40%;
     transition: background-color 250ms, filter 250ms;
-  }
+}
   
-  .redes i {
+.redes i {
     margin: 1rem;
     color: #262f75
-  }
+}
   
-  
-  .redes a:hover {
+.redes a:hover {
     background-color: #919d62;
     filter: invert(1);
   
-  }
+}
 
-  footer h3, footer a, footer p{
+footer h3, footer a, footer p{
     margin-bottom: 10px;
     font-family: 'Fira Sans', sans-serif;
   
-  }
-  footer .foot h3{
+}
+  
+footer .foot h3{
     color:#120462;
     padding-top:10px;
-  }
-  footer .ayuda li a, footer p {
+}
+
+footer .ayuda li a, footer p {
     color: #262f75;
-  }
+}
   
-  .ayuda a {
+.ayuda a {
     text-decoration-line: none;
-  }
-  
-  
+}
+    
 main section article{
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
+label {
+  display: block;
+  margin-bottom: 8px;
+}
 
 @media (min-width: 361px) {
+    
     main section article{
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
     }
@@ -285,9 +298,11 @@ main section article{
 }
 
 @media (min-width: 769px) {
+    
     .fotoSecundaria{
         flex-direction: row;
     }
+    
     .menu {
         display: none;
     }
@@ -299,12 +314,10 @@ main section article{
     .logo-footer {
         display: flex;
     }
+    
     main section div.productos article{
         width: 22%;
     }
+
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-}
