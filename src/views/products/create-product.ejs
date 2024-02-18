@@ -12,15 +12,20 @@
 
 <body>
 
-  <%- include("../partials/header")%>
+    <%- include("../partials/header")%>
+    
     <main>
+      
       <h3>Cargá la información del producto:</h3>
+      
       <div class="contenedor-principal">
         <form action="/products/create-product" method="POST" class="formulario" enctype="multipart/form-data">
+          
           <div class="form-label">
             <label for="name">Nombre del producto:</label>
             <input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok" class="form-input" />
           </div>
+
           <div class="form-label">
             <label for="price">Precio del producto:</label>
             <input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input" />
@@ -36,25 +41,22 @@
             </select>
           </div>
 
-          
           <label>Talles:</label>
-
-
           <div class="contenedor-secundario">
             <% for(let i=32; i < 37; i++){%>
+              
               <label for="talle<%= i%>">
                 <%= i%>
-                <input type="checkbox" id="talle<%= i%>" name="talle" value="<%= i%>" />
+                <input type="checkbox" id="talle<%= i%>" name="talle" value="<%= i%>"/>
               </label>
-            <% }%>
+
+            <% } %>
           </div>
 
           
           <label>Colores:</label>
-
           <div class="contenedor-secundario">
-            <% const colores=["Rojo", "Azul" , "Verde" , "Blanco" , "Negro" , "Rosa" , "Amarillo" , "Violeta" , "Marrón"
-              ]%>
+            <% const colores=["Rojo", "Azul" , "Verde" , "Blanco" , "Negro" , "Rosa" , "Amarillo" , "Violeta" , "Marrón"]%>
               <% for(let i=0; i < colores.length; i++){%>
                 <%let color=colores[i]%>
            
@@ -62,7 +64,8 @@
                       <%=color%>
                     </label>
                     <input type="checkbox" id="color<%=color%>" name="color" value="<%=color%>" />
-                    <% } %>
+                
+              <% } %>
 
                       <!-- 
       
@@ -114,10 +117,12 @@
             <label for="description">Descipción:</label>
             <textarea name="description" id="description" class="form-input"></textarea>
           </div>
+          
           <div class="form-images">
             <label for="imagenProduto">Selecciona una imagen:</label>
             <input type="file" id="imagenProduto" name="imagenProduto" accept="image/*">
           </div>
+          
           <div>
             <label for="section">Sección</label>
             <div class="form-options">
@@ -138,13 +143,11 @@
             <button type="submit">Guardar producto</button>
           </div>
 
-          
         </form>
       </div>
 
     </main>
     <%- include("../partials/footer")%>
 </body>
-
 
 </html>

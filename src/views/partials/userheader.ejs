@@ -1,13 +1,16 @@
 <header>
+  
   <div class="logo">
     <a href="/"><img src="/img/utils/Zapp-alt.png" alt="Logo Zapp" /></a>
   </div>
 
   <% if(locals.isLoggedIn){ %>
     <ul class="logout">
+      
       <li>
         <i class="fas fa-user"></i>
       </li>
+      
       <li>
         
         <form action="/users/logout" method="POST">
@@ -15,6 +18,7 @@
         </form>
       
       </li>
+
     </ul>
   <% } %>
   
