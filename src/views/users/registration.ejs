@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="/css/registration.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,500;1,600&family=Roboto:wght@700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,500;1,600&family=Roboto:wght@700&display=swap"rel="stylesheet">
     <title>Registrarse</title>
 </head>
 
@@ -18,71 +16,79 @@
         <main>
 
             <div class="contenedorPrincipal">
+                <div class="error-terminos">
+                    <% if(locals.errors && errors.checkbox_terminos_y_condiciones){ %>
+                        <%= errors.checkbox_terminos_y_condiciones.msg %>        
+                    <%}%>
+                </div>
                 
-                <% if(locals.errors && errors.checkbox_terminos_y_condiciones){ %>
-                    <%= errors.checkbox_terminos_y_condiciones.msg %>        
-                <%}%>
-
-                <h2>Registrarse</h2>
-
                 <form action='/users/registration' method="POST" enctype="multipart/form-data">
                     <div class="formu">
+                        
+                        <h2>Registrate y comenza a usar las mejores zapatillas</h2>
+
                         <div class="inputs-datos">
-                            <label for="name"><h3>Nombre y Apellido: </h3></label>
                             <input type="text" name="name" placeholder="Nombre y Apellido" class="<%= locals.errors && errors.name ? 'error' : 'success' %>" value="<%= locals.oldDate ? oldDate.name : null %>">
                         </div>
                         <div>
                             <% if(locals.errors && errors.name){ %>
-                                <h6 class="mensaje-de-error"><%= errors.name.msg %></h6>
+                                <span class="mensaje-de-error"><%= errors.name.msg %></span>
                             <% } %>
                         </div>
+                        
                         <div class="inputs-datos">
-                            <label for="email"><h3>Correo: </h3></label>
                             <input type="text" name="email" placeholder="Correo electrónico" class="<%= locals.errors && errors.email ? 'error' : 'success' %>" value="<%= locals.oldDate ? oldDate.email : null %>">
                         </div>
                         <div>
                             <% if(locals.errors && errors.email){ %>
-                                <h6 class="mensaje-de-error"><%= errors.email.msg %></h6>
+                                <span class="mensaje-de-error"><%= errors.email.msg %></span>
                             <% } %>
                         </div>
+                        
                         <div class="inputs-datos">
-                            <label for="emailComfirmation"><h3>Confirmar Correo: </h3></label>
                             <input type="text" name="mailConfirmation" placeholder="Confirme su correo" class="<%= locals.errors && errors.emailConfirmation ? 'error' : 'success' %>" value="<%= locals.oldDate ? oldDate.emailConfirmation : null %>">
                         </div>
                         <div>
                             <% if(locals.errors && errors.emailConfirmation){ %>
-                                <h6 class="mensaje-de-error"><%= errors.emailConfirmation.msg %></h6>
+                                <span class="mensaje-de-error"><%= errors.emailConfirmation.msg %></span>
                             <%}%>
                         </div>
+                        
                         <div class="inputs-datos">
-                            <label for="password"><h3>Contraseña: </h3></label>
                             <input type="password" name="password" placeholder="Indique la contraseña" class="<%= locals.errors && errors.password ? 'error' : 'success' %>">
                         </div>
                         <div>
                             <% if(locals.errors && errors.password){ %>
-                                <h6 class="mensaje-de-error"><%= errors.password.msg %></h6>
+                                <span class="mensaje-de-error"><%= errors.password.msg %></span>
                             <%}%>
                         </div>
-                        <div class="inputs-datos">
-                            <label for="image"><h3>Imagen de Perfil: </h3></label>
-                            <input type="file" id="image" name="image" accept="image/*" class="<%= locals.errors && errors.image ? 'error' : (locals.oldDate && acceptedExtensions.includes(locals.oldDate.imageExtension) ? 'success' : '') %>">
+                        
+                        <div class="inputs-datos input-imagen">
+                            <input type="file" id="image" name="image" accept="image/*">
                         </div>
-                        <% if(locals.errors && errors.image){ %>
-                            <h6 class="mensaje-de-error"><%= errors.image.msg %></h6>
-                        <% } %>
-
+                        <div class="mensaje-de-error-imagen">
+                            <% if(locals.errors && errors.image){ %>
+                                <span class="mensaje-de-error"><%= errors.image.msg %></span>
+                            <% } %>
+                        </div>
+                        
                         <div class="terminos-condiciones">
                             <div class="contenedor-terminos">
                                 <input type="checkbox" name="checkbox_terminos_y_condiciones"
                                     id="checkbox_terminos_y_condiciones">
-                                <label for="checkbox_terminos_y_condiciones">He leído los y acepto los <a href="">
-                                        Términos y Condiciones</a> de DH Venture Capitals y su <a href="">Política de
-                                        privacidad.</a></label>
+                                <label for="checkbox_terminos_y_condiciones">
+                                    He leído los y acepto los 
+                                    <a href="">Términos y Condiciones</a> 
+                                    de DH Venture Capitals y su 
+                                    <a href="">Política de privacidad.</a>
+                                </label>
                             </div>
                         </div>
+
                         <div class="botones">
                             <button type="submit">Registrarme</button>
                         </div>
+                        
                     </div>
                 </form>
             </div>

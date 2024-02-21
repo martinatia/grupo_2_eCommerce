@@ -24,13 +24,11 @@ const controller = {
 
         if(errors.isEmpty()){
             //verificacion de usuario logueado
-            let userToLogin;
-            //HACER EN UN MIDDLEWARE
             for(let i = 0; i < users.length; i++){
                 if(users[i].email == loginData.email){
                     if(bcrypt.compareSync(loginData.password, users[i].password)){
-                        userToLogin = users[i];
-                        delete userToLogin.password;
+                        let userToLogin = users[i];
+                        userToLogin.password = userToLogin.password; 
                         req.session.userToLoggedIn = userToLogin;
                         if(req.body.remember != undefined){
                             res.cookie('remember', userToLogin.email, { maxAge: 60000 }); 
@@ -52,6 +50,7 @@ const controller = {
         
     },
     logout: (req, res) => {
+        res.clearCookie('remember');
         req.session.destroy()
         res.redirect('/users/login')
     },
