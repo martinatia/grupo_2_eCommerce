@@ -47,7 +47,7 @@ form{
 
 .formu{
     width: 300px;
-    border: 1px solid rgb(106, 100, 100);
+    border: 0.5px solid rgb(192, 187, 187);
 }
 
 .contenedorPrincipal{
@@ -98,17 +98,21 @@ form{
     margin-top: 20px;
     margin-bottom: 20px;
     justify-content: center;
-
 }
 
 .terminos-condiciones label{
-   margin-left: 10px;
+    margin-left: -20px;
+}
+
+.terminos-condiciones input{
+    margin-left: -30px;
 }
 
 
 .checkbox-registro a{
     color: blue
 }
+
 
 .inputs-datos{
     display: flex;
@@ -124,6 +128,10 @@ form{
     text-align: center;;
     border: 1px solid #ccc; /* Color de borde predeterminado */
     border-radius: 10px;
+}
+
+.input-imagen input{
+    border: none;
 }
   
 /* Estilo para resaltar en rojo los campos con error */
@@ -146,19 +154,8 @@ form{
     margin-left: -80px;
 }
 
-footer {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    background-color:#E9F1F1;
-    text-align: center; 
-    height: 40px; 
-}
-
-footer p{
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-size: 10px;
+.error-terminos{
+    margin-bottom: 20px;
 }
 
 .botones{
@@ -186,6 +183,27 @@ footer p{
 .botones button:hover{
     background-color: #161850;
     color: #ffffff;
-    background-color: #ffffff;
+    background-color: #E9F1F1;
     color: #161850
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color:#E9F1F1;
+    text-align: center; 
+    height: 40px; 
+}
+
+footer p{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+
+@media(max-width: 361px){
+    .formu{
+        border: none;
+    }
 }

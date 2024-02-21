@@ -30,6 +30,7 @@ header{
   
 .input input{
     text-align: center;
+    height: 30px;
     border: 1px solid #ccc; /* Color de borde predeterminado */
     border-radius: 10px; /* Añade este estilo para redondear las esquinas */
 }
@@ -43,24 +44,36 @@ header{
   
 /* Estilo para resaltar en verde los campos sin error */
 .input input.success {
-    border: 1px solid green;
+    border: 2px solid green;
 }
   
 .error-message {
+    display: flex;
+    text-align: initial;
+    width: 230px;
+    font-size: 11px;
     color: red;
-    margin-bottom: 15px;
+    margin-top: 2px;
+    margin-left: 32px;
+}
+
+.error-message span{
+    width: 100%;
 }
   
 .contenedor-principal{
     display: flex;
     flex-direction: column;
     text-align: center;
+    margin: auto;
     margin-top: 50px;
+    width: 350px;
+    height: 380px;
+    border: 0.5px solid rgb(192, 187, 187);
 }
 
 .contenedor-principal h3{
     color: #161850;
-
 }
 
 .contenedor-formulario{
@@ -76,18 +89,29 @@ header{
     margin-top: 20px;
 }
 
-.input{
-    width: 300px;    
-}
-
 .input i{
     margin-right: 10px;
+    margin-top: 5px;
     color: #161850;
 }
 
 .input input{
-    text-align: center;
-    margin-bottom: 15px;
+    width: 250px;
+    margin-top: 15px;
+}
+
+.remember{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.remember label{
+    margin-right: 7px;
+}
+
+.remember input{
+    margin-top: 2px;
 }
 
 .contenedor-formulario button{
@@ -111,8 +135,7 @@ header{
     color:#ffffff;
     border:solid 1px #000000;
     font-size: 20px;
-    margin-top:  15px;
-    margin-bottom: 15px;
+    margin-top:  40px;
     padding: 10px;
     width: 50%;
     height: 30%;
@@ -121,8 +144,6 @@ header{
 }
   
 .botones button:hover{
-    background-color: #161850;
-    color: #ffffff;
     background-color: #ffffff;
     color: #161850
 }
@@ -141,24 +162,8 @@ footer p{
     font-size: 12px;
 }
 
-@media (min-width:361px){
-
-}
-
-@media (min-width:769px){
-    
-    form{
-        width: 450px;
+@media(max-width: 361px){
+    .contenedor-principal{
+        border: none;
     }
-
-    .input{
-        width: 100%;
-        display: flex;
-        justify-content: flex-start;
-    }
-
-    .input input{
-        width: 100%;
-    }
-
 }

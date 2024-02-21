@@ -33,7 +33,7 @@
           </div>
             <% if(locals.errors && errors.email){ %>
               <div class="error-message">
-                <h6><%= errors.email.msg %></h6> 
+                <span><%= errors.email.msg %></span> 
               </div>      
             <%}%>
           
@@ -45,11 +45,11 @@
           
           <% if(locals.errors && errors.password){ %>
             <div class="error-message">
-              <h6><%= errors.password.msg %></h6>  
+              <span><%= errors.password.msg %></span>  
             </div>    
           <%}%>
 
-          <div>
+          <div class="remember">
             <label for="remember">Recordame</label>
             <input type="checkbox" name="remember">
           </div>
