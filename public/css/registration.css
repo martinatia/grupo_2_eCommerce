@@ -3,9 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 main, header{
     font-family: 'Roboto', sans-serif;
 }
+
 main{
     text-align: center;
     width: 90%;
@@ -13,6 +15,7 @@ main{
     margin: 0 auto;
     margin-bottom: 80px;
 }
+
 header{
     background-color: #E9F1F1;
 }
@@ -21,40 +24,58 @@ header{
     display: flex;
     justify-content: center;
 }
+
 .logo img{
     width: 100px;
     height: 100px;
     transition: transform 0.3s ease;
-  }
+}
 
-  .logo img:hover {
+.logo img:hover {
     transform: scale(1.2);
-  }
+}
+
+form{
+    margin: auto;
+}
+
+.formu{
+    width: 300px;
+    border: 1px solid rgb(106, 100, 100);
+}
 
 .contenedorPrincipal{
     display:flex;
     flex-direction: column;
-    align-items: center;
     margin-top:15px;
-    justify-content: center;
 }
-.formu input{
 
-    text-align: center;
-    margin-top:15px;
-    margin-bottom:15px;
-    width: 90%;
+h2{
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#image{
+    border: none;
+}
+
+.input-imagen{
+    border: none;
+}
+
+.contenedor-terminos input{
+    width: 15%;
     border-radius: 5px;
 }
-
-
 
 .contenedorPrincipal button{
     background-color: #161850;
     color: white;
-    width:50%;
+    width: 50%;
     height: 10%;
 }
+
 .checkbox-registro{
     width: 50%;
     margin: 10px;
@@ -62,43 +83,52 @@ header{
     display: block;
     text-align: justify;
 }
-.terminos-condiciones{
-    margin-bottom: 15px;
-    width: 80%;
-    text-align: justify;
-    margin-left: 10%;
-    display: flex;
-}
-.terminos-condiciones input{
-    width: 10%;
-}
-.terminos-condiciones label{
-    width: 90%;
-    text-align: justify;
 
-}
 .contenedor-terminos{
     display: flex;
-    
+    text-align: justify;
+    font-size: 10px;
+    justify-content: center;
+    background-color: #E9F1F1;
+    width: 250px;
+    height: 50px;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
 }
+
+.terminos-condiciones{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+
+}
+
+.terminos-condiciones label{
+   margin-left: 10px;
+}
+
+
 .checkbox-registro a{
     color: blue
 }
+
 .inputs-datos{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
-  }
-  .inputs-datos label{
-    margin-top: 13px;
-  }
-  .inputs-datos input{
-    width: 50%;
-    text-align: center;
+}
+
+.inputs-datos input{
+    width: 250px;
+    height: 30px;
+    margin: auto;
+    margin-top: 15px;
+    text-align: center;;
     border: 1px solid #ccc; /* Color de borde predeterminado */
     border-radius: 10px;
-  }
+}
   
 /* Estilo para resaltar en rojo los campos con error */
 .inputs-datos input.error {
@@ -112,18 +142,18 @@ header{
 }
 
 .mensaje-de-error { /* Cambiado de 'mensaje de error' a 'mensaje-de-error' */
+    font-size: 11px;
     color: red;
-    margin-bottom: 15px;
-    margin-left: 350px;
 }
 
-h2{
-    margin-bottom: 30px;
+.mensaje-de-error-imagen{
+    margin-left: -80px;
 }
-.terminos-condiciones{
-    margin-top: 20px;
+
+.error-terminos{
     margin-bottom: 20px;
 }
+
 footer {
     position: fixed;
     width: 100%;
@@ -132,34 +162,38 @@ footer {
     text-align: center; 
     height: 40px; 
 }
+
 footer p{
     margin-top: 15px;
     margin-bottom: 15px;
     font-size: 10px;
 }
+
 .botones{
     display: flex;
     justify-content: space-around;
    
-  }
-  .botones button{
-    background-color:#ffffff;
+}
+
+.botones button{
     background-color:#161850;
     border-radius: 5px;
-    color:#161850;
+    text-align: center;
     color:#ffffff;
     border:solid 1px #000000;
-    font-size: 20px;
+    font-size: 18px;
     margin-top:  15px;
     margin-bottom: 15px;
-    padding: 10px;
-    width: 30%;
+    padding: 5px;
+    width: 250px;
+    height: 40px;
     transition: background-color 800ms;
     transition: color 800ms;
-  }
-  .botones button:hover{
+}
+
+.botones button:hover{
     background-color: #161850;
     color: #ffffff;
     background-color: #ffffff;
     color: #161850
-  }
+}
