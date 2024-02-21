@@ -4,11 +4,9 @@
     box-sizing: border-box;
 }
 
-
 main, header{
     font-family: 'Roboto', sans-serif;
 }
-
 
 main{
     text-align: center;
@@ -17,7 +15,6 @@ main{
     margin: 0 auto;
     margin-bottom: 80px;
 }
-
 
 header{
     background-color: #E9F1F1;
@@ -37,6 +34,11 @@ header{
 .logo img:hover {
     transform: scale(1.2);
 }
+
+h2{
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 18px;
 }
 
 form{
@@ -52,24 +54,14 @@ form{
     display:flex;
     flex-direction: column;
     margin-top:15px;
+    justify-content: center;
 }
+.formu input{
 
-h2{
-    font-size: 18px;
-    margin-top: 20px;
-    margin-bottom: 30px;
-}
-
-#image{
-    border: none;
-}
-
-.input-imagen{
-    border: none;
-}
-
-.contenedor-terminos input{
-    width: 15%;
+    text-align: center;
+    margin-top:15px;
+    margin-bottom:15px;
+    width: 90%;
     border-radius: 5px;
 }
 
@@ -152,10 +144,6 @@ h2{
 
 .mensaje-de-error-imagen{
     margin-left: -80px;
-}
-
-.error-terminos{
-    margin-bottom: 20px;
 }
 
 footer {
