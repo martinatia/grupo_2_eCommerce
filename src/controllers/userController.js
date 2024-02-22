@@ -38,7 +38,7 @@ const controller = {
                 }
             }
 
-            if(!userToLogin){
+            if(!req.session.userToLoggedIn){
                 res.render('users/login', {errors: {email: {msg: 'El correo electrónico no se encuentra en nuestra base de datos'}}});
             }
 
