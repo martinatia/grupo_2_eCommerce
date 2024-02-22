@@ -67,13 +67,15 @@ const routes = {
     registration: '/registration',
     shoppingCart: '/:id/shopping-cart',
     profile: '/profile',
-    logout: '/logout'
+    logout: '/logout',
+    saveData: '/profile'
 }
 
 router.get(routes.login, guestMiddleware, controller.login);
-router.post(routes.login, loginValidations, controller.userLogin)
-router.post(routes.logout, controller.logout)
-router.get(routes.registration, guestMiddleware, controller.registration)
+router.post(routes.login, loginValidations, controller.userLogin);
+router.post(routes.logout, controller.logout);
+router.put(routes.saveData, fileUpload.single('profile-image'), controller.saveData);
+router.get(routes.registration, guestMiddleware, controller.registration);
 router.post(routes.registration, fileUpload.single('image'), registrationValidations, controller.newUser);
 router.get(routes.shoppingCart, controller.shoppingCart);
 router.get(routes.profile, authMiddleware, controller.profile);

@@ -54,6 +54,23 @@ const controller = {
         req.session.destroy()
         res.redirect('/users/login')
     },
+    saveData: (req, res) => {
+        console.log(req.body)
+        
+        
+        
+         const dataUserProfile = {
+            name: req.body['profile-nombre'],
+            email: req.body['profile-email'],
+            adress: req.body['profile-adress'],
+            country: req.body['profile-country'],
+            province: req.body['profile-province']
+
+        }
+        
+
+        res.send(dataUserProfile)
+    },
     registration: (req,res) => {
         res.render('users/registration');
     },

@@ -11,11 +11,102 @@
     <%- include("../partials/userHeader")%>
 
     <main>
-        <h2> Bienvenido <%= user.name %></h2>
+        <div class="profile-image">
+            <img src="/img/usersImageProfile/<%= user.image %>" alt="imagen de usuario">
+        </div>
+        
+        <div class="form">
+            <form action="/users/profile?_method=PUT" method="POST" enctype="multipart/form-data">
 
-        <img src="/img/usersImageProfile/<%= user.image %>" alt="imagen de usuario">
+                <h2> Bienvenido <%= user.name %></h2>
+                
+                <div class="profile">
+    
+                    <label for="profile-nombre">Nombre Completo:</label>
+                    <input type="text" name="profile-nombre" id="profile-nombre" value="<%= user.name %>" placeholder="Ej: Jose Marcelo Lodi">
+    
+                </div>
+                
+                <div class="profile">
+    
+                    <label for="profile-email">Correo electrónico:</label>
+                    <input type="email" name="profile-email" id="profile-email" value="<%= user.email %>" placeholder="Ej: joselodi12@gmail.com">
+    
+                </div>
+    
+                <div class="profile">
+                    
+                    <label for="profile-adress">Domicilio: </label>
+                    <input type="text" name="profile-adress" id="profile-adress" value="" placeholder="Ej: Rivadavia 668">
+    
+                </div>
+    
+                <div class="profile" id="profile-password">
+                    <label for="">Cambiar contraseña</label>
+                    
+                    <div class="profile-password">
+                        <input type="password" name="profile-password-current" id="profile-password-current" placeholder="Contraseña actual">
+                        <input type="password" name="profile-password-new" id="profile-password-new" placeholder="Contraseña nueva">
+                    </div>
+    
+                </div>
+    
+                <div class="profile-select">
+                    <Label>Pais de Nacimiento:</Label>
+                    <Select name="profile-country" id="profile-country">
+                        
+                        <option value="">---------------</option>
+                        <% const countries = ['Argentina', 'Brasil', 'Uruguay'] %>
+    
+                        <% for( const country of countries){ %>
+    
+                            <option value="<%= country %>"><%= country %></option>
+    
+                        <% } %>
+    
+                    </Select>
+                </div>
+    
+                <div class="profile-select">
+                    <Label>Provincia:</Label>
+                    <Select name="profile-province" id="profile-province">
+                        
+                        <option value="">---------------</option>
+                        <% const provinces = ['Santiago del Estero', 'Córdoba', 'Buenos Aires', 'Tucumán'] %>
+    
+                        <% for( const province of provinces){ %>
+    
+                            <option value="<%= province %>"><%= province %></option>
+    
+                        <% } %>
+                        
+                    </Select>
+                </div>
+    
+    
+    
+                <div class="profile-select">
+                    <input type="file" name="profile-image" id="image-profile">
+                </div>
+                
+                <div class="bt-box-save">
+                    <button class="bt-save" type="submit">Guardar</button>
+                </div>
+                
+    
+            </form>
 
-        <p>Correo electrónico: <%= user.email %></p>
+            <div class="profile-linea">
+                <div class="profile-line-left"></div>
+                <div class="profile-line-words">o</div>
+                <div class="profile-line-right"></div>
+            </div>
+
+            <form class="profile-cerrar-sesion" action="/users/logout" method="POST">
+                <button type="submit">Cerrar Sesión</button>
+            </form>
+        </div>
+        
     </main>
     
     <footer><p>Copyright® 2023 DH Venture Capitals. Todos los derechos reservados</p></footer>

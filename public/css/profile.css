@@ -24,6 +24,10 @@ header{
   margin-right: 20px;
 }
 
+.logout li i{
+    font-size: 20px;
+}
+
 .logout button{
   border: none;
 } 
@@ -43,12 +47,222 @@ header{
     transform: scale(1.2);
 }
 
+main{
+    display: flex;
+}
+
 main img{
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     margin: 20px;
 }
 
+form{
+    margin-left: 30px;
+
+}
+
+form h2{
+    margin-top: 20px;
+}
+
+.profile{
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+
+.profile input{
+    margin-left: 20px;
+}
+
+.profile label{
+    font-size: 20px;
+}
+
+.profile-select{
+    display: flex;
+    margin-top: 15px;
+}
+
+.profile-select label{
+    font-size: 20px;
+}
+
+#profile-country{
+    margin-left: 11px;
+}
+
+#profile-province{
+    margin-left: 101px;
+}
+
+.profile-select input{
+    width: 250px;
+    height: 25px;
+    border: none;
+}
+
+.profile-select select{
+    height: 25px;
+}
+
+.profile input{
+    width: 250px;
+    height: 25px;
+    padding-left: 5px;
+}
+
+.profile-password{
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-password input{
+    margin-bottom: 10px;
+}
+
+#profile-password{
+    background-color: #E9F1F1;
+    margin-left: -5px;
+    margin-right: -5px;
+    padding: 10px;
+    border: 1px solid rgb(130, 128, 128);
+    border-radius: 5px;
+}
+
+.bt-box-save{
+    display: flex;
+    justify-content: center;
+}
+
+.bt-save{
+    margin-top: 70px;
+    width: 150px;
+    height: 30px;
+    background-color: #161850;
+    color: white;
+}
+
+
+.profile-linea{
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    width: 70%;
+    margin-top: 30px;
+    position: relative;
+}
+
+.profile-line-left{
+    width: 45%;
+    border: 1px solid rgb(197, 188, 188);
+    margin-top: 20px;
+}
+
+.profile-line-words{
+    position: absolute;
+    top: 10px;
+}
+
+.profile-line-right{
+    width: 45%;
+    border: 1px solid rgb(197, 188, 188);
+    margin-top: 20px;
+}
+
+.profile-cerrar-sesion{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.profile-cerrar-sesion button{
+    margin-top: 30px;
+    width: 150px;
+    height: 30px;
+    background-color: #161850;
+    color: white;
+}
+
 footer{
-    margin-top: 300px;
+    background-color: #E9F1F1;
+    height: 40px;
+    text-align: center;
+
+}
+
+footer p{
+    margin-top: 50px;
+    font-size: 12px;
+}
+
+
+@media(max-width: 800px){
+    main{
+        flex-direction: column;
+        
+    }
+
+    .form{
+        border: 3px solid #161850;
+        width: 380px;
+        margin: auto;
+    }
+
+    form{
+        margin: auto;
+        width: 300px;
+    }
+
+    form h2{
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .profile-image{
+        display: flex;
+        justify-content: center;
+    }
+
+    .profile input{
+        width: 150px
+    };
+
+    .profile-select input{
+        width: 150px;
+    }
+
+    .profile-select label{
+        font-size: 15px;
+    }
+
+    .profile label{
+        font-size: 15px ;
+    }
+
+    #profile-country{
+        padding-right: 48.5px;
+    }
+
+    #profile-province{
+        margin-left: 78.5px;
+    }
+
+    .logout i{
+        display: none;
+    }
+
+    .logout button{
+        display: none;
+    }
+}
+
+@media(max-width: 380px){
+    .form{
+        border: none;
+        width: 360px;
+    }
+
 }

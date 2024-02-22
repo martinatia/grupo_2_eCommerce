@@ -17,12 +17,6 @@
 
             <div class="contenedorPrincipal">
                 
-                <div class="error-terminos">
-                    <% if(locals.errors && errors.checkbox_terminos_y_condiciones){ %>
-                        <%= errors.checkbox_terminos_y_condiciones.msg %>        
-                    <%}%>
-                </div>
-                
                 <form action='/users/registration' method="POST" enctype="multipart/form-data">
                     <div class="formu">
                         
@@ -88,6 +82,12 @@
 
                         <div class="botones">
                             <button type="submit">Registrarme</button>
+                        </div>
+
+                        <div class="error-terminos">
+                            <% if(locals.errors && errors.checkbox_terminos_y_condiciones){ %>
+                                <%= errors.checkbox_terminos_y_condiciones.msg %>        
+                            <%}%>
                         </div>
                         
                     </div>
