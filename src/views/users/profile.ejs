@@ -18,12 +18,19 @@
         <div class="form">
             <form action="/users/profile?_method=PUT" method="POST" enctype="multipart/form-data">
 
-                <h2> Bienvenido <%= user.name %></h2>
+                <h2> Bienvenido <%= user.firstname %></h2>
                 
                 <div class="profile">
     
-                    <label for="profile-nombre">Nombre Completo:</label>
-                    <input type="text" name="profile-nombre" id="profile-nombre" value="<%= user.name %>" placeholder="Ej: Jose Marcelo Lodi">
+                    <label for="profile-nombre">Nombre:</label>
+                    <input type="text" name="profile-nombre" id="profile-nombre" value="<%= user.firstname %>" placeholder="Ej: Jose Marcelo">
+    
+                </div>
+
+                <div class="profile">
+    
+                    <label for="profile-nombre">Apellido:</label>
+                    <input type="text" name="profile-apellido" id="profile-nombre" value="<%= user.surname %>" placeholder="Ej: Lodi">
     
                 </div>
                 
@@ -33,6 +40,13 @@
                     <input type="email" name="profile-email" id="profile-email" value="<%= user.email %>" placeholder="Ej: joselodi12@gmail.com">
     
                 </div>
+
+                <div>
+                    <% if(locals.errors && errors['profile-email']){ %>
+                        <span class="mensaje-de-error"><%= errors['profile-email'].msg %></span>
+                    <% } %>
+                </div>
+
     
                 <div class="profile">
                     
@@ -46,8 +60,24 @@
                     
                     <div class="profile-password">
                         <input type="password" name="profile-password-current" id="profile-password-current" placeholder="Contraseña actual">
+
+                        <div>
+                            <% if(locals.errors && errors['profile-password-current']){ %>
+                                <span class="mensaje-de-error"><%= errors['profile-password-current'].msg %></span>
+                            <% } %>
+                        </div>
+
                         <input type="password" name="profile-password-new" id="profile-password-new" placeholder="Contraseña nueva">
+
+                        <div>
+                            <% if(locals.errors && errors['profile-password-new']){ %>
+                                <span class="mensaje-de-error"><%= errors['profile-password-new'].msg %></span>
+                            <% } %>
+                        </div>
+
                     </div>
+
+                    
     
                 </div>
     
@@ -83,24 +113,22 @@
                     </Select>
                 </div>
     
-    
-    
                 <div class="profile-select">
                     <input type="file" name="profile-image" id="image-profile">
                 </div>
-                
+
+               
                 <div class="bt-box-save">
                     <button class="bt-save" type="submit">Guardar</button>
                 </div>
                 
+                <div class="profile-linea">
+                    <div class="profile-line-left"></div>
+                    <div class="profile-line-words">o</div>
+                    <div class="profile-line-right"></div>
+                </div>
     
             </form>
-
-            <div class="profile-linea">
-                <div class="profile-line-left"></div>
-                <div class="profile-line-words">o</div>
-                <div class="profile-line-right"></div>
-            </div>
 
             <form class="profile-cerrar-sesion" action="/users/logout" method="POST">
                 <button type="submit">Cerrar Sesión</button>

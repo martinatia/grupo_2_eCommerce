@@ -16,8 +16,10 @@ const loginValidations = [
 ]
 
 const registrationValidations = [
-    body('name')
-    .notEmpty().withMessage('Por favor, completa con tu nombre y apellido.').bail(),
+    body('firstname')
+    .notEmpty().withMessage('Por favor, completa con tu nombre.').bail(),
+    body('surname')
+    .notEmpty().withMessage('Por favor, completa con tu apellido.'),
     body('email')
     .notEmpty().withMessage('Por favor, completa con un correo electrónico.')
     .isEmail().withMessage('Por favor, completa con un correo electrónico válido.'),
@@ -37,7 +39,40 @@ const registrationValidations = [
             throw new Error('Por favor, adjunta una imagen.');
         }else{
             let fileExtension = path.extname(file.originalname);
-            console.log(fileExtension)
+            if(!acceptedExtensions.includes(fileExtension)){
+                throw new Error(`Las exteciones permitidas son ${acceptedExtensions.join(', ')}.`);
+            }
+        }
+
+        return true;
+    })
+]
+
+const profileValidations = [
+    body('profile-email')
+    .isEmail().withMessage('Por favor, completa con un correo electrónico válido.'),
+    body('profile-password-current')
+    .notEmpty().withMessage('Por favor, complete su contraseña para realizar los cambios')
+    .isLength({ min: 8 }).withMessage('Por favor, completa con una contraseña con mas de 8 caracteres.'),
+    body('profile-password-new').custom((value, { req }) => {
+        // Si el campo profile-password-new está vacío, no se realiza la validación
+        if (value === '') {
+            return true;
+        }
+        
+        if (value.length < 8) {
+            throw new Error('La nueva contraseña debe tener al menos 8 caracteres');
+        }
+        return true;
+    }),
+    body('profile-image').custom((value, { req }) => {
+        
+        if(!(value == undefined)){
+
+            let file = req.file;
+            let acceptedExtensions = ['.jpg', '.gif', '.png'];
+            let fileExtension = path.extname(file.originalname);
+
             if(!acceptedExtensions.includes(fileExtension)){
                 throw new Error(`Las exteciones permitidas son ${acceptedExtensions.join(', ')}.`);
             }
@@ -62,7 +97,7 @@ const multerDiskStorage = multer.diskStorage({
 const fileUpload = multer({ storage: multerDiskStorage });
 
 const routes = {
-    /* aqui iria otra pagina como editUser, que reciba un id/edit */
+    
     login: '/login',
     registration: '/registration',
     shoppingCart: '/:id/shopping-cart',
@@ -74,7 +109,7 @@ const routes = {
 router.get(routes.login, guestMiddleware, controller.login);
 router.post(routes.login, loginValidations, controller.userLogin);
 router.post(routes.logout, controller.logout);
-router.put(routes.saveData, fileUpload.single('profile-image'), controller.saveData);
+router.put(routes.saveData, fileUpload.single('profile-image'),profileValidations, controller.saveData);
 router.get(routes.registration, guestMiddleware, controller.registration);
 router.post(routes.registration, fileUpload.single('image'), registrationValidations, controller.newUser);
 router.get(routes.shoppingCart, controller.shoppingCart);

@@ -23,11 +23,21 @@
                         <h2>Registrate y comenza a usar las mejores zapatillas</h2>
 
                         <div class="inputs-datos">
-                            <input type="text" name="name" placeholder="Nombre y Apellido" class="<%= locals.errors && errors.name ? 'error' : 'success' %>" value="<%= locals.oldDate ? oldDate.name : null %>">
+                            <input type="text" name="firstname" placeholder="Nombre" class="<%= locals.errors && errors.firstname ? 'error' : 'success' %>" value="<%= locals.oldDate ? oldDate.firstname : null %>">
                         </div>
                         <div>
-                            <% if(locals.errors && errors.name){ %>
-                                <span class="mensaje-de-error"><%= errors.name.msg %></span>
+                            <% if(locals.errors && errors.firstname){ %>
+                                <span class="mensaje-de-error"><%= errors.firstname.msg %></span>
+                            <% } %>
+                        </div>
+
+                        <div class="inputs-datos">
+                            <input type="text" name="surname" placeholder="Apellido" class="<%= locals.errors && errors.surname ? 'error' : 'success' %>" value="<%= locals.oldDate ? oldDate.surname : null %>">
+                        </div>
+
+                        <div>
+                            <% if(locals.errors && errors.surname){ %>
+                                <span class="mensaje-de-error"><%= errors.surname.msg %></span>
                             <% } %>
                         </div>
                         
@@ -41,7 +51,7 @@
                         </div>
                         
                         <div class="inputs-datos">
-                            <input type="text" name="mailConfirmation" placeholder="Confirme su correo" class="<%= locals.errors && errors.emailConfirmation ? 'error' : 'success' %>" value="<%= locals.oldDate ? oldDate.emailConfirmation : null %>">
+                            <input type="text" name="emailConfirmation" placeholder="Confirme su correo" class="<%= locals.errors && errors.emailConfirmation ? 'error' : 'success' %>" value="<%= locals.oldDate ? oldDate.emailConfirmation : null %>">
                         </div>
                         <div>
                             <% if(locals.errors && errors.emailConfirmation){ %>

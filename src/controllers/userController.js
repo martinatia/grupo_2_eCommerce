@@ -28,18 +28,21 @@ const controller = {
                 if(users[i].email == loginData.email){
                     if(bcrypt.compareSync(loginData.password, users[i].password)){
                         let userToLogin = users[i];
-                        userToLogin.password = userToLogin.password; 
+                        req.session.userProfilePassword = userToLogin.password;
+                        userToLogin.password = ''; 
                         req.session.userToLoggedIn = userToLogin;
                         if(req.body.remember != undefined){
                             res.cookie('remember', userToLogin.email, { maxAge: 60000 }); 
                         }
                         res.redirect('/users/profile');
+                    }else{
+                        res.render('users/login', {errors: {password: {msg: 'Correo o contraseña incorrecta'}}});
                     } 
                 }
             }
 
             if(!req.session.userToLoggedIn){
-                res.render('users/login', {errors: {email: {msg: 'El correo electrónico no se encuentra en nuestra base de datos'}}});
+                res.render('users/login', {errors: {email: {msg: 'Correo o contraseña incorrecta'}}});
             }
 
           
@@ -55,21 +58,104 @@ const controller = {
         res.redirect('/users/login')
     },
     saveData: (req, res) => {
-        console.log(req.body)
         
-        
-        
-         const dataUserProfile = {
-            name: req.body['profile-nombre'],
+        const dataUserProfile = {
+            firstname: req.body['profile-nombre'],
+            surname: req.body['profile-surname'],
             email: req.body['profile-email'],
             adress: req.body['profile-adress'],
+            passwordCurrent: req.body['profile-password-current'],
+            passwordNew: req.body['profile-password-new'],
             country: req.body['profile-country'],
-            province: req.body['profile-province']
-
+            province: req.body['profile-province'],
+            image: req.body['profile-image']
         }
-        
 
-        res.send(dataUserProfile)
+        const errors = validationResult(req);
+
+        if(!(dataUserProfile.passwordCurrent == "") && bcrypt.compareSync(dataUserProfile.passwordCurrent, req.session.userProfilePassword)){
+            
+            if(errors.isEmpty()){
+            
+                if(req.session.userToLoggedIn){
+
+                    for(let i = 0; i < users.length; i++){
+                        
+                        if(users[i].email === req.session.userToLoggedIn.email){
+                            // valida si existe cada una de las propiedades del objeto dataUserProfile que seria los campos que quiere modificar el usuario en su perfil
+                            if(dataUserProfile.firstname){
+                                users[i].firstname = dataUserProfile.firstname;
+                            }
+                            
+                            if(dataUserProfile.surname){
+                                users[i].surname = dataUserProfile.surname;
+                            }
+
+                            if(dataUserProfile.email){
+                                users[i].email = dataUserProfile.email;
+                            }
+                        
+                            if(dataUserProfile.passwordNew){
+                                const hashedPasswordProfile = bcrypt.hashSync(dataUserProfile.passwordNew, 10);
+                                users[i].password = hashedPasswordProfile;
+                            }else{
+                                users[i].password = req.session.userProfilePassword;
+                            }
+
+                            if(dataUserProfile.country){
+                                users[i].country = dataUserProfile.country;
+                            }
+
+                            if(dataUserProfile.province){
+                                users[i].province = dataUserProfile.province;
+                            }   
+                        
+                            if(dataUserProfile.image){
+                                users[i].image = dataUserProfile.image;
+                            }
+                            
+                            break;
+
+                        }
+                    }
+
+                    fs.writeFileSync(usersFilePath, JSON.stringify(users));
+
+                    req.session.userProfilePassword = '';
+
+                    if(dataUserProfile.passwordNew){
+
+                        res.clearCookie('remember');
+                        req.session.destroy()
+                        res.redirect('/users/login')
+
+                    }else{
+
+                        res.redirect('/users/profile');
+
+                    }
+
+                    
+
+                }else{
+
+                    res.render('users/profile', {errors: {['profile-password-current']: {msg: 'Credenciales incorrectas'}}, user: req.session.userToLoggedIn});
+
+                }
+
+                
+            }else{
+
+                res.render('users/profile', { errors: errors.mapped(), user: req.session.userToLoggedIn}); 
+
+            }
+            
+        }else{
+
+            res.render('users/profile', {errors: {['profile-password-current']: {msg: 'Credenciales incorrectas'}}, user: req.session.userToLoggedIn});
+            
+        }  
+        
     },
     registration: (req,res) => {
         res.render('users/registration');
@@ -87,7 +173,8 @@ const controller = {
             const newUser = {
                 //crea un ID mas
                 id: lastIdSaved + 1,
-                name: req.body.name,
+                firstname: req.body.firstname,
+                surname: req.body.surname,
                 email: req.body.email,
                 mailConfirmation: req.body.mailConfirmation,
                 password: hashedPassword,
@@ -98,7 +185,7 @@ const controller = {
             // actualizar el archivo users.json
             fs.writeFileSync(usersFilePath, JSON.stringify(users));
 
-            res.redirect('/');
+            res.redirect('/users/login');
 
         }else{
 
