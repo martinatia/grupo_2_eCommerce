@@ -73,6 +73,14 @@ form h2{
     justify-content: space-between;
 }
 
+.box-mensaje-de-error{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 30px;
+}
+
+
 .mensaje-de-error { 
     font-size: 11px;
     color: red;

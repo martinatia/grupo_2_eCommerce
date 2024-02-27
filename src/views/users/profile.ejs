@@ -12,7 +12,7 @@
 
     <main>
         <div class="profile-image">
-            <img src="/img/usersImageProfile/user.image !== undefined?<%= user.image %>:avatarDefault.png" alt="imagen de usuario">
+            <img src="/img/usersImageProfile/<%= user.image %>" alt="imagen de usuario">
         </div>
         
         <div class="form">
@@ -69,9 +69,13 @@
 
                         <input type="password" name="profile-password-new" id="profile-password-new" placeholder="Contraseña nueva">
 
-                        <div>
+                        <div class="box-mensaje-de-error">
                             <% if(locals.errors && errors['profile-password-new']){ %>
-                                <span class="mensaje-de-error"><%= errors['profile-password-new'].msg %></span>
+                                <% for(let i = 0; i < errors['profile-password-new'].msg.length; i++){%>
+                                    <span class="mensaje-de-error">
+                                        <%= errors['profile-password-new'].msg %>
+                                    </span>
+                                <% } %>
                             <% } %>
                         </div>
 

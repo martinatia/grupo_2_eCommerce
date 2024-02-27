@@ -17,33 +17,42 @@ const loginValidations = [
 
 const registrationValidations = [
     body('firstname')
-    .notEmpty().withMessage('Por favor, completa con tu nombre.').bail(),
+    .notEmpty().withMessage('Por favor, completa con tu nombre.').bail()
+    .isLength({ min: 2 }).withMessage('Por favor completa con un nombre válido'),
     body('surname')
-    .notEmpty().withMessage('Por favor, completa con tu apellido.'),
+    .notEmpty().withMessage('Por favor, completa con tu apellido.')
+    .isLength({ min: 2 }).withMessage('Por favor completa con un nombre válido'),
     body('email')
     .notEmpty().withMessage('Por favor, completa con un correo electrónico.')
     .isEmail().withMessage('Por favor, completa con un correo electrónico válido.'),
     body('emailConfirmation')
     .notEmpty().withMessage('Por favor, completa con un correo electrónico.')
     .isEmail().withMessage('Por favor, completa con un email válido.'),
-    body('password')
-    .notEmpty().withMessage('Por favor, completa con una contraseña válida.')
-    .isLength({ min: 5 }).withMessage('Por favor, completa con una contraseña con mas de 5 caracteres.'),
+    body('password').matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)
+    .withMessage([
+        'La Contraseña debe tener al menos:',
+        '1. una mayúscula.',
+        '2. una minúscula.',
+        '3. un número.',
+        '4. un caracter especial de estos @$!%*?&.',
+        '5. 8 caracteres de longitud.'
+      ]),
     body('checkbox_terminos_y_condiciones')
     .notEmpty().withMessage('Debes aceptar los Términos y Condiciones para continuar.'),
     body('image').custom((value, { req }) => {
-        let file = req.file;
-        let acceptedExtensions = ['.jpg', '.gif', '.png'];
+            
+            if(!(value == undefined)){
+                
+                let file = req.file;
+                let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
 
-        if(!file){
-            throw new Error('Por favor, adjunta una imagen.');
-        }else{
-            let fileExtension = path.extname(file.originalname);
-            if(!acceptedExtensions.includes(fileExtension)){
-                throw new Error(`Las exteciones permitidas son ${acceptedExtensions.join(', ')}.`);
+                let fileExtension = path.extname(file.originalname);
+                if(!acceptedExtensions.includes(fileExtension)){
+                    throw new Error(`Las exteciones permitidas son ${acceptedExtensions.join(', ')}.`);
+                }
+
             }
-        }
-
+            
         return true;
     })
 ]
@@ -59,10 +68,15 @@ const profileValidations = [
         if (value === '') {
             return true;
         }
-        
-        if (value.length < 8) {
-            throw new Error('La nueva contraseña debe tener al menos 8 caracteres');
+
+        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  
+        // Verificar si la contraseña cumple con el patrón
+        if (!regex.test(value)) {
+            throw new Error('La contraseña no cumple con los criterios requeridos');
         }
+        
+        
         return true;
     }),
     body('profile-image').custom((value, { req }) => {
@@ -70,7 +84,7 @@ const profileValidations = [
         if(!(value == undefined)){
 
             let file = req.file;
-            let acceptedExtensions = ['.jpg', '.gif', '.png'];
+            let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
             let fileExtension = path.extname(file.originalname);
 
             if(!acceptedExtensions.includes(fileExtension)){
@@ -109,7 +123,7 @@ const routes = {
 router.get(routes.login, guestMiddleware, controller.login);
 router.post(routes.login, loginValidations, controller.userLogin);
 router.post(routes.logout, controller.logout);
-router.put(routes.saveData, fileUpload.single('profile-image'),profileValidations, controller.saveData);
+router.put(routes.saveData, fileUpload.single('profile-image'), profileValidations, controller.saveData);
 router.get(routes.registration, guestMiddleware, controller.registration);
 router.post(routes.registration, fileUpload.single('image'), registrationValidations, controller.newUser);
 router.get(routes.shoppingCart, controller.shoppingCart);

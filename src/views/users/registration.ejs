@@ -25,7 +25,7 @@
                         <div class="inputs-datos">
                             <input type="text" name="firstname" placeholder="Nombre" class="<%= locals.errors && errors.firstname ? 'error' : 'success' %>" value="<%= locals.oldDate ? oldDate.firstname : null %>">
                         </div>
-                        <div>
+                        <div class="box-mensaje-de-error">
                             <% if(locals.errors && errors.firstname){ %>
                                 <span class="mensaje-de-error"><%= errors.firstname.msg %></span>
                             <% } %>
@@ -35,7 +35,7 @@
                             <input type="text" name="surname" placeholder="Apellido" class="<%= locals.errors && errors.surname ? 'error' : 'success' %>" value="<%= locals.oldDate ? oldDate.surname : null %>">
                         </div>
 
-                        <div>
+                        <div class="box-mensaje-de-error">
                             <% if(locals.errors && errors.surname){ %>
                                 <span class="mensaje-de-error"><%= errors.surname.msg %></span>
                             <% } %>
@@ -44,7 +44,7 @@
                         <div class="inputs-datos">
                             <input type="text" name="email" placeholder="Correo electrónico" class="<%= locals.errors && errors.email ? 'error' : 'success' %>" value="<%= locals.oldDate ? oldDate.email : null %>">
                         </div>
-                        <div>
+                        <div class="box-mensaje-de-error">
                             <% if(locals.errors && errors.email){ %>
                                 <span class="mensaje-de-error"><%= errors.email.msg %></span>
                             <% } %>
@@ -53,7 +53,7 @@
                         <div class="inputs-datos">
                             <input type="text" name="emailConfirmation" placeholder="Confirme su correo" class="<%= locals.errors && errors.emailConfirmation ? 'error' : 'success' %>" value="<%= locals.oldDate ? oldDate.emailConfirmation : null %>">
                         </div>
-                        <div>
+                        <div class="box-mensaje-de-error">
                             <% if(locals.errors && errors.emailConfirmation){ %>
                                 <span class="mensaje-de-error"><%= errors.emailConfirmation.msg %></span>
                             <%}%>
@@ -62,9 +62,13 @@
                         <div class="inputs-datos">
                             <input type="password" name="password" placeholder="Indique la contraseña" class="<%= locals.errors && errors.password ? 'error' : 'success' %>">
                         </div>
-                        <div>
+                        <div class="box-mensaje-de-error">
                             <% if(locals.errors && errors.password){ %>
-                                <span class="mensaje-de-error"><%= errors.password.msg %></span>
+                                    <% for(let i = 0; i < errors.password.msg.length; i++){%>
+                                        <span class="mensaje-de-error">
+                                        <%= errors.password.msg[i] %>
+                                        </span>
+                                    <% } %>
                             <%}%>
                         </div>
                         

@@ -34,7 +34,8 @@ const controller = {
                         if(req.body.remember != undefined){
                             res.cookie('remember', userToLogin.email, { maxAge: 60000 }); 
                         }
-                        res.redirect('/users/profile');
+                        
+                        res.redirect('/');
                     }else{
                         res.render('users/login', {errors: {password: {msg: 'Correo o contraseña incorrecta'}}});
                     } 
@@ -68,7 +69,6 @@ const controller = {
             passwordNew: req.body['profile-password-new'],
             country: req.body['profile-country'],
             province: req.body['profile-province'],
-            image: req.body['profile-image']
         }
 
         const errors = validationResult(req);
@@ -110,8 +110,10 @@ const controller = {
                                 users[i].province = dataUserProfile.province;
                             }   
                         
-                            if(dataUserProfile.image){
-                                users[i].image = dataUserProfile.image;
+                            if(req.file.filename){
+                                users[i].image = req.file.filename;
+                            }else{
+                                users[i].image = 'avatarDefault.png'
                             }
                             
                             break;
@@ -167,7 +169,7 @@ const controller = {
         if(errors.isEmpty()){
             
             const hashedPassword = bcrypt.hashSync(req.body.password, 10);
-
+            
             // último ID
             const lastIdSaved = users[users.length - 1].id;
             const newUser = {
@@ -178,13 +180,19 @@ const controller = {
                 email: req.body.email,
                 mailConfirmation: req.body.mailConfirmation,
                 password: hashedPassword,
-                image: req.file.filename,
             };
+
+            if(!req.file){
+                newUser.image = 'avatarDefault.png';
+            }else{
+                newUser.image = req.file.filename;
+            }
+
             //agrega el ID creado
             users.push(newUser);
             // actualizar el archivo users.json
             fs.writeFileSync(usersFilePath, JSON.stringify(users));
-
+            
             res.redirect('/users/login');
 
         }else{

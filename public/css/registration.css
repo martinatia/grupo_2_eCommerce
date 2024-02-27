@@ -145,6 +145,13 @@ form{
     border: 1px solid green;
 }
 
+.box-mensaje-de-error{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 30px;
+}
+
 .mensaje-de-error { /* Cambiado de 'mensaje de error' a 'mensaje-de-error' */
     font-size: 11px;
     color: red;
