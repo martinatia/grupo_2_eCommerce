@@ -229,7 +229,7 @@ footer p{
 
     form{
         margin: auto;
-        width: 300px;
+        width: 330px;
     }
 
     form h2{
@@ -244,7 +244,7 @@ footer p{
     }
 
     .profile input{
-        width: 150px
+        width: 180px
     };
 
     .profile-select input{

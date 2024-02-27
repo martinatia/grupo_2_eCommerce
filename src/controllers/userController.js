@@ -178,7 +178,7 @@ const controller = {
                 firstname: req.body.firstname,
                 surname: req.body.surname,
                 email: req.body.email,
-                mailConfirmation: req.body.mailConfirmation,
+                emailConfirmation: req.body.emailConfirmation,
                 password: hashedPassword,
             };
 
@@ -188,12 +188,29 @@ const controller = {
                 newUser.image = req.file.filename;
             }
 
-            //agrega el ID creado
-            users.push(newUser);
-            // actualizar el archivo users.json
-            fs.writeFileSync(usersFilePath, JSON.stringify(users));
-            
-            res.redirect('/users/login');
+            let ok = 0;
+
+            if(newUser.email === newUser.emailConfirmation){
+                for(let i = 0; i < users.length; i++){
+                    if(users[i].email === newUser.email){
+                        
+                        ok = 1;
+                        res.render('users/registration', {errors: {email: {msg: 'Este correo ya esta registrado'}}});
+                        break;
+
+                    }
+                }
+                if(ok == 0){
+                    //agrega el usuario creado
+                    users.push(newUser);
+                    //actualizar el archivo users.json
+                    fs.writeFileSync(usersFilePath, JSON.stringify(users));
+                    //redirige al login para loguearte 
+                    res.redirect('/users/login');
+                }
+            }else{
+                res.render('users/registration', {errors: {email: {msg: 'Los correos no coinciden'}}});
+            }
 
         }else{
 
