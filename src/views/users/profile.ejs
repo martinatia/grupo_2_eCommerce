@@ -29,8 +29,8 @@
 
                 <div class="profile">
     
-                    <label for="profile-nombre">Apellido:</label>
-                    <input type="text" name="profile-apellido" id="profile-nombre" value="<%= user.surname %>" placeholder="Ej: Lodi">
+                    <label for="profile-apellido">Apellido:</label>
+                    <input type="text" name="profile-apellido" id="profile-apellido" value="<%= user.surname %>" placeholder="Ej: Lodi">
     
                 </div>
                 
@@ -73,9 +73,17 @@
                             <% if(locals.errors && errors['profile-password-new']){ %>
                                 <% for(let i = 0; i < errors['profile-password-new'].msg.length; i++){%>
                                     <span class="mensaje-de-error">
-                                        <%= errors['profile-password-new'].msg %>
+                                        <%= errors['profile-password-new'].msg[i] %>
                                     </span>
                                 <% } %>
+                            <% } %>
+                        </div>
+
+                        <input type="password" name="profile-password-admin" id="profile-password-admin" placeholder="Clave de administrador">
+
+                        <div>
+                            <% if(locals.errors && errors['profile-password-admin']){ %>
+                                <span class="mensaje-de-error"><%= errors['profile-password-admin'].msg %></span>
                             <% } %>
                         </div>
 
@@ -111,6 +119,22 @@
                         <% for( const province of provinces){ %>
     
                             <option value="<%= province %>"><%= province %></option>
+    
+                        <% } %>
+                        
+                    </Select>
+                </div>
+
+                <div class="profile-select">
+                    <Label>Categoría:</Label>
+                    <Select name="profile-category" id="profile-category">
+                        
+                        <option value="">---------------</option>
+                        <% const categories = ['Comprador', 'Administrador'] %>
+    
+                        <% for( const category of categories){ %>
+    
+                            <option value="<%= category %>"><%= category %></option>
     
                         <% } %>
                         

@@ -31,9 +31,11 @@
         "firstname": "Jose Marcelo",
         "surname": "Lodi",
         "email": "joselodi12@gmail.com",
-        "password": "$2b$10$DZpGyugBOySJxGAQHuEcledZ9kw.kC59VWlRAbBYHtJ5VhPR5z4DG",
-        "image": "1709009743378.jpg",
-        "country": "Argentina",
-        "province": "Buenos Aires"
+        "emailConfirmation": "joselodi12@gmail.com",
+        "password": "$2b$10$sXE3v.tS1IqSaRL48Ff7A.fXNVNy/oYHc0VyJVQ9113sr.ovMokmu",
+        "category": "Administrador",
+        "image": "avatarDefault.png",
+        "country": "Brasil",
+        "province": "Santiago del Estero"
     }
 ]

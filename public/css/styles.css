@@ -26,33 +26,27 @@ main article img {
   display: flex;
 }
 
-.logo {
+.header-logo {
   width: 100px;
   height: 100px;
 
 }
 
-.logo img {
-
+.header-logo img{
   width: 100px;
   height: 100px;
   transition: transform 0.3s ease;
 }
 
-.logo img:hover {
+.header-logo img:hover {
   transform: scale(1.2);
-}
-
-
-.opciones {
-  display: none;
 }
 
 .image-login-cierre {
   color: #463f3f;
 }
 
-.main-navbar {
+.main-navbar{
   display: flex;
   padding: 0;
   margin-top: 0px;
@@ -62,12 +56,11 @@ main article img {
   align-items: center;
 }
 
-.main-header ul {
+.main-header ul{
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-
 }
 
 .main-header a {
@@ -77,11 +70,16 @@ main article img {
   padding: 5px 0;
 }
 
-.opciones {
+.header-category{
+  display: none;
   text-align: justify;
 }
 
-.opciones h4 a {
+.header-category ul{
+  display: flex;
+}
+
+.header-category h4 a {
   display: inline-block;
   margin-left: 5px;
   margin-bottom: 10px;
@@ -91,24 +89,43 @@ main article img {
   transition: color 500ms, background-color 500ms, border 500ms, transform 300ms;
 }
 
-.opciones h4:hover a {
+.header-category h4:hover a {
   color: #E9F1F1;
   background-color: #27374D;
   border: 1px solid #000000;
   transform: scale(1.4);
 }
 
-.opciones h4 a {
+.header-category h4 a {
   box-shadow: 0px 0px 10px rgb(146, 146, 146);
 }
 
-.opciones ul li a i {
+.header-category ul li a i {
   font-size: 18px;
   transition: transform 0.3s ease;
 }
 
-.opciones ul li a:hover i {
+.header-category ul li a:hover i {
   transform: scale(1.4);
+}
+
+.header-session{
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-icons-session{
+  display: flex;
+}
+
+.bt-header-session{
+  display: flex;
+  flex-direction: column;
+}
+
+.bt-header-session button{
+  width: 100px;
+  height: 25px;
 }
 
 .navbar {
@@ -116,12 +133,12 @@ main article img {
   justify-content: space-around;
 }
 
-.menu {
+.header-menu {
   text-align: center;
   display: block;
 }
 
-.menu i {
+.header-menu i {
   text-align: center;
   background-color: #161850;
   border-radius: 5px;

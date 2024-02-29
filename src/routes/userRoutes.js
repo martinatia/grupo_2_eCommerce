@@ -65,6 +65,16 @@ const profileValidations = [
     .isLength({ min: 8 }).withMessage('Por favor, completa con una contraseña con mas de 8 caracteres.'),
     body('profile-password-new').custom((value, { req }) => {
         // Si el campo profile-password-new está vacío, no se realiza la validación
+        
+        let msgErrors = [
+            'La Contraseña debe tener al menos:',
+            '1. una mayúscula.',
+            '2. una minúscula.',
+            '3. un número.',
+            '4. un caracter especial de estos @$!%*?&.',
+            '5. 8 caracteres de longitud.'
+        ];
+        
         if (value === '') {
             return true;
         }
@@ -73,9 +83,10 @@ const profileValidations = [
   
         // Verificar si la contraseña cumple con el patrón
         if (!regex.test(value)) {
-            throw new Error('La contraseña no cumple con los criterios requeridos');
+            throw new Error(msgErrors);
         }
         
+        console.log(Error)
         
         return true;
     }),

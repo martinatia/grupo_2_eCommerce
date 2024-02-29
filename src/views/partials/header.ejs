@@ -1,42 +1,66 @@
 <header class="main-header">
   <div class="main-navbar">
     
-    <div class="logo">
+    <div class="header-logo">
       <a href="/"><img src="/img/utils/Zapp-alt.png" alt="Logo Zapp" /></a>
     </div>
     
-    <div class="opciones">
+    <div class="header-category">
       <h4><a href="#">Hombres</a></h4>
       <h4><a href="#">Mujeres</a></h4>
       <h4><a href="#">Niñ@</a></h4>
     </div>
 
-    <div class="opciones">
+    <div class="header-session">
       <ul>
         <% if(!locals.isLoggedIn){ %>
-        <li>
+        
+          <li>
           <a href="./users/login" class= "image-login-cierre" ><i class="fas fa-user"></i></a>
-        </li>
+          </li>
         <% }else{ %>
-        <li>
-          <a href="./users/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
-        </li>
-        <li>
-          <i class="fas fa-user"></i>
-          <p>Hola!, <%= user.name %></p> 
-        </li>
-        <li>
+          
+          <div class="header-icons-session">
+            
+            <li>
+              <a href="./users/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
+            </li>
+            
+            <li>
+              <i class="fas fa-user"></i>
+            </li>
+
+          </div>
         
-          <form action="/users/logout" method="POST">
-            <button type="submit">Cerrar Sesión</button>
-          </form>
-        
-        </li>
+          <div class="header-icons-session">
+          
+            <li>
+              <p>Hola!, <%= user.firstname %></p>  
+            </li>
+          
+          </div>
+
+          <div class="bt-header-session">
+            <li>
+              
+              <a href="/users/profile.ejs"><button type="submit">Mi Perfil</button></a>
+            
+            </li>
+
+            <li>
+          
+              <form action="/users/logout" method="POST">
+                <button type="submit">Cerrar Sesión</button>
+              </form>
+          
+            </li>
+          </div>
+    
         <% } %>
       </ul>
     </div>
     
-    <div class="menu">
+    <div class="header-menu">
       <i class="fas fa-bars"></i>
     </div>
   
