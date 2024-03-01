@@ -107,7 +107,8 @@
     
                         <% for( const country of countries){ %>
     
-                            <option value="" <% if(locals.user && user.country === country){%>
+                            <option value="<%= country %>" 
+                            <% if(locals.user && user.country === country){%>
                                 selected
                             <% } %>>
                             <%= country %>
@@ -127,7 +128,7 @@
     
                         <% for( const province of provinces){ %>
     
-                            <option value="" 
+                            <option value="<%= province %>" 
                                 <% if(locals.user && user.province === province){%>
                                     selected
                                 <% } %>>
@@ -148,7 +149,7 @@
     
                         <% for( const category of categories){ %>
     
-                            <option value=""
+                            <option value="<%= category %>"
                                 <% if(locals.user && user.category === category){%>
                                     selected
                                 <% } %>>

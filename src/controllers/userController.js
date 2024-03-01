@@ -113,6 +113,8 @@ const controller = {
                             users[i].password = hashedPasswordProfile;
                         }
 
+                        console.log(dataUserProfile.category)
+
                         if(dataUserProfile.codeAdmin){
                             if(dataUserProfile.category){
                                 if(dataUserProfile.category === "Administrador"){
@@ -129,13 +131,15 @@ const controller = {
                             delete dataUserProfile.codeAdmin;
 
                         }else{
-                            
+                            console.log(dataUserProfile.category)
                             if(dataUserProfile.category && dataUserProfile.category === 'Comprador'){
                                 users[i].category = dataUserProfile.category;
                             }else{
+                                
                                 if(dataUserProfile.category && dataUserProfile.category === 'Administrador'){
+                                    console.log('por aqui')
                                     return res.render('users/profile', {errors: {['profile-password-admin']: {msg: 'Debe ingresar el código de administrador'}}, user: session});
-                                }    
+                                } 
                             }
                             
                             delete dataUserProfile.codeAdmin;

@@ -1,33 +1,6 @@
 [
     {
         "id": 1,
-        "name": "Martin",
-        "surname": "Atia",
-        "email": "martin1@gmail.com",
-        "password": "martin123",
-        "category": "administrador",
-        "image": "Avatar1.png"
-    },
-    {
-        "id": 2,
-        "name": "Fausto",
-        "surname": "Tenaglia",
-        "email": "fausto1@gmail.com",
-        "password": "fausto123",
-        "category": "administrador",
-        "image": "Avatar2.jpg"
-    },
-    {
-        "id": 3,
-        "name": "Luana",
-        "surname": "capilla",
-        "email": "luana1@gmail.com",
-        "password": "luana123",
-        "category": "comprador",
-        "image": "Avatar4.png"
-    },
-    {
-        "id": 4,
         "firstname": "Jose Marcelo",
         "surname": "Lodi",
         "email": "joselodi12@gmail.com",
@@ -38,5 +11,45 @@
         "country": "Brasil",
         "province": "Santiago del Estero",
         "adress": "Rivadavia 579"
+    },
+    {
+        "id": 2,
+        "firstname": "Luana",
+        "surname": "Capilla",
+        "email": "luana2@gmail.com",
+        "emailConfirmation": "luana2@gmail.com",
+        "password": "$2b$10$BoxVKm9kfk1psKL8u32O9OKOUC58Xut5oCe.w8cRspsIiivj829WG",
+        "category": "Comprador",
+        "image": "avatarDefault.png"
+    },
+    {
+        "id": 3,
+        "firstname": "Martin",
+        "surname": "Atia",
+        "email": "martin2@gmail.com",
+        "emailConfirmation": "martin2@gmail.com",
+        "password": "$2b$10$kpsBO7wZxx2RSkb2Jdu00eVx8bmI7G5pWGZNbg/EGVkiUNTgWaNtS",
+        "category": "Administrador",
+        "image": "avatarDefault.png"
+    },
+    {
+        "id": 4,
+        "firstname": "Fausto",
+        "surname": "Tenaglia",
+        "email": "fausto2@gmail.com",
+        "emailConfirmation": "fausto2@gmail.com",
+        "password": "$2b$10$oyjSd4oIgwbEa3SePkajxe6jKNvdGMsbEESw758EBEu9fT42d1IX6",
+        "category": "Administrador",
+        "image": "avatarDefault.png"
+    },
+    {
+        "id": 5,
+        "firstname": "Joaquin",
+        "surname": "nose",
+        "email": "joaquin2@gmail.com",
+        "emailConfirmation": "joaquin2@gmail.com",
+        "password": "$2b$10$dLuOsvtnIOn4R/ooyDyGSeIesjpib8AK/R/BjqyOQ4keZ9jHTXapK",
+        "category": "Comprador",
+        "image": "avatarDefault.png"
     }
 ]
