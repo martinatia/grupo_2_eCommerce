@@ -36,6 +36,7 @@
         "category": "Administrador",
         "image": "avatarDefault.png",
         "country": "Brasil",
-        "province": "Santiago del Estero"
+        "province": "Santiago del Estero",
+        "adress": "Rivadavia 579"
     }
 ]

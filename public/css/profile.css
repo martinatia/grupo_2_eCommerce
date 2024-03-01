@@ -25,31 +25,32 @@ header{
   display: none;
 }
 
-.logout li i{
-    font-size: 20px;
-}
+.logout i{
+    display: none;
+} 
 
 .logout button{
   border: none;
 } 
 
-.logo{
+.header-logo{
     display: flex;
     justify-content: center;
 }
 
-.logo img{
+.header-logo img{
     width: 100px;
     height: 100px;
     transition: transform 0.3s ease;
 }
 
-.logo img:hover {
+.header-logo img:hover {
     transform: scale(1.2);
 }
 
 main{
     display: flex;
+    flex-direction: column;
 }
 
 main img{
@@ -58,13 +59,21 @@ main img{
     margin: 20px;
 }
 
+.form{
+    border: none;
+    width: 360px;
+}
+
 form{
-    margin-left: 30px;
+    margin: auto;
+    width: 330px;
 
 }
 
 form h2{
-    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .profile{
@@ -88,10 +97,11 @@ form h2{
 
 .profile input{
     margin-left: 20px;
+    height: 25px;
 }
 
 .profile label{
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .profile-select{
@@ -100,20 +110,25 @@ form h2{
 }
 
 .profile-select label{
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #profile-country{
     margin-left: 11px;
-    padding-right: 48.5px ;
+    padding-right: 48.5px;
 }
 
 #profile-province{
-    margin-left: 101px;
+    margin-left: 78.5px;
+}
+
+#profile-category{
+    margin-left: 75px;
+    padding-right: 35px;
 }
 
 .profile-select input{
-    width: 250px;
+    width: 150px;
     height: 25px;
     border: none;
 }
@@ -123,7 +138,7 @@ form h2{
 }
 
 .profile input{
-    width: 250px;
+    width: 180px;
     height: 25px;
     padding-left: 5px;
 }
@@ -144,6 +159,11 @@ form h2{
     padding: 10px;
     border: 1px solid rgb(130, 128, 128);
     border-radius: 5px;
+}
+
+.profile-image{
+    display: flex;
+    justify-content: center;
 }
 
 .bt-box-save{
@@ -215,71 +235,98 @@ footer p{
 }
 
 
-@media(max-width: 800px){
-    main{
-        flex-direction: column;
-        
-    }
-
+@media(min-width: 380px){
+    
     .form{
         border: 3px solid #161850;
         width: 380px;
         margin: auto;
     }
 
+}
+
+@media(min-width: 800px){
+
+    main{
+        flex-direction: row;
+    }
+
+    .form{
+        border: none;
+        width: 100%;
+        margin: 0px;
+    }
+
     form{
-        margin: auto;
-        width: 330px;
+        margin-left: 30px;
     }
 
     form h2{
-        font-size: 20px;
-        text-align: center;
-        margin-bottom: 40px;
+        margin-top: 20px;
     }
-    
+
     .profile-image{
-        display: flex;
-        justify-content: center;
+        border: 2px #161850 solid ;
+    }
+
+    .profile{
+        width: 450px;
     }
 
     .profile input{
-        width: 180px
+        width: 250px;
     };
 
     .profile-select input{
-        width: 150px;
+        width: 250px;
     }
 
     .profile-select label{
-        font-size: 15px;
+        font-size: 20px;
     }
 
     .profile label{
-        font-size: 15px ;
-    }
-
-    #profile-country{
-        padding-right: 48.5px;
+        font-size: 20px;
     }
 
     #profile-province{
-        margin-left: 78.5px;
+        margin-left: 101px;
     }
 
+
     .logout i{
-        display: none;
+        display: flex;
+        font-size: 20px;
     }
+
+    #profile-category{
+        margin-left: 95px;
+    }
+
+}
+
+
+/* 
+
+    
+
+    
+
+   
+
+    
+
+    
+
+    
+
+    
+
+   
 
     .logout button{
         display: none;
     }
-}
 
-@media(max-width: 380px){
-    .form{
-        border: none;
-        width: 360px;
-    }
 
-}
+*/

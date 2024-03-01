@@ -104,6 +104,9 @@ const controller = {
                             users[i].email = dataUserProfile.email;
                         }
                         
+                        if(dataUserProfile.adress){
+                            users[i].adress = dataUserProfile.adress;
+                        }
 
                         if(dataUserProfile.passwordNew){
                             const hashedPasswordProfile = bcrypt.hashSync(dataUserProfile.passwordNew, 10);
@@ -129,6 +132,10 @@ const controller = {
                             
                             if(dataUserProfile.category && dataUserProfile.category === 'Comprador'){
                                 users[i].category = dataUserProfile.category;
+                            }else{
+                                if(dataUserProfile.category && dataUserProfile.category === 'Administrador'){
+                                    return res.render('users/profile', {errors: {['profile-password-admin']: {msg: 'Debe ingresar el código de administrador'}}, user: session});
+                                }    
                             }
                             
                             delete dataUserProfile.codeAdmin;

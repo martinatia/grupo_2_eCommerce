@@ -13,18 +13,18 @@ header{
     width: 100%;
 }
 
-.logo{
+.header-logo{
     display: flex;
     justify-content: center;
 }
 
-.logo img{
+.header-logo img{
     width: 100px;
     height: 100px;
     transition: transform 0.3s ease;
 }
 
-.logo img:hover{
+.header-logo img:hover{
     transform: scale(1.2);
 }
   

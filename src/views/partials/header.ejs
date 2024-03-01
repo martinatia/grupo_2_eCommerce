@@ -20,40 +20,18 @@
           </li>
         <% }else{ %>
           
-          <div class="header-icons-session">
+          <div class="header-session-icons">
             
             <li>
               <a href="./users/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
             </li>
-            
-            <li>
-              <i class="fas fa-user"></i>
-            </li>
-
-          </div>
-        
-          <div class="header-icons-session">
-          
-            <li>
-              <p>Hola!, <%= user.firstname %></p>  
-            </li>
-          
-          </div>
-
-          <div class="bt-header-session">
-            <li>
-              
-              <a href="/users/profile.ejs"><button type="submit">Mi Perfil</button></a>
-            
-            </li>
 
             <li>
-          
               <form action="/users/logout" method="POST">
-                <button type="submit">Cerrar Sesión</button>
+                <button type="submit"><i class="fa-solid fa-right-from-bracket"></i></button>
               </form>
-          
             </li>
+
           </div>
     
         <% } %>

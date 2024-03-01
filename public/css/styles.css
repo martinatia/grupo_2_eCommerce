@@ -109,25 +109,6 @@ main article img {
   transform: scale(1.4);
 }
 
-.header-session{
-  display: flex;
-  justify-content: space-around;
-}
-
-.header-icons-session{
-  display: flex;
-}
-
-.bt-header-session{
-  display: flex;
-  flex-direction: column;
-}
-
-.bt-header-session button{
-  width: 100px;
-  height: 25px;
-}
-
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -147,6 +128,10 @@ main article img {
   margin: 20px 0px 20px 0px;
   padding: 10px;
   width: 40px;
+}
+
+.header-session{
+  display: none;
 }
 
 .titulos {
@@ -424,17 +409,28 @@ label {
 
 @media (min-width: 769px) {
 
-  .menu {
+  .header-session{
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .header-session-icons{
+    display: flex;
+  }
+  
+  .header-menu{
     display: none;
   }
 
-  .opciones {
+  .header-category {
     display: flex;
   }
 
   .logo-footer {
     display: flex;
   }
+
+  
 
 }
 

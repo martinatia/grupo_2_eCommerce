@@ -66,14 +66,7 @@ const profileValidations = [
     body('profile-password-new').custom((value, { req }) => {
         // Si el campo profile-password-new está vacío, no se realiza la validación
         
-        let msgErrors = [
-            'La Contraseña debe tener al menos:',
-            '1. una mayúscula.',
-            '2. una minúscula.',
-            '3. un número.',
-            '4. un caracter especial de estos @$!%*?&.',
-            '5. 8 caracteres de longitud.'
-        ];
+        let msgErrors = 'La contraseña no cumple con los requisitos';
         
         if (value === '') {
             return true;
@@ -83,10 +76,11 @@ const profileValidations = [
   
         // Verificar si la contraseña cumple con el patrón
         if (!regex.test(value)) {
+            
             throw new Error(msgErrors);
+            
         }
         
-        console.log(Error)
         
         return true;
     }),

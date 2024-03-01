@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const controller = require('../controllers/productController');
+const adminMiddleware = require('../middlewares/adminMiddleware')
 const path = require('path');
 const router = Router();
 
@@ -28,12 +29,12 @@ const routes = {
 };
 
 // router.get(routes.productList, controller.list);
-router.get(routes.createProduct, controller.createProduct);//Listo
+router.get(routes.createProduct, adminMiddleware, controller.createProduct);//Listo
 router.get(routes.productDetail, controller.productDetail);//Listo
-router.post(routes.postProduct, fileUpload.single('imagenProduto'), controller.postProduct);//Listo
+router.post(routes.postProduct, fileUpload.single('imagenProduto'), adminMiddleware, controller.postProduct);//Listo
 
-router.get(routes.editProduct,controller.editProduct);//TODO: Ahora
-router.put(routes.putProduct, fileUpload.single('imagenProducto'), controller.putProduct);
+router.get(routes.editProduct, adminMiddleware, controller.editProduct);//TODO: Ahora
+router.put(routes.putProduct, fileUpload.single('imagenProducto'), adminMiddleware, controller.putProduct);
 //TODO: NO SE PORQUE NO ENTRA POR EL IF (REQ.FILE) CUANDO SI ESTOY ADJUNTANDO UNA IMAGEN!!!!
 
 

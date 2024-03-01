@@ -51,7 +51,12 @@
                 <div class="profile">
                     
                     <label for="profile-adress">Domicilio: </label>
-                    <input type="text" name="profile-adress" id="profile-adress" value="" placeholder="Ej: Rivadavia 668">
+                    <input type="text" name="profile-adress" id="profile-adress" 
+                    value=
+                    "<% if(locals.user && user.adress){ %>
+                        <%= user.adress %>
+                    <% } %>" 
+                    placeholder="Ej: Rivadavia 668">
     
                 </div>
     
@@ -71,11 +76,9 @@
 
                         <div class="box-mensaje-de-error">
                             <% if(locals.errors && errors['profile-password-new']){ %>
-                                <% for(let i = 0; i < errors['profile-password-new'].msg.length; i++){%>
                                     <span class="mensaje-de-error">
-                                        <%= errors['profile-password-new'].msg[i] %>
+                                        <%= errors['profile-password-new'].msg %>
                                     </span>
-                                <% } %>
                             <% } %>
                         </div>
 
@@ -83,7 +86,9 @@
 
                         <div>
                             <% if(locals.errors && errors['profile-password-admin']){ %>
-                                <span class="mensaje-de-error"><%= errors['profile-password-admin'].msg %></span>
+                                <span class="mensaje-de-error">
+                                    <%= errors['profile-password-admin'].msg %>
+                                </span>
                             <% } %>
                         </div>
 
@@ -102,8 +107,12 @@
     
                         <% for( const country of countries){ %>
     
-                            <option value="<%= country %>"><%= country %></option>
-    
+                            <option value="" <% if(locals.user && user.country === country){%>
+                                selected
+                            <% } %>>
+                            <%= country %>
+                            </option>
+                            
                         <% } %>
     
                     </Select>
@@ -118,7 +127,12 @@
     
                         <% for( const province of provinces){ %>
     
-                            <option value="<%= province %>"><%= province %></option>
+                            <option value="" 
+                                <% if(locals.user && user.province === province){%>
+                                    selected
+                                <% } %>>
+                                <%= province %>
+                            </option>
     
                         <% } %>
                         
@@ -134,7 +148,12 @@
     
                         <% for( const category of categories){ %>
     
-                            <option value="<%= category %>"><%= category %></option>
+                            <option value=""
+                                <% if(locals.user && user.category === category){%>
+                                    selected
+                                <% } %>>
+                                <%= category %>
+                            </option>
     
                         <% } %>
                         
