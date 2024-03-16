@@ -22,6 +22,7 @@ const controller = {
         }        
         
         const errors = validationResult(req);
+        
 
         if(errors.isEmpty()){
             //verificacion de usuario logueado

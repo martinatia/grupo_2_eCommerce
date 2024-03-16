@@ -1,55 +1,75 @@
 [
-    {
-        "id": 1,
-        "firstname": "Jose Marcelo",
-        "surname": "Lodi",
-        "email": "joselodi12@gmail.com",
-        "emailConfirmation": "joselodi12@gmail.com",
-        "password": "$2b$10$sXE3v.tS1IqSaRL48Ff7A.fXNVNy/oYHc0VyJVQ9113sr.ovMokmu",
-        "category": "Administrador",
-        "image": "avatarDefault.png",
-        "country": "Brasil",
-        "province": "Santiago del Estero",
-        "adress": "Rivadavia 579"
-    },
-    {
-        "id": 2,
-        "firstname": "Luana",
-        "surname": "Capilla",
-        "email": "luana2@gmail.com",
-        "emailConfirmation": "luana2@gmail.com",
-        "password": "$2b$10$BoxVKm9kfk1psKL8u32O9OKOUC58Xut5oCe.w8cRspsIiivj829WG",
-        "category": "Comprador",
-        "image": "avatarDefault.png"
-    },
-    {
-        "id": 3,
-        "firstname": "Martin",
-        "surname": "Atia",
-        "email": "martin2@gmail.com",
-        "emailConfirmation": "martin2@gmail.com",
-        "password": "$2b$10$kpsBO7wZxx2RSkb2Jdu00eVx8bmI7G5pWGZNbg/EGVkiUNTgWaNtS",
-        "category": "Administrador",
-        "image": "avatarDefault.png"
-    },
-    {
-        "id": 4,
-        "firstname": "Fausto",
-        "surname": "Tenaglia",
-        "email": "fausto2@gmail.com",
-        "emailConfirmation": "fausto2@gmail.com",
-        "password": "$2b$10$oyjSd4oIgwbEa3SePkajxe6jKNvdGMsbEESw758EBEu9fT42d1IX6",
-        "category": "Administrador",
-        "image": "avatarDefault.png"
-    },
-    {
-        "id": 5,
-        "firstname": "Joaquin",
-        "surname": "nose",
-        "email": "joaquin2@gmail.com",
-        "emailConfirmation": "joaquin2@gmail.com",
-        "password": "$2b$10$dLuOsvtnIOn4R/ooyDyGSeIesjpib8AK/R/BjqyOQ4keZ9jHTXapK",
-        "category": "Comprador",
-        "image": "avatarDefault.png"
-    }
+  {
+    "id": 1,
+    "firstname": "Jose Marcelo",
+    "surname": "Lodi",
+    "email": "joselodi12@gmail.com",
+    "emailConfirmation": "joselodi12@gmail.com",
+    "password": "$2b$10$sXE3v.tS1IqSaRL48Ff7A.fXNVNy/oYHc0VyJVQ9113sr.ovMokmu",
+    "category": "Administrador",
+    "image": "avatarDefault.png",
+    "country": "Brasil",
+    "province": "Santiago del Estero",
+    "adress": "Rivadavia 579"
+  },
+  {
+    "id": 2,
+    "firstname": "Luana",
+    "surname": "Capilla",
+    "email": "luana2@gmail.com",
+    "emailConfirmation": "luana2@gmail.com",
+    "password": "$2b$10$BoxVKm9kfk1psKL8u32O9OKOUC58Xut5oCe.w8cRspsIiivj829WG",
+    "category": "Comprador",
+    "image": "avatarDefault.png"
+  },
+  {
+    "id": 3,
+    "firstname": "Martin",
+    "surname": "Atia",
+    "email": "martin2@gmail.com",
+    "emailConfirmation": "martin2@gmail.com",
+    "password": "$2b$10$kpsBO7wZxx2RSkb2Jdu00eVx8bmI7G5pWGZNbg/EGVkiUNTgWaNtS",
+    "category": "Administrador",
+    "image": "avatarDefault.png"
+  },
+  {
+    "id": 4,
+    "firstname": "Fausto",
+    "surname": "Tenaglia",
+    "email": "fausto2@gmail.com",
+    "emailConfirmation": "fausto2@gmail.com",
+    "password": "$2b$10$oyjSd4oIgwbEa3SePkajxe6jKNvdGMsbEESw758EBEu9fT42d1IX6",
+    "category": "Administrador",
+    "image": "avatarDefault.png"
+  },
+  {
+    "id": 5,
+    "firstname": "Joaquin",
+    "surname": "nose",
+    "email": "joaquin2@gmail.com",
+    "emailConfirmation": "joaquin2@gmail.com",
+    "password": "$2b$10$dLuOsvtnIOn4R/ooyDyGSeIesjpib8AK/R/BjqyOQ4keZ9jHTXapK",
+    "category": "Comprador",
+    "image": "avatarDefault.png"
+  },
+  {
+    "id": 6,
+    "firstname": "Amir",
+    "surname": "Atia",
+    "email": "amir.atia@gmail.com",
+    "emailConfirmation": "amir.atia@gmail.com",
+    "password": "$2b$10$1rLRIDgvEq7oTfGsxrcx2ODYMqO6GZOzmhc4smT0l7yd/thsU5Xmm",
+    "category": "Comprador",
+    "image": "1710592222583.jpg"
+  },
+  {
+    "id": 7,
+    "firstname": "Amirrrrrrrrr",
+    "surname": "amirrrrrrrrrr",
+    "email": "amir@gmail.com",
+    "emailConfirmation": "amir@gmail.com",
+    "password": "$2b$10$tmHAkr5mjID7n1GZXH4s/.R0TA4Px3GA1mMwSVlapXFBpJnS2qB/O",
+    "category": "Comprador",
+    "image": "1710594968390.jpg"
+  }
 ]
