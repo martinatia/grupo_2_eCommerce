@@ -4,7 +4,8 @@ module.exports = (sequelize, dataTypes) => {
         category_id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
         },
 
         category_description: {
@@ -13,10 +14,7 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: false,
+        timestamps: false,
         tableName: 'categories'
     }
     const categories = sequelize.define(alias, cols, config); 

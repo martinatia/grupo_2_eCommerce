@@ -34,6 +34,10 @@ module.exports = (sequelize, dataTypes) => {
             type: DataTypes.STRING(15),
             allowNull: false,
             defaultValue: 'Cliente'
+        },
+        date_created: {
+            type: DataTypes.DATE,
+            allowNull: false
         }
     };
     let config = {

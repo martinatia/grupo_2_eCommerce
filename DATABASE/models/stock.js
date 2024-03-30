@@ -1,11 +1,12 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = 'stock';
     let cols = {
-        product_id: {
+        id: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            primaryKey: true,
+            autoIncrement: true
         },
-        color_id: {
+        product_id: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
@@ -13,9 +14,9 @@ module.exports = (sequelize, dataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        stock_quantity: {
+        quantity: {
             type: DataTypes.INTEGER,
-            defaultValue: null
+            allowNull: false
         }
     };
     let config = {
@@ -24,24 +25,16 @@ module.exports = (sequelize, dataTypes) => {
     }
     const stock = sequelize.define(alias, cols, config); 
     
-    Stock.associate = (models) => {
+    stock.associate = (models) => {
 
-        Stock.belongsTo(models.products, {
+        stock.belongsTo(models.products, {
             foreignKey: 'product_id',
             as: 'product'
         });
-
-
-        Stock.belongsTo(models.colors, {
-            foreignKey: 'color_id',
-            as: 'colors'
-        });
-
-
-        Stock.belongsTo(models.sizes, {
+        stock.belongsTo(models.sizes, {
             foreignKey: 'size_id',
-            as: 'sizes'
-        });
+            as: 'size'
+        })
     };
 
     return stock
