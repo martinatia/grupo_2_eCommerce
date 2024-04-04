@@ -4,17 +4,23 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 const { validationResult } = require('express-validator');
 const { Console } = require('console');
+const db = require('../database/models')
 
-const usersFilePath = path.join(__dirname, '../data/users.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+//Usabamos cuando teniamos la base de datos json
+//const usersFilePath = path.join(__dirname, '../data/users.json');
+//const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+//Esto no se para que estaba
+//const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+const users = db.users;
 
 const controller = {
     login: (req, res) => {
         res.render('users/login');
     },
     userLogin: (req,res) => {
+
 
         const loginData = {
             email: req.body.email,
@@ -26,28 +32,43 @@ const controller = {
 
         if(errors.isEmpty()){
             //verificacion de usuario logueado
-            for(let i = 0; i < users.length; i++){
-                if(users[i].email == loginData.email){
-                    if(bcrypt.compareSync(loginData.password, users[i].password)){
-                        let userToLogin = users[i];
-                        req.session.userToLoggedIn = userToLogin;
-                        if(req.body.remember != undefined){
-                            res.cookie('remember', userToLogin.email, { maxAge: 60000 }); 
+            
+            users.findAll()
+            .then((dataUsers) => {
+                
+                let userFound = false;
+                
+                for(let i = 0; i < dataUsers.length; i++){
+                    if(dataUsers[i].dataValues.email == loginData.email){
+                        if(bcrypt.compareSync(loginData.password, dataUsers[i].dataValues.password)){
+                            let userToLogin = dataUsers[i].dataValues;
+                            req.session.userToLoggedIn = userToLogin;
+                            if(req.body.remember != undefined){
+                                res.cookie('remember', userToLogin.email, { maxAge: 60000 }); 
+                            }
+                            
+                            userFound = true;
+                            break;
+
+                        }else{
+
+                            return res.render('users/login', {errors: {password: {msg: 'Correo o contraseña incorrecta'}}});
+
                         }
                         
-                        return res.redirect('/');
-                    }else{
-                        return res.render('users/login', {errors: {password: {msg: 'Correo o contraseña incorrecta'}}});
-                    } 
+                    }
                 }
-            }
 
-            if(!req.session.userToLoggedIn){
-                return res.render('users/login', {errors: {email: {msg: 'Correo o contraseña incorrecta'}}});
-            }
+                if(userFound) {
+                    res.redirect('/');
+                } else {
+                    res.render('users/login', { errors: { password: { msg: 'Correo o contraseña incorrecta' } }});
+                }
+            })
+            .catch((error) => {
+                console.log(error)
+            })
 
-          
-            
         }else{
             return res.render('users/login', { errors: errors.mapped()});
         }  
@@ -209,52 +230,57 @@ const controller = {
 
         const errors = validationResult(req);
         
+        
         if(errors.isEmpty()){
             
             const hashedPassword = bcrypt.hashSync(req.body.password, 10);
             
             // último ID
-            const lastIdSaved = users[users.length - 1].id;
-            const newUser = {
-                //crea un ID mas
-                id: lastIdSaved + 1,
-                firstname: req.body.firstname,
-                surname: req.body.surname,
-                email: req.body.email,
-                emailConfirmation: req.body.emailConfirmation,
-                password: hashedPassword,
-                category: "Comprador"
-            };
+            //const lastIdSaved = users[users.length - 1].id;
+            let imagenURL;
 
             if(!req.file){
-                newUser.image = 'avatarDefault.png';
+                imagenURL = 'avatarDefault.png';
             }else{
-                newUser.image = req.file.filename;
+                imagenURL = req.file.filename;
             }
 
             let ok = 0;
 
-            if(newUser.email === newUser.emailConfirmation){
-                for(let i = 0; i < users.length; i++){
-                    if(users[i].email === newUser.email){
-                        
-                        ok = 1;
-                        res.render('users/registration', {errors: {email: {msg: 'Este correo ya esta registrado'}}});
-                        break;
-
+            users.findAll()
+            .then((dataUsers) => {
+                if(req.body.email === req.body.emailConfirmation){
+                    for(let i = 0; i < dataUsers.length; i++){
+                        if(dataUsers[i].dataValues.email === req.body.email){
+                            
+                            ok = 1;
+                            res.render('users/registration', {errors: {email: {msg: 'Este correo ya esta registrado'}}});
+                            break;
+    
+                        }
                     }
+                    if(ok == 0){
+                        //agrega el usuario creado
+                        users.create ({
+                            first_name: req.body.firstname,
+                            last_name: req.body.surname,
+                            address: 'Publica s/n',
+                            password: hashedPassword,
+                            email: req.body.email,
+                            user_type: "Comprador",
+                            profile_image_url: imagenURL,
+                            date_created: Date.now()
+                        });
+            
+                        //actualizar el archivo users.json
+                        //fs.writeFileSync(usersFilePath, JSON.stringify(users));
+                        //redirige al login para loguearte 
+                        res.redirect('/users/login');
+                    }
+                }else{
+                    res.render('users/registration', {errors: {email: {msg: 'Los correos no coinciden'}}});
                 }
-                if(ok == 0){
-                    //agrega el usuario creado
-                    users.push(newUser);
-                    //actualizar el archivo users.json
-                    fs.writeFileSync(usersFilePath, JSON.stringify(users));
-                    //redirige al login para loguearte 
-                    res.redirect('/users/login');
-                }
-            }else{
-                res.render('users/registration', {errors: {email: {msg: 'Los correos no coinciden'}}});
-            }
+            })
 
         }else{
 

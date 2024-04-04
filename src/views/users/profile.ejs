@@ -12,25 +12,25 @@
 
     <main>
         <div class="profile-image">
-            <img src="/img/usersImageProfile/<%= user.image %>" alt="imagen de usuario">
+            <img src="/img/usersImageProfile/<%= user.profile_image_url %>" alt="imagen de usuario">
         </div>
         
         <div class="form">
             <form action="/users/profile?_method=PUT" method="POST" enctype="multipart/form-data">
 
-                <h2> Bienvenido <%= user.firstname %></h2>
+                <h2> Bienvenido <%= user.first_name + ' ' + user.last_name %></h2>
                 
                 <div class="profile">
     
                     <label for="profile-nombre">Nombre:</label>
-                    <input type="text" name="profile-nombre" id="profile-nombre" value="<%= user.firstname %>" placeholder="Ej: Jose Marcelo">
+                    <input type="text" name="profile-nombre" id="profile-nombre" value="<%= user.first_name %>" placeholder="Ej: Jose Marcelo">
     
                 </div>
 
                 <div class="profile">
     
                     <label for="profile-apellido">Apellido:</label>
-                    <input type="text" name="profile-apellido" id="profile-apellido" value="<%= user.surname %>" placeholder="Ej: Lodi">
+                    <input type="text" name="profile-apellido" id="profile-apellido" value="<%= user.last_name %>" placeholder="Ej: Lodi">
     
                 </div>
                 
@@ -53,8 +53,8 @@
                     <label for="profile-adress">Domicilio: </label>
                     <input type="text" name="profile-adress" id="profile-adress" 
                     value=
-                    "<% if(locals.user && user.adress){ %>
-                        <%= user.adress %>
+                    "<% if(locals.user && user.address){ %>
+                        <%= user.address %>
                     <% } %>" 
                     placeholder="Ej: Rivadavia 668">
     

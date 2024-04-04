@@ -2,26 +2,26 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'ventas_products';
     let cols = {
         venta_id: {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             allowNull: false
         },
         product_id: {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             allowNull: false
         },
         size_id: {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             allowNull: false
         },
         quantity: {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         monto_parcial: {
-            type: DataTypes.FLOAT,
+            type: dataTypes.FLOAT,
             allowNull: false
         }
     };

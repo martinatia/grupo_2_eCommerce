@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": null,
-    "database": "db_zapp",
+    "database": "db_zappv2",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

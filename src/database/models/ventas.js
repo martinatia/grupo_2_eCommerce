@@ -2,24 +2,24 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'ventas';
     let cols = {
         id_venta: {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
         date_venta: {
-            type: DataTypes.DATE,
+            type: dataTypes.DATE,
             allowNull: false
         },
         id_usuario_comprador: {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         precio_total: {
-            type: DataTypes.FLOAT,
+            type: dataTypes.FLOAT,
             allowNull: false
         },
         payment_method: {
-            type: DataTypes.STRING(45),
+            type: dataTypes.STRING(45),
             allowNull: false
         }
     }
