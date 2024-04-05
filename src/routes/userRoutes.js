@@ -115,24 +115,26 @@ const multerDiskStorage = multer.diskStorage({
 
 const fileUpload = multer({ storage: multerDiskStorage });
 
-const routes = {
-    
-    login: '/login',
-    registration: '/registration',
-    shoppingCart: '/:id/shopping-cart',
-    profile: '/profile',
-    logout: '/logout',
-    saveData: '/profile'
-}
 
-router.get(routes.login, guestMiddleware, controller.login);
-router.post(routes.login, loginValidations, controller.userLogin);
-router.post(routes.logout, controller.logout);
-router.put(routes.saveData, fileUpload.single('profile-image'), profileValidations, controller.saveData);
-router.get(routes.registration, guestMiddleware, controller.registration);
-router.post(routes.registration, fileUpload.single('image'), registrationValidations, controller.newUser);
-router.get(routes.shoppingCart, controller.shoppingCart);
-router.get(routes.profile, authMiddleware, controller.profile);
+//Login
+router.get("/login", guestMiddleware, controller.login);
+router.post("/login", loginValidations, controller.userLogin);
+
+//Logout
+router.post("/logout", controller.logout);
+
+//User Session
+router.get("/profile", authMiddleware, controller.profile);
+router.put("/profile", fileUpload.single('profile-image'), profileValidations, controller.saveData);
+
+//Register
+router.get("/registration", guestMiddleware, controller.registration);
+router.post("/registration", fileUpload.single('image'), registrationValidations, controller.newUser);
+
+//Shopping Cart
+router.get("/shopping-cart", controller.shoppingCart);
+
+
 
 
 module.exports = router;
