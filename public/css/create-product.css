@@ -9,18 +9,6 @@ body {
   color: #161850;
 }
 
-.main-header {
-  background-color: #e9f1f1;
-  font-family: "Roboto", sans-serif;
-  padding: 0px 10px;
-  display: flex;
-}
-
-.header-logo{
-  width: 100px;
-  height: 100px;
-}
-
 .main-navbar {
   display: flex;
   padding: 0;
@@ -29,6 +17,13 @@ body {
   width: 100%;
   justify-content: space-around;
   align-items: center;
+}
+
+.main-header {
+  background-color: #E9F1F1;
+  font-family: "Roboto", sans-serif;
+  padding: 0px 10px;
+  display: flex;
 }
 
 .main-header ul {
@@ -43,6 +38,16 @@ body {
   text-decoration: none;
   color: #222222;
   padding: 5px 0;
+}
+
+.header-logo img{
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s ease;
+}
+
+.header-logo img:hover{
+  transform: scale(1.2);
 }
 
 .header-category{
@@ -77,14 +82,6 @@ body {
 
 .header-category ul li a:hover i {
   transform: scale(1.4);
-}
-
-.header-logo{
-  transition: transform 0.3s ease;
-}
-
-.header-logo:hover {
-  transform: scale(1.2);
 }
 
 .navbar {
