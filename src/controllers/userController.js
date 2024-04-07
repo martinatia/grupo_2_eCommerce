@@ -2,8 +2,8 @@ const fs = require ('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const { validationResult } = require('express-validator');
+const db = require('../database/models');
 //const { Console } = require('console');
-const db = require('../database/models')
 
 //Usabamos cuando teniamos la base de datos json
 //const usersFilePath = path.join(__dirname, '../data/users.json');
@@ -20,7 +20,6 @@ const controller = {
     },
     userLogin: (req,res) => {
 
-
         const loginData = {
             email: req.body.email,
             password: req.body.password,
@@ -30,23 +29,31 @@ const controller = {
         
 
         if(errors.isEmpty()){
-            //verificacion de usuario logueado
             
             users.findAll()
             .then((dataUsers) => {
                 
                 let userFound = false;
                 
+                //verificacion de usuario logueado
+                //recorre el total de usuarios
                 for(let i = 0; i < dataUsers.length; i++){
+                    //verifica que el email de la base de datos coincida con el email que viene del body
                     if(dataUsers[i].dataValues.email == loginData.email){
+                        //compara las contraseñas del body con la de la base de datos
                         if(bcrypt.compareSync(loginData.password, dataUsers[i].dataValues.password)){
+                            //Guarda el usuario logueado en la variable userToLogin
                             let userToLogin = dataUsers[i].dataValues;
+                            //Guarda el usuario logueado en la variable session
                             req.session.userToLoggedIn = userToLogin;
+                            //Verifica si esta tildado el checkbox de recuerdame
                             if(req.body.remember != undefined){
+                                //Crea la cookie
                                 res.cookie('remember', userToLogin.email, { maxAge: 60000 }); 
                             }
-                            
+                            //Cuando encuentra al usuario cambia la variable userFound a true
                             userFound = true;
+                            //Corta el ciclo
                             break;
 
                         }else{
@@ -58,6 +65,7 @@ const controller = {
                     }
                 }
 
+                //Verifica si se encontro el usuario
                 if(userFound) {
                     res.redirect('/');
                 } else {
@@ -74,14 +82,16 @@ const controller = {
         
     },
     logout: (req, res) => {
-        
+        //elimina la cookie
         res.clearCookie('remember');
+        //elimina la variable session
         req.session.destroy()
         res.redirect('/users/login')
         
     },
     saveData: (req, res) => {
         
+        //Esta variable sirve como validacion, solo colocando esta clave se puede ser administrador
         let admin = '123456789';
 
         const dataUserProfile = {
@@ -229,18 +239,21 @@ const controller = {
 
         const errors = validationResult(req);
         
-        
         if(errors.isEmpty()){
             
+            //hashea la contraseña creada
             const hashedPassword = bcrypt.hashSync(req.body.password, 10);
             
             // último ID
             //const lastIdSaved = users[users.length - 1].id;
             let imagenURL;
-
+            
+            //Verifica que no llegue alguna imagen
             if(!req.file){
+                //si no llega a la variable imagenURL se le asigna una imagen por defecto 
                 imagenURL = 'avatarDefault.png';
             }else{
+                //si llega lo guarda en imagenURL
                 imagenURL = req.file.filename;
             }
 
@@ -248,8 +261,10 @@ const controller = {
 
             users.findAll()
             .then((dataUsers) => {
+                //Verifica que el email sea igual al email de confirmacion a la hora de registrarse
                 if(req.body.email === req.body.emailConfirmation){
                     for(let i = 0; i < dataUsers.length; i++){
+                        //Verifica si existe el mismo mail registrado
                         if(dataUsers[i].dataValues.email === req.body.email){
                             
                             ok = 1;
@@ -259,7 +274,7 @@ const controller = {
                         }
                     }
                     if(ok == 0){
-                        //agrega el usuario creado
+                        //Agrega el usuario creado a la base de datos
                         users.create ({
                             first_name: req.body.firstname,
                             last_name: req.body.surname,
