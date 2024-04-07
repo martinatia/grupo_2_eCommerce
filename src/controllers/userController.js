@@ -2,7 +2,7 @@ const fs = require ('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const { validationResult } = require('express-validator');
-const { Console } = require('console');
+//const { Console } = require('console');
 const db = require('../database/models')
 
 //Usabamos cuando teniamos la base de datos json

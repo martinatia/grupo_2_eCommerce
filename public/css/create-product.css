@@ -111,6 +111,10 @@ main{
     flex-direction: column;
 }
 
+main h3{
+  text-align: center;
+}
+
 .contenedor-principal{
   display: flex;
   justify-content: center;
@@ -167,13 +171,18 @@ main{
 
 .contenedor-secundario{
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .contenedor-secundario input{
   display: flex;
-  flex-direction: column;
+  margin-right: 1vw;
+  margin-left: 5px;
+}
+
+.checkbox-talles{
+  display: flex;
 }
 
 .botones{

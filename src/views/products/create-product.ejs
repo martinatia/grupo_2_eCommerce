@@ -40,19 +40,27 @@
               <option value="Women">Mujeres</option>
             </select>
           </div>
+          
 
-          <label>Talles:</label>
+          
           <div class="contenedor-secundario">
-            <% for(let i=32; i < 37; i++){%>
+            <label class="titulo-talles">Talles:</label>
+            
+            <div class="checkbox-talles">
+              <% for(let i=32; i < 37; i++){%>
               
-              <label for="talle<%= i%>">
+                <label for="talle<%= i%>"></label>
                 <%= i%>
                 <input type="checkbox" id="talle<%= i%>" name="talle" value="<%= i%>"/>
-              </label>
-
-            <% } %>
+              
+              <% } %>
+            </div>
           </div>
 
+          
+          <!-- 
+        
+          Para hacer mas simple la base de datos incluimos los colores en le titulo del producto
           
           <label>Colores:</label>
           <div class="contenedor-secundario">
@@ -66,52 +74,10 @@
                     <input type="checkbox" id="color<%=color%>" name="color" value="<%=color%>" />
                 
               <% } %>
-
-                      <!-- 
-      
-                  aqui hice reemplace este codigo por un ciclo y los colores los agregue en un array
-      
-                  <div class="colores">
-                  <label for="color">Rojo</label>
-                  <input type="checkbox" id="colorRojo" name="color" value="Rojo" />
-                </div>
-                <div class="colores">
-                  <label for="col">Azul</label>
-                  <input type="checkbox" id="colorAzul" name="color" value="Azul" />
-                </div>
-                <div class="colores">
-                  <label for="colo">Verde</label>
-                  <input type="checkbox" id="colorVerde" name="color" value="Verde" />
-                </div>
-                <div class="colores">
-                  <label for="color">Blanco</label>
-                  <input type="checkbox" id="colorBlanco" name="color" value="Blanco" />
-                </div>
-                <div class="colores">
-                  <label for="colo">Negro</label>
-                  <input type="checkbox" id="colorNegro" name="color" value="Negro" />
-                </div>
-                <div class="colores">
-                  <label for="col">Rosa</label>
-                  <input type="checkbox" id="colorRosa" name="color" value="Rosa" />
-                </div>
-                <div class="colores">
-                  <label for="colorAm">Amarillo</label>
-                  <input type="checkbox" id="colorAmarillo" name="color" value="Amarillo" />
-                </div>
-                <div class="colores">
-                  <label for="colorV">Violeta</label>
-                  <input type="checkbox" id="colorVioleta" name="color" value="Violeta" />
-                </div>
-                <div class="colores">
-                  <label for="color">Marrón</label>
-                  <input type="checkbox" id="colorMarron" name="color" value="Marrón" />
-                </div>
-              </div>
-      
-                 -->
-                 
+           
+              
           </div>
+          -->
 
           <div class="form-description">
             <label for="description">Descipción:</label>
