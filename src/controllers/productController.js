@@ -3,10 +3,20 @@ const fs = require("fs");
 const path = require("path");
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+const db = require('../database/models'); 
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+let productList = db.products;
+
 const controller = {
+  list: (req, res) => {
+    productList.findAll()
+    .then((products) => {
+      res.render('products/list-products', {products})
+    })
+    
+  },
   editProduct: (req, res) => {
     const producto = products.find((producto) => producto.id == req.params.id);
 
@@ -110,6 +120,9 @@ const controller = {
     fs.writeFileSync(productsFilePath, JSON.stringify(nuevoArreglo));
 
     res.redirect("/");
+  },
+  addStockProduct: (req, res) => {
+    res.send('añadiendo stock')
   },
   deleteProduct: (req, res) => {
     console.log("viene por delete!!!");

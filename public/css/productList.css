@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    background-color: #E9F1F1;
+    width: 100%;
+}
+
+.header-logo{
+    display: flex;
+    justify-content: center;
+}
+
+.header-logo img{
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s ease;
+}
+
+.header-logo img:hover{
+    transform: scale(1.2);
+}
+
+
+.main-products-top-panel{
+    display: flex;
+}
+
+.main-product-top-panel-delete{
+    display: none;
+}
+
+.main-products-panel{
+    margin: 3%;
+}
+
+.main-products-panel-container{
+    margin-bottom: 2px;
+    background-color: #E9F1F1;
+}
+
+.main-products-panel-detail{
+    display: flex;
+}
+
+.main-products-panel-detail img{
+    width: 30%;
+    margin: 2%;
+}
+
+
+#product-delete-selected{
+    display: none;
+}
+
+.main-product-panel-info{
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    width: 10%;
+}
+
+.main-product-panel-price{
+    margin: 3%;
+}
+
+.main-products-panel-forms{
+    display: none;
+}
+
+footer{
+    background-color: #E9F1F1;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+}
+
+footer p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+@media (min-width: 361px){
+
+
+    .main-product-panel-price h4{
+        font-size: 20px;
+    }
+
+}
+
+@media (min-width: 769px){
+    
+    .main-product-panel-price{
+        width: 10%;
+        margin-left: 100px
+    }
+
+    .main-product-panel-price h4{
+        font-size: 30px;
+    }
+
+    .main-product-top-panel-delete{
+        display: flex;
+        margin-top: 5%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .main-product-top-panel-delete input{
+        margin-right: 20px;
+    }
+
+    .main-products-panel-container{
+        display: flex;
+    }
+
+    .main-products-panel-detail{
+        display: flex;
+    }
+
+    .main-products-panel-detail img{
+        width: 200px;
+    }
+    
+    #product-delete-selected{
+        display: flex;
+        margin-left: 10px;
+        margin-right: 5px;
+    }
+
+    
+    
+
+}

@@ -19,19 +19,20 @@ const multerDiskStorage = multer.diskStorage({
 const fileUpload = multer({storage: multerDiskStorage});
 
 const routes = {
-    // productList: '/',
+    productList:    '/',
     createProduct:  '/create-product',
-    productDetail:  '/:id',
-    postProduct:    '/create-product',
-    editProduct:    '/:id/edit-product',
-    putProduct:     '/:id',
-    deleteProduct:  '/:id'
+    productDetail:  '/product-description/:id',
+    postProduct:    '/',
+    editProduct:    '/edit-product/:id',
+    putProduct:     '/',
+    deleteProduct:  '/deleteProduct/:id'
 };
 
-// router.get(routes.productList, controller.list);
+router.get(routes.productList, controller.list);
+
 router.get(routes.createProduct, adminMiddleware, controller.createProduct);//Listo
 router.get(routes.productDetail, controller.productDetail);//Listo
-router.post(routes.postProduct, fileUpload.single('imagenProduto'), adminMiddleware, controller.postProduct);//Listo
+router.post(routes.postProduct, fileUpload.single('imagenProduto'), adminMiddleware, controller.postProduct);//Listo    
 
 router.get(routes.editProduct, adminMiddleware, controller.editProduct);//TODO: Ahora
 router.put(routes.putProduct, fileUpload.single('imagenProducto'), adminMiddleware, controller.putProduct);
