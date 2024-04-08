@@ -82,6 +82,8 @@
                             <% } %>
                         </div>
 
+                        <!-- 
+
                         <input type="password" name="profile-password-admin" id="profile-password-admin" placeholder="Clave de administrador">
 
                         <div>
@@ -92,12 +94,19 @@
                             <% } %>
                         </div>
 
+                         -->
+                        
+
                     </div>
 
                     
     
                 </div>
     
+                
+                
+                <!-- 
+
                 <div class="profile-select">
                     <Label>Pais de Nacimiento:</Label>
                     <Select name="profile-country" id="profile-country">
@@ -118,7 +127,7 @@
     
                     </Select>
                 </div>
-    
+
                 <div class="profile-select">
                     <Label>Provincia:</Label>
                     <Select name="profile-province" id="profile-province">
@@ -140,6 +149,9 @@
                     </Select>
                 </div>
 
+                 -->
+                
+
                 <div class="profile-select">
                     <Label>Categoría:</Label>
                     <Select name="profile-category" id="profile-category">
@@ -150,7 +162,7 @@
                         <% for( const category of categories){ %>
     
                             <option value="<%= category %>"
-                                <% if(locals.user && user.category === category){%>
+                                <% if(locals.user && user.user_type === category){%>
                                     selected
                                 <% } %>>
                                 <%= category %>

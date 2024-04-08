@@ -92,125 +92,182 @@ const controller = {
     saveData: (req, res) => {
         
         //Esta variable sirve como validacion, solo colocando esta clave se puede ser administrador
-        let admin = '123456789';
-
-        const dataUserProfile = {
-            firstname: req.body['profile-nombre'],
-            surname: req.body['profile-apellido'],
-            email: req.body['profile-email'],
-            adress: req.body['profile-adress'],
-            passwordCurrent: req.body['profile-password-current'],
-            passwordNew: req.body['profile-password-new'],
-            codeAdmin: req.body['profile-password-admin'],
-            category: req.body['profile-category'],
-            country: req.body['profile-country'],
-            province: req.body['profile-province'],
-        }
+        //let admin = '123456789';
 
         const session = req.session.userToLoggedIn;
 
         const errors = validationResult(req);
 
-        
+        console.log('por aqui si');
         if(errors.isEmpty()){
-
-            for(let i = 0; i < users.length; i++){
+        
+            users.findAll()
+            .then((dataUsers) => {
+                /* 
                 
-                if(users[i].email === session.email){
+                    for(let i = 0; i < users.length; i++){
                 
-                    if(!(dataUserProfile.passwordCurrent == "") && bcrypt.compareSync(dataUserProfile.passwordCurrent, users[i].password)){
-
-                        dataUserProfile.passwordCurrent = "";
-
-                        // valida si existe cada una de las propiedades del objeto dataUserProfile que seria los campos que quiere modificar el usuario en su perfil
-                        if(dataUserProfile.firstname){
-                            users[i].firstname = dataUserProfile.firstname;
-                        }
+                    if(dataUsers[i].dataValues.email === session.email){
+                    
+                        if(!(dataUserProfile.passwordCurrent == "") && bcrypt.compareSync(dataUserProfile.passwordCurrent, dataUsers.[i].dataValues.password)){
+    
+                            dataUserProfile.passwordCurrent = "";
+    
+                            // valida si existe cada una de las propiedades del objeto dataUserProfile que seria los campos que quiere modificar el usuario en su perfil
+                            if(dataUserProfile.firstname){
+                                users[i].firstname = dataUserProfile.firstname;
+                            }
+                                
+                            if(dataUserProfile.surname){
+                                users[i].surname = dataUserProfile.surname;
+                            }
+    
+                            if(dataUserProfile.email){
+                                users[i].email = dataUserProfile.email;
+                            }
                             
-                        if(dataUserProfile.surname){
-                            users[i].surname = dataUserProfile.surname;
-                        }
-
-                        if(dataUserProfile.email){
-                            users[i].email = dataUserProfile.email;
-                        }
-                        
-                        if(dataUserProfile.adress){
-                            users[i].adress = dataUserProfile.adress;
-                        }
-
-                        if(dataUserProfile.passwordNew){
-                            const hashedPasswordProfile = bcrypt.hashSync(dataUserProfile.passwordNew, 10);
-                            users[i].password = hashedPasswordProfile;
-                        }
-
-                        console.log(dataUserProfile.category)
-
-                        if(dataUserProfile.codeAdmin){
-                            if(dataUserProfile.category){
-                                if(dataUserProfile.category === "Administrador"){
-                                    if(dataUserProfile.codeAdmin === admin){
-                                        users[i].category = dataUserProfile.category;
-                                    }else{
-                                        return res.render('users/profile', {errors: {['profile-password-admin']: {msg: 'Código inválido'}}, user: session});
+                            if(dataUserProfile.adress){
+                                users[i].adress = dataUserProfile.adress;
+                            }
+    
+                            if(dataUserProfile.passwordNew){
+                                const hashedPasswordProfile = bcrypt.hashSync(dataUserProfile.passwordNew, 10);
+                                users[i].password = hashedPasswordProfile;
+                            }
+    
+                            console.log(dataUserProfile.category)
+    
+                            if(dataUserProfile.codeAdmin){
+                                if(dataUserProfile.category){
+                                    if(dataUserProfile.category === "Administrador"){
+                                        if(dataUserProfile.codeAdmin === admin){
+                                            users[i].category = dataUserProfile.category;
+                                        }else{
+                                            return res.render('users/profile', {errors: {['profile-password-admin']: {msg: 'Código inválido'}}, user: session});
+                                        }
                                     }
+                                    users[i].category = dataUserProfile.category;
+                                    delete dataUserProfile.codeAdmin;
                                 }
-                                users[i].category = dataUserProfile.category;
+                                
+                                delete dataUserProfile.codeAdmin;
+    
+                            }else{
+                                console.log(dataUserProfile.category)
+                                if(dataUserProfile.category && dataUserProfile.category === 'Comprador'){
+                                    users[i].category = dataUserProfile.category;
+                                }else{
+                                    
+                                    if(dataUserProfile.category && dataUserProfile.category === 'Administrador'){
+                                        console.log('por aqui')
+                                        return res.render('users/profile', {errors: {['profile-password-admin']: {msg: 'Debe ingresar el código de administrador'}}, user: session});
+                                    } 
+                                }
+                                
                                 delete dataUserProfile.codeAdmin;
                             }
+    
+                            if(dataUserProfile.country){
+                                users[i].country = dataUserProfile.country;
+                            }
+    
+                            if(dataUserProfile.province){
+                                users[i].province = dataUserProfile.province;
+                            }   
                             
-                            delete dataUserProfile.codeAdmin;
-
-                        }else{
-                            console.log(dataUserProfile.category)
-                            if(dataUserProfile.category && dataUserProfile.category === 'Comprador'){
-                                users[i].category = dataUserProfile.category;
-                            }else{
-                                
-                                if(dataUserProfile.category && dataUserProfile.category === 'Administrador'){
-                                    console.log('por aqui')
-                                    return res.render('users/profile', {errors: {['profile-password-admin']: {msg: 'Debe ingresar el código de administrador'}}, user: session});
-                                } 
+                            if(req.file){
+                                users[i].image = req.file.filename;
                             }
                             
-                            delete dataUserProfile.codeAdmin;
-                        }
-
-                        if(dataUserProfile.country){
-                            users[i].country = dataUserProfile.country;
-                        }
-
-                        if(dataUserProfile.province){
-                            users[i].province = dataUserProfile.province;
-                        }   
-                        
-                        if(req.file){
-                            users[i].image = req.file.filename;
-                        }
-                        
-                        break;
-
-                    }else{
-
-                        return res.render('users/profile', {errors: {['profile-password-current']: {msg: 'Credenciales incorrectas'}}, user: session});                 
+                            break;
     
+                        }else{
+    
+                            return res.render('users/profile', {errors: {['profile-password-current']: {msg: 'Credenciales incorrectas'}}, user: session});                 
+        
+                        }
                     }
                 }
-            }
+                
+                */
+                
+                let userFound = false;
+                let passwordNew;
+                
+                //recorre por cada usuario en la base de datos
+                for(let i = 0; i < dataUsers.length; i++){
+                    //confirma si el email de la base de datos es igual al email que esta logueado, si o si tenemos que hacer esta validacion pq dos usuarios pueden tener una misma contraseña
+                    if(dataUsers[i].dataValues.email === session.email){
+                        //verifica que la contraseña sea la correcta, si o si hay que poner la contraseña para modificar algun dato
+                        if(!(req.body['profile-password-current'] == "") && bcrypt.compareSync(req.body['profile-password-current'], dataUsers[i].dataValues.password)){
+                            //esto verifica si es que existe una contraseña nueva o sea si es que el usuario quiere cambiarla
+                            if(req.body['profile-password-new']){
+                                passwordNew = bcrypt.hashSync(req.body['profile-password-new'], 10);
+                            }else{
+                                passwordNew = dataUsers[i].dataValues.password
+                            }
+                            
+                            //modifica los datos del usuario en la base de datos
+                            users.update({
+                                first_name: req.body['profile-nombre'],
+                                last_name: req.body['profile-apellido'],
+                                email: req.body['profile-email'],
+                                address: req.body['profile-adress'],
+                                password: passwordNew,
+                                user_type: req.body['profile-category'],
+                                profile_image_url: req.body['profile-image'],
+                            },{
+                                where: {
+                                    email: session.email
+                                }
+                            })
+
+                            req.session.userToLoggedIn = dataUsers[i].dataValues
+                            userFound = true;
+
+                            break;
+
+                        }
+                    
+                    }
+
+                }
+
+                if(userFound){
+                    if(!req.body['profile-password-new']){
+                        res.redirect('/');
+                    }else{
+                        req.session.destroy();
+                        return res.redirect('/users/login')
+
+                    }   
+                }else{
+                    res.render('users/profile', {errors: {['profile-password-current']: {msg: 'Credenciales incorrectas'}}, user: session})
+                }
+
+            })
             
         }else{
             return res.render('users/profile', { errors: errors.mapped(), user: session});
             
         }
 
+        
+
         //se hace esta validacion para verificar que alguno de estos campos fue completado por el usuario logueado para ser modificados en la base de datos,
         //en el caso que no se haga esta validacion, aunque no se haya modificado nada, me modifica la base de datos y por lo tanto me reinicia el servidor
+        /* 
+        
         if(dataUserProfile.adress == "" && dataUserProfile.category == "" && dataUserProfile.country == "" && dataUserProfile.province == ""){
             return res.redirect('/users/profile');
         }
 
         fs.writeFileSync(usersFilePath, JSON.stringify(users));
-        res.redirect('/users/login');
+        
+        
+        */
+        
+        
         
 
         /* Estas lineas de codigo hacen que no se cierre la sesion despues de un cambio, pero produce un error que hace que se reinicie el servidor por ende
@@ -275,10 +332,12 @@ const controller = {
                     }
                     if(ok == 0){
                         //Agrega el usuario creado a la base de datos
+                        let addressNew = 'Publica s/n'
+                        
                         users.create ({
                             first_name: req.body.firstname,
                             last_name: req.body.surname,
-                            address: 'Publica s/n',
+                            address: addressNew,
                             password: hashedPassword,
                             email: req.body.email,
                             user_type: "Comprador",
