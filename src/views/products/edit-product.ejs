@@ -15,140 +15,162 @@
     <main>
         <div class="contenedor-principal">
 
-            <form action="/products/<%= producto.id  %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form action="/products/<%= product.product_id  %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 
                 <div class="inputs">
                     <label for="name"><h3>Nombre del producto</h3></label>
-                    <input type="text" name="name" id="name" value="<%=producto.name %>">
+                    <input type="text" name="name" id="name" value="<%=product.product_name %>">
                 </div>
                     
                 <div class="inputs">
                     <label for="price"><h3>Precio</h3></label>
-                    <input type="number" name="price" id="price" value="<%= producto.price %>">
+                    <input type="number" name="price" id="price" value="<%= product.product_price %>">
                 </div>
                     
                 <div class="inputs">
                     <label for="description"><h3>Descripción</h3></label>
-                    <input name="description" id="description" value="<%= producto.description%>"></textarea>
+                    <input name="description" id="description" value="<%= product.product_description%>"></textarea>
                 </div>
                     
                 <div class="contenedor-secundario">
                     
                     <label for="categoria"><h3>Categoría</h3></label>
 
-                        <label>
-                            
-                            <input type="radio" name="categoria" id="categoria" value="Hombres" 
-                            <% if(producto.category === "Men" ) { %>checked
-                            <% } %>
-                            > Hombres
-
-                        </label>
+                    <% let categoryProduct %>
+                    <% let sizesProductId %>
+                    <% let sizesProduct %>
                         
-                        <label>
-
-                            <input type="radio" name="categoria" id="categoria" value="Mujeres" 
-                            <% if( producto.category === "Women" ) { %>checked
-                            <% } %>
-                            > Mujeres
-
-                        </label>
+                    <% for(let i = 0; i < categories.length; i++){ %>
                         
-                        <label>
-                            
-                            <input type="radio" name="categoria" id="categoria" value="Niños" 
-                            <% if(producto.category === "Kids"){%>checked
-                            <% }%> 
-                            > Niños
+                        <% if(product.category_id == categories[i].category_id){%>
+                            <% categoryProduct = categories[i].category_description  %>
+                            <% sizesProduct = sizes[i].size_name %>
+                            <% break; %>
+                        <% } %>
+                        
+                    <% } %>
 
-                        </label>
+                    <% for(let i = 0; i < stock.length; i++){ %>
+                        
+                        <% if(product.category_id == stock[i].product_id){%>
+                            <% sizesProductId = stock[i].size_id %>
+                            <% break; %>
+                        <% } %>
+                        
+                    <% } %>
+
+                    <% for(let i = 0; i < sizes.length; i++){ %>
+                        
+                        <% if(sizesProductId == sizes[i].size_id){%>
+                            <% sizesProduct = sizes[i].size_name %>
+                            <% break; %>
+                        <% } %>
+                        
+                    <% } %>
                     
-                    </div>
-                    
-                    <div>
                         
-                        <label for="seccion"><h3>Sección</h3></label>
+                    <label>
+                            
+                        <input type="radio" name="categoria" id="categoria" value="Hombres" 
+                        <% if( categoryProduct  == "Hombres" ) { %>
+                            checked
+                        <% } %>
+                        > Hombres
+
+                    </label>
                         
-                        <div class="contenedor-secundario">
+                    <label>
+
+                        <input type="radio" name="categoria" id="categoria" value="Mujeres" 
+                        <% if( categoryProduct == "Mujeres" ) { %>
+                            checked
+                        <% } %>
+                        > Mujeres
+
+                    </label>
+                        
+                    <label>
                             
-                            <label>
+                        <input type="radio" name="categoria" id="categoria" value="Niños" 
+                        <% if( categoryProduct == "niños"){%>
+                            checked
+                        <% }%> 
+                        > Niños
 
-                                <input type="radio" name="seccion" id="seccion" value="in-sale" 
-                                <% if(producto.section === "in-sale" ) { %>checked
-                                <% } %>
-                                > Ofertas
-
-                            </label>
-                            
-                            <label>
-                                
-                                <input type="radio" name="seccion" id="seccion" value="featured" 
-                                <% if(producto.section === "featured" ) { %>checked<% } %>
-                                > Destacados
-
-                            </label>
-                            
-                            <label>
-                                
-                                <input type="radio" name="seccion" id="seccion" value="last-colection" 
-                                <% if(producto.section === "last-colection" ) { %>checked
-                                <% } %>
-                                > Ultima colección
-
-                            </label>
-
-                        </div>
+                    </label>
                     
-                    </div>
-
-                    <h3>Talles:</h3>
+                </div>
+                    
+                <div>
+                        
+                    <label for="seccion"><h3>Sección</h3></label>
+                        
                     <div class="contenedor-secundario">
+                            
+                        <label>
+
+                            <input type="radio" name="seccion" id="seccion" value="in-sale" 
+                            <% if(product.product_section === "in-sale" ) { %>checked
+                            <% } %>
+                            > Ofertas
+
+                        </label>
+                            
+                        <label>
+                                
+                            <input type="radio" name="seccion" id="seccion" value="featured" 
+                            <% if(product.product_section === "featured" ) { %>checked<% } %>
+                            > Destacados
+
+                        </label>
+                            
+                        <label>
+                                
+                            <input type="radio" name="seccion" id="seccion" value="last-colection" 
+                            <% if(product.product_section === "last-colection" ) { %>checked
+                            <% } %>
+                            > Ultima colección
+
+                        </label>
+
+                    </div>
+                    
+                </div>
+
+                <h3>Talles:</h3>
+                <div class="contenedor-secundario">
                         
-                        <% const sizesKids = [22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]%>
-                        <% const sizesAdult = [36, 37, 38, 39, 40, 41, 42, 43, 44]%>
-                        <% const sizes=producto.sizes || [] %>
-                        <% const availableSizes=(producto.category==="Kids") ? sizesKids : sizesAdult%>
+                    <% const sizesKids = [24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]%>
+                    <% const sizesAdult = [36, 37, 38, 39, 40, 41, 42, 43, 44, 45]%>
+                    
+                    <% const availableSizes = categoryProduct === "Kids" ? sizesKids : sizesAdult %>
 
-                        <% availableSizes.forEach(size=> { %>
-                            <label for="size<%= size %>">
-                                <input type="checkbox" name="sizes" id="size<%= size %>" value="<%= size %>" 
-                                <% if(sizes.includes(size)) { %>checked
-                                <% } %>>
-                                <%= size %>
-                            </label>
-                        <% }) %>
+                    <!-- si funciona pero en la base de datos esta mal completado ya que en el stock el id 1 del producto 1 que es para adultos esta con id 1 en sizes o sea en la columna size_name dice 24 q es para niños -->
+                    <% availableSizes.forEach(size=> { %>
+                        <label for="size<%= size %>">
+                            <input type="checkbox" name="sizes" id="size<%= size %>" value="<%= size %>" 
+                            <% if(sizesProduct == size) { %>
+                                checked
+                            <% } %>>
+                            <%= size %>
+                        </label>
+                    <% }) %>
 
-                    </div>
+                </div>
 
-                    <div>
-                        <h3>Colores:</h3>
-                        <div class="colores">
-                            <% const colorImages=['Yellow', 'Blue' , 'White' , 'Brown' , 'Black' , 'Red' , 'Pink', 'Green' , 'Violet' ]; %>
-                            <% const colors=producto.colors || [] %>
-                            <% colorImages.forEach((colorImage, index) => { %>
-                                <label class="color-checkbox" for="color_<%= index %>">
-                                    <input type="checkbox" id="color_<%= index %>" name="<%= colorImage %>" value="<%= colorImage %>"
-                                        <% if(colors.includes(colorImage)) { %>checked<% } %>>
-                                        <img src="/img/utils/<%= colorImage %>.png" alt="<%= colorImage %>">
-                                </label>
-                            <% }); %>
+                <div>
+                    <label for="imagenProducto">Subir imagen</label>
+                    <input type="file" id="imagenProducto" name="imagenProducto" accept="image/*">
+                </div>
 
-                        </div>
-                    </div>
-
-                    <div>
-                        <label for="imagenProducto">Subir imagen</label>
-                        <input type="file" id="imagenProducto" name="imagenProducto" accept="image/*">
-                    </div>
-
-                    <div class="botones">
-                        <button type="reset">Descartar cambios <i class="fas fa-trash"></i></button>
-                        <button type="submit">Guardar cambios <i class="fas fa-save"></i></button>
-                    </div>
-                </form>
-            </div>
-        </main>
-        <%- include("../partials/footer")%>
+                <div class="botones">
+                    <button type="reset">Descartar cambios <i class="fas fa-trash"></i></button>
+                    <button type="submit">Guardar cambios <i class="fas fa-save"></i></button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include("../partials/footer")%>
 </body>
 
 

@@ -18,7 +18,7 @@
                 <div class="main-product-top-panel-delete">
 
                     <input type="checkbox" name="product-delete-selected-all" id="product-delete-selected-all">
-                    <form action="/product/deleteProduct/:<%= products.id %>?_method=PUT" method="POST">
+                    <form action="/product/deleteProduct/<%= products.product_id %>?_method=PUT" method="POST">
 
                         <button type="submit">Eliminar</button>
 
@@ -63,13 +63,13 @@
 
                     <div class="main-products-panel-forms">
 
-                        <form action="/product/editProduct/:<%= products[i].id %>" method="GET">
+                        <a href="/products/edit-product/<%= products[i].product_id %>">
 
-                            <button type="submit">Modificar</button>
+                            <button>Modificar</button>
 
-                        </form>
+                        </a>
 
-                        <form action="/product/deleteProduct/:<%= products[i].id %>?_method=PUT" method="POST">
+                        <form action="/products/deleteProduct/<%= products[i].product_id %>?_method=PUT" method="POST">
 
                             <button type="submit">Eliminar</button>
 

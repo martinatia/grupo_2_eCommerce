@@ -8,6 +8,9 @@ const db = require('../database/models');
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 let productList = db.products;
+let categoriesList = db.categories;
+let sizesList = db.sizes;
+let stockList = db.stock;
 
 const controller = {
   list: (req, res) => {
@@ -18,9 +21,25 @@ const controller = {
     
   },
   editProduct: (req, res) => {
-    const producto = products.find((producto) => producto.id == req.params.id);
+    //const producto = products.find((producto) => producto.id == req.params.id);
+    const producto = productList.findByPk(req.params.id);
+    const categorias = categoriesList.findAll();
+    const talles = sizesList.findAll();
+    const stock = stockList.findAll();
 
-    res.render("products/edit-product", { producto });
+    
+    
+    Promise.all([producto, categorias, talles, stock])
+    .then(([product, categories, sizes, stock]) => {
+      res.render("products/edit-product", 
+      { 
+        product: product, 
+        categories: categories, 
+        sizes: sizes, 
+        stock: stock 
+      });
+    }) 
+
   },
   productDetail: (req, res) => {
     const product = products.find((product) => product.id == req.params.id);
