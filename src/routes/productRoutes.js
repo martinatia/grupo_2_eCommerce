@@ -25,9 +25,9 @@ const routes = {
     postProduct:    '/',
     editProduct:    '/edit-product/:id',
     putProduct:     '/',
-    deleteProduct:  '/deleteProduct/:id'
+    deleteProduct:  '/deleteProduct/:id',
+    searchProduct: '/search'
 };
-
 router.get(routes.productList, controller.list);
 
 router.get(routes.createProduct, adminMiddleware, controller.createProduct);//Listo
@@ -40,7 +40,7 @@ router.put(routes.putProduct, fileUpload.single('imagenProducto'), adminMiddlewa
 
 
 router.delete(routes.deleteProduct, controller.deleteProduct);
-
+router.get(routes.searchProduct, controller.searchProduct);
 //TODO: deleteProduct
 
 

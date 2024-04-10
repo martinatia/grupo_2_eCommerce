@@ -11,8 +11,54 @@ body{
 header{
     background-color: #E9F1F1;
     width: 100%;
-}
-
+} 
+.busqueda{
+    width: 100%;
+}   
+.search-container{
+    width: 100%; /* Cambiado a 100% para ajustarse al ancho de la pantalla */
+    max-width: 490px; /* Establecer un ancho máximo */
+    display: block;
+    margin: 0 auto;
+  }
+  
+  input#search-bar{
+    margin: 0 auto;
+    width: calc(100% - 95px); /* Ajustado para dejar espacio para el icono de búsqueda */
+    height: 45px;
+    padding: 0 20px;
+    font-size: 1rem;
+    border: 1px solid #D0CFCE;
+    outline: none;
+    margin-top: 10px;
+    box-sizing: border-box; /* Agregado para incluir el relleno en el ancho total */
+    &:focus{
+      border: 1px solid #008ABF;
+      transition: 0.35s ease;
+      color: #008ABF;
+      &::-webkit-input-placeholder{
+        transition: opacity 0.45s ease; 
+          opacity: 0;
+       }
+      &::-moz-placeholder {
+        transition: opacity 0.45s ease; 
+          opacity: 0;
+       }
+      &:-ms-placeholder {
+       transition: opacity 0.45s ease; 
+         opacity: 0;
+       }    
+     }
+  }
+  
+  .search-icon{
+    position: relative;
+    float: right;
+    width: 75px;
+    height: 75px;
+    right: 80px;
+    top: -5px;
+  }
 .header-logo{
     display: flex;
     justify-content: center;

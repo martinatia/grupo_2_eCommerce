@@ -1,92 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/list-product.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
     <title>Lista de Productos</title>
 </head>
+
 <body>
     <%- include('../partials/smallHeader') %>
-    <main>
-        <div class="main-products">
-            
-            <!-- Panel superior para seleccionar todos los productos -->
-            <div class="main-products-top-panel">
+        <main>
+            <div class="main-products">
 
-                <div class="main-product-top-panel-delete">
+                <!-- Panel superior para seleccionar todos los productos -->
+                <div class="main-products-top-panel">
 
-                    <input type="checkbox" name="product-delete-selected-all" id="product-delete-selected-all">
-                    <form action="/product/deleteProduct/<%= products.product_id %>?_method=PUT" method="POST">
+                    <div class="main-product-top-panel-delete">
 
-                        <button type="submit">Eliminar</button>
-
-                    </form>
-
-                </div>
-                
-
-            </div>
-
-            <div class="main-products-panel">
-
-                <% for(let i = 0; i < products.length; i++){%>
-                
-                <div class="main-products-panel-container">
-
-                    <div class="main-products-panel-detail">
-                        
-                        <input type="checkbox" name="product-delete-selected" id="product-delete-selected">
-                        <img src="/img/mercaderia/<%= products[i].product_image_url %>" alt="imagen de producto">
-    
-                        <div class="main-product-panel-info">
-                        
-                            <span>#<%= products[i].product_id %></span>
-                            <h3><%= products[i].product_name%></h3>
-                            <span>size</span>
-                            <span>stock</span>
-
-                        </div>
-
-                    </div>
-
-                    
-
-                    <div>
-                    
-                        <div class="main-product-panel-price">
-                            <h4>$<%= products[i].product_price%></h4>
-                        </div>
-
-                    </div>
-
-                    <div class="main-products-panel-forms">
-
-                        <a href="/products/edit-product/<%= products[i].product_id %>">
-
-                            <button>Modificar</button>
-
-                        </a>
-
-                        <form action="/products/deleteProduct/<%= products[i].product_id %>?_method=PUT" method="POST">
+                        <input type="checkbox" name="product-delete-selected-all" id="product-delete-selected-all">
+                        <form action="/product/deleteProduct/<%= products.product_id %>?_method=PUT" method="POST">
 
                             <button type="submit">Eliminar</button>
 
                         </form>
 
                     </div>
+                    <div class="busqueda">
+                        <form class="search-container" action="/product/search" method="GET">
+                            <input type="text" id="search-bar" name="q" placeholder="Buscar...">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                    
 
                 </div>
-                
-                <%}%>
+
+                <div class="main-products-panel">
+
+                    <% for(let i=0; i < products.length; i++){%>
+
+                        <div class="main-products-panel-container">
+
+                            <div class="main-products-panel-detail">
+
+                                <input type="checkbox" name="product-delete-selected"
+                                    id="product-delete-selected<%= products[i].product_id %>" class="product-checkbox">
+
+                                <img src="/img/mercaderia/<%= products[i].product_image_url %>"
+                                    alt="imagen de producto">
+
+                                <div class="main-product-panel-info">
+
+                                    <span>#<%= products[i].product_id %></span>
+                                    <h3>
+                                        <%= products[i].product_name%>
+                                    </h3>
+                                    <span>size</span>
+                                    <span>stock</span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div>
+
+                                <div class="main-product-panel-price">
+                                    <h4>$<%= products[i].product_price%>
+                                    </h4>
+                                </div>
+
+                            </div>
+
+                            <div class="main-products-panel-forms">
+
+                                <a href="/products/edit-product/<%= products[i].product_id %>">
+
+                                    <button>Modificar</button>
+
+                                </a>
+
+                                <form action="/products/deleteProduct/<%= products[i].product_id %>?_method=PUT"
+                                    method="POST">
+
+                                    <button type="submit">Eliminar</button>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+
+                        <%}%>
+
+                </div>
+
+                <i class="fa-solid fa-ellipsis-vertical"></i>
 
             </div>
+            <script>
+                // Obtener el checkbox "Eliminar todos"
+                const deleteCheckboxAll = document.getElementById('product-delete-selected-all');
 
-            <i class="fa-solid fa-ellipsis-vertical"></i>
+                // Obtener todos los checkboxes de producto
+                const productCheckboxes = document.querySelectorAll('.product-checkbox');
 
-        </div>
-    </main>
-    <%- include("../partials/smallFooter") %>
+                // Agregar evento de escucha al checkbox "Eliminar todos"
+                deleteCheckboxAll.addEventListener('change', function () {
+                    // Iterar sobre todos los checkboxes de producto
+                    productCheckboxes.forEach(function (checkbox) {
+                        // Marcar o desmarcar según el estado del checkbox "Eliminar todos"
+                        checkbox.checked = deleteCheckboxAll.checked;
+                    });
+                });
+
+
+            </script>
+
+
+
+
+        </main>
+        <%- include("../partials/smallFooter") %>
 </body>
+
 </html>
