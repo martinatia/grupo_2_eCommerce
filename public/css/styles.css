@@ -206,75 +206,22 @@ main article img {
 
 }
 
-main section .productos article {
-  background-color: #fff;
-  margin: 10px 0px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-main section .productos article:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-}
-
-.sec-ofertas,
-.sec-prod-destacados,
-.sec-ultima-coleccion {
+section .sec-prod-destacados,
+ section .sec-ofertas,
+ section .sec-ultima-coleccion{
   display: flex;
   flex-wrap: wrap;
 }
 
-.titulos i {
-  font-size: 20px;
-  border-radius: 50px;
-  border: #FFF;
-  padding: 5px;
-  transition: border-radius 0.8s ease, border 0.8s ease;
-}
-
-.titulos i:hover {
-  border-radius: 50px;
-  border: 1px solid #000000;
-}
-
-main section .productos article h4 {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  text-align: center;
-}
-
-main section .productos article .main-product .precioZapp {
-  width: 100%;
-  text-align: center;
-  color: #39b54a;
-  border: 1px solid #dcdcdc;
-  border-radius: 5px;
-  text-align: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-main section article {
+main section div form {
   background-color: #fff;
   margin: 10px 0px;
-  border-radius: 10px;
 }
-
-main section {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-main section article img {
+main section article form img {
   width: 100%;
 }
 
-main section article i {
+main section form .main-product i {
   display: block;
   font-size: 16px;
   padding: 5px;
@@ -284,30 +231,47 @@ main section article i {
   background-color: #FFF;
   border-radius: 50%;
   position: absolute;
-  right: 25px;
+  right: 20px;
   top: -15px;
 }
+article div.main-product {
+  width: 100%;
+  align-items: baseline;
+  border-top: 1px solid #ebebeb;
+  position: relative;
+  padding: 15px;
+}
 
-div.productos i {
+
+div.main-product i {
   border: 2px solid #39b54a;
   border-radius: 50%;
+  padding: 5px;
   color: #39b54a;
-  transition: transform 0.7s ease;
 }
+.precioZapp {
+  font-size: 18px;
+  width:80%;
+  text-align: center;
+  display: block;
+}
+.main-product {
+  display: flex;
+
+}
+
+
+
+.titulos i:hover {
+  border-radius: 50px;
+  border: 1px solid #000000;
+}
+
 
 main section .productos article:hover .main-product i {
   transform: rotate(-360deg);
 }
 
-section article div.main-product {
-  width: 100%;
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  border-top: 1px solid #ebebeb;
-  position: relative;
-  margin-bottom: 15px;
-}
 
 .foot .logo-footer {
   padding-top: 17px;
@@ -398,17 +362,33 @@ label {
 
 @media (min-width: 361px) {
   
-  main section div.productos {
+
+  main section .productos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+    main article {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  }
+}
+
+@media (min-width: 769px) {
+  main article {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  }
+  main section .productos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
-
-}
-
-
-@media (min-width: 769px) {
-
+  main section .productos form {
+    width: calc(50% - 20px); /* Para mostrar 2 productos por fila */
+    margin-bottom: 20px; /* Espacio entre filas */
+  }
   .header-session{
     display: flex;
     justify-content: space-around;

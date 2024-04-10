@@ -167,7 +167,7 @@ const controller = {
           }
         }
       });
-      console.log(foundProducts)
+      
       res.render('products/resultadoBusqueda', { products: foundProducts });
     } catch (error) {
       console.error(error);
