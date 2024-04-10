@@ -157,6 +157,7 @@ const controller = {
 
   },
   searchProduct: async (req, res) => {
+    console.log("Hola")
     try {
       const searchQuery = req.query.q;
       const foundProducts = await db.products.findAll({
@@ -166,7 +167,8 @@ const controller = {
           }
         }
       });
-      res.render('resultadoBusqueda', { products: foundProducts });
+      console.log(foundProducts)
+      res.render('products/resultadoBusqueda', { products: foundProducts });
     } catch (error) {
       console.error(error);
       res.status(500).send('Error interno del servidor');
