@@ -4,6 +4,13 @@ const app = express();
 const mainRouter = require('./routes/mainRoutes');
 const productRouter = require('./routes/productRoutes');
 const userRouter = require('./routes/userRoutes');
+
+//Rutas de las APIs
+const apiUsersRouter = require('./routes/api/users');
+const apiProductsRouter = require('./routes/api/products');
+const apiCategoriesRouter = require('./routes/api/categories');
+
+
 const rememberMiddleware = require('./middlewares/rememberMiddleware')
 const userMiddleware = require('./middlewares/userMiddleware')
 
@@ -33,5 +40,14 @@ app.use("/products", productRouter);
 app.use("/users",userRouter);
 
 
-app.listen(3000, () => console.log("Servidor corriendo en http://localhost:3000"));
+//para la API
+app.use("/api/users",apiUsersRouter);
+app.use("/api/products",apiProductsRouter);
+app.use("/api/categories", apiCategoriesRouter);
+
+
+app.listen(3001, () => console.log("Servidor corriendo en http://localhost:3001"));
+
+
+
 

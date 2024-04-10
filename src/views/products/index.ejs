@@ -35,19 +35,19 @@
     
       <div class="productos">
         <% inSaleProducts.forEach((product) => { %>
-          <form action="./products/<%= product.id %>">
+          <form action="./products/<%= product.product_id %>">
             
             <button type="submit">
             
               <article>
             
-              <h4><%= product.name %></h4> <!-- Nombre del producto arriba de la imagen -->
+              <h4><%= product.product_name %></h4> <!-- Nombre del producto arriba de la imagen -->
              
-                <img src="/img/mercaderia/<%= product.image %>"  />
+                <img src="/img/mercaderia/<%= product.product_image_url %>"  />
               
                 <div class="main-product">
                   <i class="fas fa-cart-plus"></i>
-                  <h3 class="precioZapp">$ <%= product.price %></h3>  <!-- Precio del producto abajo de la imagen  -->
+                  <h3 class="precioZapp">$ <%= product.product_price %></h3>  <!-- Precio del producto abajo de la imagen  -->
                 </div>
               
               </article>
@@ -68,15 +68,15 @@
       <div class="productos">
         <% featuredProducts.forEach((product) =>{ %>
           
-          <form action="./products/<%= product.id %>">
+          <form action="./products/<%= product.product_id %>">
             <button type="submit">
               <article>
             
-                <h4><%= product.name %></h4>
-                <img src="/img/mercaderia/<%= product.image %>"  />
+                <h4><%= product.product_name %></h4>
+                <img src="/img/mercaderia/<%= product.product_image_url %>"  />
                   <div class="main-product">
                     <i class="fas fa-cart-plus"></i>
-                    <h3 class="precioZapp">$ <%= product.price %></h3>
+                    <h3 class="precioZapp">$ <%= product.product_price %></h3>
                   </div>
                 
               </article>
@@ -100,11 +100,11 @@
           <!-- Esto tambien debes modificar, te dejo como referencia -->
           <article>
             
-            <h4><%= product.name %></h4>
-            <img src="/img/mercaderia/<%= product.image %>"  />
+            <h4><%= product.product_name %></h4>
+            <img src="/img/mercaderia/<%= product.product_image_url %>"  />
             <div class="main-product">
               <i class="fas fa-cart-plus"></i>
-              <h3 class="precioZapp">$ <%= product.price %></h3>
+              <h3 class="precioZapp">$ <%= product.product_price %></h3>
             </div>
             
           </article>
