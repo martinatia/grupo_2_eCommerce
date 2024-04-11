@@ -25,7 +25,7 @@ const routes = {
     postProduct:    '/new-product',
     editProduct:    '/edit-product/:id',
     putProduct:     '/modify-product/:id',
-    deleteProduct:  '/deleteProduct/:id',
+    deleteProduct:  '/delete-product/:id',
     searchProduct: '/search'
 };
 router.get(routes.productList, controller.list);

@@ -16,9 +16,12 @@ let brandList = db.brands
 
 const controller = {
   list: (req, res) => {
-    productList.findAll()
-    .then((products) => {
-      res.render('products/list-products', {products})
+    const products = productList.findAll()
+    const product = productList.findByPk(req.params.id)
+    
+    Promise.all([products, product])
+    .then(([products, product]) => {
+      res.render('products/list-products', {products: products, product: product})
     })
     
   },
@@ -236,6 +239,17 @@ const controller = {
     res.send('añadiendo stock')
   },
   deleteProduct: (req, res) => {
+    
+    //no me deja eliminar ya que es una foreingkey de otra tabla
+    console.log(req.params.id)
+    productList.destroy({
+      where:{
+        product_id: req.params.id
+      }
+    })
+    
+    /* 
+    
     console.log("viene por delete!!!");
     const idProductoAAliminar = req.params.id;
     console.log("id producto :" + idProductoAAliminar);
@@ -245,7 +259,10 @@ const controller = {
       return res.send("no se eliminó el producto");
     }
     fs.writeFileSync(productsFilePath, JSON.stringify(updatedProducts));
-    res.redirect("/");
+    
+    */
+    
+    res.redirect("/products");
 
   },
   searchProduct: async (req, res) => {
