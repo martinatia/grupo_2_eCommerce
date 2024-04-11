@@ -21,12 +21,12 @@ const fileUpload = multer({storage: multerDiskStorage});
 const routes = {
     productList:    '/',
     createProduct:  '/create-product',
-    productDetail:  '/product-description/:id',
     postProduct:    '/new-product',
     editProduct:    '/edit-product/:id',
     putProduct:     '/modify-product/:id',
     deleteProduct:  '/delete-product/:id',
-    searchProduct: '/search'
+    searchProduct:  '/search',
+    productDetail:  '/:id'
 };
 router.get(routes.productList, controller.list);
 

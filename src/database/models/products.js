@@ -48,6 +48,7 @@ module.exports = (sequelize, dataTypes) => {
             as: "brand",
             foreignKey: "brand_id"
         });
+        
     }
     return products
 };
