@@ -24,10 +24,10 @@ const routes = {
     productDetail:  '/product-description/:id',
     postProduct:    '/new-product',
     editProduct:    '/edit-product/:id',
-    putProduct:     '/:id',
-    deleteProduct:  '/deleteProduct/:id'
+    putProduct:     '/',
+    deleteProduct:  '/deleteProduct/:id',
+    searchProduct: '/search'
 };
-
 router.get(routes.productList, controller.list);
 
 router.get(routes.createProduct, controller.createProduct);//Listo (lleva permiso de administrador)
@@ -40,7 +40,7 @@ router.put(routes.putProduct, fileUpload.single('imagenProducto'), adminMiddlewa
 
 
 router.delete(routes.deleteProduct, controller.deleteProduct);
-
+router.get(routes.searchProduct, controller.searchProduct);
 //TODO: deleteProduct
 
 

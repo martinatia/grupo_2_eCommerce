@@ -251,6 +251,25 @@ const controller = {
     res.redirect("/");
 
   },
+  searchProduct: async (req, res) => {
+    console.log("Hola")
+    try {
+      const searchQuery = req.query.q;
+      const foundProducts = await db.products.findAll({
+        where: {
+          product_name: {
+            [db.Sequelize.Op.like]: `%${searchQuery}%`
+          }
+        }
+      });
+      
+      res.render('products/resultadoBusqueda', { products: foundProducts });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error interno del servidor');
+    }
+  }
 };
+
 
 module.exports = controller;
