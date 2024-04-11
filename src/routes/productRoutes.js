@@ -22,17 +22,17 @@ const routes = {
     productList:    '/',
     createProduct:  '/create-product',
     productDetail:  '/product-description/:id',
-    postProduct:    '/',
+    postProduct:    '/new-product',
     editProduct:    '/edit-product/:id',
-    putProduct:     '/',
+    putProduct:     '/:id',
     deleteProduct:  '/deleteProduct/:id'
 };
 
 router.get(routes.productList, controller.list);
 
-router.get(routes.createProduct, adminMiddleware, controller.createProduct);//Listo
+router.get(routes.createProduct, controller.createProduct);//Listo (lleva permiso de administrador)
 router.get(routes.productDetail, controller.productDetail);//Listo
-router.post(routes.postProduct, fileUpload.single('imagenProduto'), adminMiddleware, controller.postProduct);//Listo    
+router.post(routes.postProduct, fileUpload.single('imagenProduto'), controller.postProduct);//Listo (lleva permiso de administrador)
 
 router.get(routes.editProduct, controller.editProduct);//TODO: Ahora (va con permiso de admin)
 router.put(routes.putProduct, fileUpload.single('imagenProducto'), adminMiddleware, controller.putProduct);
