@@ -221,6 +221,7 @@ const controller = {
           brandId = marcas[i].brand_id;
         }
       }
+      console.log("El nuevo numero en teoria es:", req.body.price);
         
       productList.update({
         product_name: req.body.name,
@@ -237,7 +238,8 @@ const controller = {
       });
     })
     
-    res.redirect("/products");
+    // res.redirect("/products");
+    res.redirect("/");
   },
   addStockProduct: (req, res) => {
     res.send('añadiendo stock')
