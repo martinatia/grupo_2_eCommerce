@@ -205,7 +205,30 @@ main article img {
   }
 
 }
+article {
+  border-radius: 2%;
+}
+#carrito {
+  transition: transform 0.7s ease;
+}
 
+.rotar {
+  transform: rotate(360deg);
+}
+.productos article {
+  transition: transform 0.3s ease;
+}
+
+.productos article:hover {
+  transform: scale(1.05); /* Puedes ajustar el factor de escala según tu preferencia */
+}
+li a i {
+  transition: transform 0.3s ease;
+}
+
+li a i:hover {
+  transform: scale(1.5); /* Puedes ajustar el factor de escala según tu preferencia */
+}
 section .sec-prod-destacados,
  section .sec-ofertas,
  section .sec-ultima-coleccion{
