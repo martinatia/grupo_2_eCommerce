@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Descripción del Producto</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,500;1,600&family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/produc-description.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Descripción del Producto</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,500;1,600&family=Roboto:wght@700&display=swap"rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/produc-description.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
-</head>
-
-<body>
+  <body>
     <%- include("../partials/header")%>
     <main>
-
       <div class="main-content">
-
         <div class="contenedorFotos">
-          
           <div class="fotoPrimaria">
-            <img src="/img/mercaderia/<%= product.image  %>" alt="Foto del Producto" />
+            <img
+              src="/img/mercaderia/<%= product.product_image_url  %>"
+              alt="Foto del Producto"
+            />
           </div>
           <!-- <div class="fotoSecundaria">
                     <img src="/img/Zapp5.jpg" alt="Foto del Producto">
@@ -30,76 +38,40 @@
         </div>
 
         <div class="contenedorDescripcion">
-
-          <h2>Modelo: <%= product.name %></h2>
-          <h3 class="price">Precio: $<%= product.price %></h3>
-
+          <h2>Nombre: <%= product.product_name %></h2>
+          <h3 class="price">Precio: $<%= product.product_price %></h3>
+          
           <form action="">
             
-            <div>
-              
-              <label for="color">Colores disponibles:</label>
-              <div class="contenedor-secundario">
-                <% const availableColors=product.colors %>
-                  <% availableColors.forEach(color=> { %>
-                    <label for="color">
-                      <%= color %>
-                        <input type="radio" name="color" value="<%= color %>" />
-                    </label>
-                    <% }); %>
-              </div>
-
-            </div>
-
-            <div>
-              
-              <label for="talles">
-                <h3 class="tallesss">Talles disponibles</h3>
-              </label>
-
-              <select name="talles" id="talles">
-                <% const availableSizes=product.sizes%>
-                <% availableSizes.forEach((size)=>{ %>
-                <option name="talles" id="talles" value="<%= size %>">
-                  <%= size %>
-                </option>
-                <% }) %>
-              </select>
-
-            </div>
 
             <div class="detalle">
               <h3>Descripción:</h3>
-              <p><%= product.description %></p>
+              <p><%= product.product_description %></p>
             </div>
-            
+
             <div class="boton">
               <button onclick="window.location.href='./shopping-cart'">
-                Añadir 
+                Añadir
                 <i class="fas fa-shopping-cart"></i>
               </button>
             </div>
-
           </form>
 
           <div class="boton">
-            <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
+            <form
+              action="/products/<%= product.id %>?_method=DELETE"
+              method="POST"
+            >
               <button>
                 <a href="/products/<%= product.id %>?_method=DELETE"></a>
-                Eliminar producto 
+                Eliminar producto
                 <i class="fa-solid fa-trash"></i>
               </button>
             </form>
           </div>
-
         </div>
-
       </div>
-
-
-
     </main>
     <%- include("../partials/footer")%>
-</body>
-
+  </body>
 </html>

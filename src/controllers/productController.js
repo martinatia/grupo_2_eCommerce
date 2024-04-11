@@ -46,8 +46,12 @@ const controller = {
 
   },
   productDetail: (req, res) => {
-    const product = products.find((product) => product.id == req.params.id);
-    res.render("products/product-description", { product });
+    // const product = products.find((product) => product.id == req.params.id);
+    db.products.findByPk(req.params.id)
+    .then((product)=>{
+      res.render("products/product-description", { product });
+    });
+    
   },
   createProduct: (req, res) => {
     const marcas = brandList.findAll();
