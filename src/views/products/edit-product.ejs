@@ -15,7 +15,7 @@
     <main>
         <div class="contenedor-principal">
 
-            <form action="/products/<%= product.product_id  %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form action="/products/modify-product/<%= product.product_id  %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 
                 <div class="inputs">
                     <label for="name"><h3>Nombre del producto</h3></label>
@@ -31,7 +31,19 @@
                     <label for="description"><h3>Descripción</h3></label>
                     <input name="description" id="description" value="<%= product.product_description%>"></textarea>
                 </div>
+                
+                <div class="inputs">
+                    <label for="brands"><h3>Marca:</h3></label>
+                    <select name="brands" id="brands">
+                      <option value="">Elegí</option>                                   
+                    <% for(let i = 0; i < brands.length; i++){%>  
+                      <option value=<%= brands[i].brand_name %>><%= brands[i].brand_name %></option>
+                    <%}%>
+                    </select>
+                  </div>
                     
+                <div>
+                
                 <div class="contenedor-secundario">
                     
                     <label for="categoria"><h3>Categoría</h3></label>
@@ -44,7 +56,6 @@
                         
                         <% if(product.category_id == categories[i].category_id){%>
                             <% categoryProduct = categories[i].category_description  %>
-                            <% sizesProduct = sizes[i].size_name %>
                             <% break; %>
                         <% } %>
                         
@@ -100,8 +111,6 @@
                     </label>
                     
                 </div>
-                    
-                <div>
                         
                     <label for="seccion"><h3>Sección</h3></label>
                         
@@ -136,8 +145,9 @@
                     </div>
                     
                 </div>
+                <!-- 
 
-                <h3>Talles:</h3>
+                    <h3>Talles:</h3>
                 <div class="contenedor-secundario">
                         
                     <% const sizesKids = [24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]%>
@@ -145,7 +155,7 @@
                     
                     <% const availableSizes = categoryProduct === "Kids" ? sizesKids : sizesAdult %>
 
-                    <!-- si funciona pero en la base de datos esta mal completado ya que en el stock el id 1 del producto 1 que es para adultos esta con id 1 en sizes o sea en la columna size_name dice 24 q es para niños -->
+                    si funciona pero en la base de datos esta mal completado ya que en el stock el id 1 del producto 1 que es para adultos esta con id 1 en sizes o sea en la columna size_name dice 24 q es para niños
                     <% availableSizes.forEach(size=> { %>
                         <label for="size<%= size %>">
                             <input type="checkbox" name="sizes" id="size<%= size %>" value="<%= size %>" 
@@ -157,6 +167,9 @@
                     <% }) %>
 
                 </div>
+
+                 -->
+                
 
                 <div>
                     <label for="imagenProducto">Subir imagen</label>

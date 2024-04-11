@@ -17,9 +17,7 @@ const controller = {
         // res.render('products/index', {inSaleProducts, featuredProducts, lastColectionProducts,user: req.session.userToLoggedIn});
         productList.findAll()
         .then((products) => {
-            console.log(products);
             const inSaleProducts = products.filter((product) => product.product_section=="in-sale").map(product => product.dataValues);
-            console.log("Insale:", inSaleProducts);
             const featuredProducts = products.filter((product) => product.product_section=="featured").map(product => product.dataValues);
             const lastColectionProducts = products.filter((product) => product.product_section=="last-colection").map(product => product.dataValues);
             res.render('products/index', {inSaleProducts, featuredProducts, lastColectionProducts,user: req.session.userToLoggedIn});

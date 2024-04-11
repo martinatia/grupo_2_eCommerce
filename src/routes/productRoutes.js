@@ -24,7 +24,7 @@ const routes = {
     productDetail:  '/product-description/:id',
     postProduct:    '/new-product',
     editProduct:    '/edit-product/:id',
-    putProduct:     '/',
+    putProduct:     '/modify-product/:id',
     deleteProduct:  '/deleteProduct/:id',
     searchProduct: '/search'
 };
@@ -35,7 +35,7 @@ router.get(routes.productDetail, controller.productDetail);//Listo
 router.post(routes.postProduct, fileUpload.single('imagenProduto'), controller.postProduct);//Listo (lleva permiso de administrador)
 
 router.get(routes.editProduct, controller.editProduct);//TODO: Ahora (va con permiso de admin)
-router.put(routes.putProduct, fileUpload.single('imagenProducto'), adminMiddleware, controller.putProduct);
+router.put(routes.putProduct, fileUpload.single('imagenProducto'), controller.putProduct); //lleva permisos de administrador
 //TODO: NO SE PORQUE NO ENTRA POR EL IF (REQ.FILE) CUANDO SI ESTOY ADJUNTANDO UNA IMAGEN!!!!
 
 

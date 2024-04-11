@@ -28,17 +28,19 @@ const controller = {
     const categorias = categoriesList.findAll();
     const talles = sizesList.findAll();
     const stock = stockList.findAll();
+    const marcas = brandList.findAll();
 
     
     
-    Promise.all([producto, categorias, talles, stock])
-    .then(([product, categories, sizes, stock]) => {
+    Promise.all([producto, categorias, talles, stock, marcas])
+    .then(([product, categories, sizes, stock, brands]) => {
       res.render("products/edit-product", 
       { 
         product: product, 
         categories: categories, 
         sizes: sizes, 
-        stock: stock 
+        stock: stock,
+        brands: brands 
       });
     }) 
 
@@ -180,60 +182,55 @@ const controller = {
   },
   putProduct: (req, res) => {
     const id = req.params.id;
-    var producto = products.find((producto) => producto.id == req.params.id);
-    console.log("estoy aqui:");
-    console.log(req.body);
-    console.log("file...");
-    console.log(req.file);
+    //var producto = products.find((producto) => producto.id == req.params.id);
     // Verifica si se cargó un nuevo archivo
-    let editedProduct;
-    console.log("producto original tiene:");
-    console.log(producto);
-    if (req.file) {
-      console.log("está entrando con imagen");
-      editedProduct = {
-        id: id,
-        name: (req.body.name)? req.body.name : producto.name,
-        description: (req.body.description)? req.body.description : producto.description,
-        image: req.file.filename, 
-        category: (req.body.categoria)? req.body.categoria : producto.category,
-        colors: (req.body.colors)? req.body.colors : producto.colors,
-        price: (req.body.price)? req.body.price : producto.prices,
-        sizes: (req.body.sizes)? req.body.sizes : producto.size,
-        section: (req.body.seccion)? req.body.seccion : producto.section,
-      };
 
-    } else {
-      console.log("viene por el no");
-      // Si no se carga un nuevo archivo, conserva la imagen existente
+    const productos = productList.findAll();
+    const categorias = categoriesList.findAll();
+    const marcas = brandList.findAll();
 
-      editedProduct = {
-        id: id,
-        name: (req.body.name)? req.body.name : producto.name,
-        description: (req.body.description)? req.body.description : producto.description,
-        image: producto.image, // Conserva la imagen existente
-        category: (req.body.categoria)? req.body.categoria : producto.category,
-        colors: (req.body.colors)? req.body.colors : producto.colors,
-        price: (req.body.price)? req.body.price : producto.prices,
-        sizes: (req.body.sizes)? req.body.sizes : producto.size,
-        section: (req.body.seccion)? req.body.seccion : producto.section,
-      };
-    }
-    let nuevoArreglo = products.map((producto) => {
-      if (producto.id == id) {
-        console.log("entró en id: " + id);
-        return editedProduct;
+    Promise.all([productos, categorias, marcas])
+    .then(([productos, categorias, marcas]) => {
+        
+      let categoryId;
+      let brandId;
+      let img;
+
+      if (req.file) {
+        img = req.file.filename
+      }else{
+        img = productos.product_image_url
       }
-      return producto;
-    });
-
-    console.log("Producto editado:");
-    console.log(editedProduct);
-
-    // Actualiza el producto en el array de productos
-    fs.writeFileSync(productsFilePath, JSON.stringify(nuevoArreglo));
-
-    res.redirect("/");
+        
+      for(let i = 0; i < categorias.length; i++){
+        if(categorias[i].category_description == req.body.categoria){
+          categoryId = categorias[i].category_id;
+        }
+      }
+  
+      //verifica que la marca del producto que viene en el body sea igual al de la base de datos, y en ese caso guarda el id de esa marca en la variable brandId
+      for(let i = 0; i < marcas.length; i++){
+        if(marcas[i].brand_name == req.body.brands){
+          brandId = marcas[i].brand_id;
+        }
+      }
+        
+      productList.update({
+        product_name: req.body.name,
+        product_description: req.body.description,
+        product_image_url: img, 
+        product_price: req.body.price,
+        product_section: req.body.seccion,
+        category_id: categoryId,
+        brand_id: brandId,
+      },{
+        where:{
+          product_id: id
+        }
+      });
+    })
+    
+    res.redirect("/products");
   },
   addStockProduct: (req, res) => {
     res.send('añadiendo stock')

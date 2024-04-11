@@ -140,7 +140,7 @@ main article img{
   justify-content: space-between;  
 }
 
-.inputs input{
+.inputs input, select{
   width: 50%;
 }
 
